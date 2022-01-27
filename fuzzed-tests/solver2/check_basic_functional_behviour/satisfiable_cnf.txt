@@ -1,0 +1,2 @@
+input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/satisfiable_cnf.cnf the error found is:
+satisfiable cnf result in unsatisfiable
