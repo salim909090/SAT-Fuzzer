@@ -6,9 +6,9 @@ exec_dir = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SAT fuzzer interface")
-    parser.add_argument('sut', help="refers to the source directory of the SUT")
-    parser.add_argument('inputs', help="refers to a directory containing a non-empty set of well-formed DIMACS-format files")
-    parser.add_argument('--seed', help="the path to the target sut to fuzz")
+    parser.add_argument('sut', help="Source directory of the SUT")
+    parser.add_argument('inputs', help="Directory containing a non-empty set of well-formed DIMACS-format files")
+    parser.add_argument('--seed', help="Path to the target sut to fuzz")
     args = parser.parse_args()
 
 # Create output directory, remove and recreate
