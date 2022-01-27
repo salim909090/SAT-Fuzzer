@@ -5,7 +5,9 @@ is detected
 '''
 import os
 import subprocess
+
 STRATEGY_NAME = "sanatizer_undefined_behaviour_fuzzing"
+
 def run_strategy(input_path,SUT_path,seed,bugs_logs_path):
     for current_input_filename in os.listdir(input_path):
         file_name_full_path = os.path.abspath(os.path.join(input_path,current_input_filename))

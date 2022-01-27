@@ -4,10 +4,11 @@ to detetct wrong functional behviour
 '''
 
 # array of startgies to be run 
-stratgies = {
+strategies = {
 
 
 
 }
-def run_stragies(input_path,SUT_path,seed,bugs_logs):
-    print("unimplmented yet!")
+
+def run_strategies(input_path,SUT_path,seed,bugs_logs):
+    pass
