@@ -2,7 +2,7 @@
 #define DECISION_H
 
 #include "literal.h"
-
+#include "string.h"
 #define MAX_TREE_HEIGHT 10000
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 

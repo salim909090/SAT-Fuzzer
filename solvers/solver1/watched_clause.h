@@ -7,7 +7,7 @@
 
 #include "literal.h"
 #include "clause.h"
-
+#include "stdio.h"
 //#define DEBUG_INIT_W_CLAUSE
 
 typedef struct watched_clause {
