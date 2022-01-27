@@ -3,7 +3,7 @@
 
 #include "clause.h"
 #include "formula.h"
-
+#include "string.h"
 #define INITIAL_BT_LEVEL 1
 
 //#define DEBUG_ANALYSE_CONFLICT 
