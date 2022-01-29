@@ -10,34 +10,34 @@ sat.c:337:13: runtime error: load of misaligned address 0x62a00ad70205 for type 
              ^ 
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior sat.c:337:13 in 
 =================================================================
-==22366==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000217c39 at pc 0x000106c70db2 bp 0x7ffee8f9d6b0 sp 0x7ffee8f9d6a8
+==29406==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000217c39 at pc 0x0001058e3db2 bp 0x7ffeea32a6b0 sp 0x7ffeea32a6a8
 READ of size 4 at 0x602000217c39 thread T0
-    #0 0x106c70db1 in binary_search sat.c:334
-    #1 0x106c6afb8 in remove_lit sat.c:315
-    #2 0x106c6aa04 in assign sat.c:159
-    #3 0x106c6903b in DPLL sat.c:239
-    #4 0x106c69806 in DPLL sat.c:260
-    #5 0x106c69806 in DPLL sat.c:260
-    #6 0x106c69806 in DPLL sat.c:260
-    #7 0x106c69806 in DPLL sat.c:260
-    #8 0x106c69806 in DPLL sat.c:260
-    #9 0x106c69806 in DPLL sat.c:260
-    #10 0x106c69806 in DPLL sat.c:260
-    #11 0x106c6850a in main sat.c:125
+    #0 0x1058e3db1 in binary_search sat.c:334
+    #1 0x1058ddfb8 in remove_lit sat.c:315
+    #2 0x1058dda04 in assign sat.c:159
+    #3 0x1058dc03b in DPLL sat.c:239
+    #4 0x1058dc806 in DPLL sat.c:260
+    #5 0x1058dc806 in DPLL sat.c:260
+    #6 0x1058dc806 in DPLL sat.c:260
+    #7 0x1058dc806 in DPLL sat.c:260
+    #8 0x1058dc806 in DPLL sat.c:260
+    #9 0x1058dc806 in DPLL sat.c:260
+    #10 0x1058dc806 in DPLL sat.c:260
+    #11 0x1058db50a in main sat.c:125
     #12 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x602000217c39 is located 1 bytes to the right of 8-byte region [0x602000217c30,0x602000217c38)
 allocated by thread T0 here:
-    #0 0x106cce400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x106c6f75b in copy sat.c:287
-    #2 0x106c696c7 in DPLL sat.c:259
-    #3 0x106c69806 in DPLL sat.c:260
-    #4 0x106c69806 in DPLL sat.c:260
-    #5 0x106c69806 in DPLL sat.c:260
-    #6 0x106c69806 in DPLL sat.c:260
-    #7 0x106c69806 in DPLL sat.c:260
-    #8 0x106c69806 in DPLL sat.c:260
-    #9 0x106c6850a in main sat.c:125
+    #0 0x10593c400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1058e275b in copy sat.c:287
+    #2 0x1058dc6c7 in DPLL sat.c:259
+    #3 0x1058dc806 in DPLL sat.c:260
+    #4 0x1058dc806 in DPLL sat.c:260
+    #5 0x1058dc806 in DPLL sat.c:260
+    #6 0x1058dc806 in DPLL sat.c:260
+    #7 0x1058dc806 in DPLL sat.c:260
+    #8 0x1058dc806 in DPLL sat.c:260
+    #9 0x1058db50a in main sat.c:125
     #10 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:334 in binary_search
@@ -74,34 +74,34 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==22366==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000217c39 at pc 0x000106c70eee bp 0x7ffee8f9d6b0 sp 0x7ffee8f9d6a8
+==29406==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000217c39 at pc 0x0001058e3eee bp 0x7ffeea32a6b0 sp 0x7ffeea32a6a8
 READ of size 4 at 0x602000217c39 thread T0
-    #0 0x106c70eed in binary_search sat.c:337
-    #1 0x106c6afb8 in remove_lit sat.c:315
-    #2 0x106c6aa04 in assign sat.c:159
-    #3 0x106c6903b in DPLL sat.c:239
-    #4 0x106c69806 in DPLL sat.c:260
-    #5 0x106c69806 in DPLL sat.c:260
-    #6 0x106c69806 in DPLL sat.c:260
-    #7 0x106c69806 in DPLL sat.c:260
-    #8 0x106c69806 in DPLL sat.c:260
-    #9 0x106c69806 in DPLL sat.c:260
-    #10 0x106c69806 in DPLL sat.c:260
-    #11 0x106c6850a in main sat.c:125
+    #0 0x1058e3eed in binary_search sat.c:337
+    #1 0x1058ddfb8 in remove_lit sat.c:315
+    #2 0x1058dda04 in assign sat.c:159
+    #3 0x1058dc03b in DPLL sat.c:239
+    #4 0x1058dc806 in DPLL sat.c:260
+    #5 0x1058dc806 in DPLL sat.c:260
+    #6 0x1058dc806 in DPLL sat.c:260
+    #7 0x1058dc806 in DPLL sat.c:260
+    #8 0x1058dc806 in DPLL sat.c:260
+    #9 0x1058dc806 in DPLL sat.c:260
+    #10 0x1058dc806 in DPLL sat.c:260
+    #11 0x1058db50a in main sat.c:125
     #12 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x602000217c39 is located 1 bytes to the right of 8-byte region [0x602000217c30,0x602000217c38)
 allocated by thread T0 here:
-    #0 0x106cce400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x106c6f75b in copy sat.c:287
-    #2 0x106c696c7 in DPLL sat.c:259
-    #3 0x106c69806 in DPLL sat.c:260
-    #4 0x106c69806 in DPLL sat.c:260
-    #5 0x106c69806 in DPLL sat.c:260
-    #6 0x106c69806 in DPLL sat.c:260
-    #7 0x106c69806 in DPLL sat.c:260
-    #8 0x106c69806 in DPLL sat.c:260
-    #9 0x106c6850a in main sat.c:125
+    #0 0x10593c400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1058e275b in copy sat.c:287
+    #2 0x1058dc6c7 in DPLL sat.c:259
+    #3 0x1058dc806 in DPLL sat.c:260
+    #4 0x1058dc806 in DPLL sat.c:260
+    #5 0x1058dc806 in DPLL sat.c:260
+    #6 0x1058dc806 in DPLL sat.c:260
+    #7 0x1058dc806 in DPLL sat.c:260
+    #8 0x1058dc806 in DPLL sat.c:260
+    #9 0x1058db50a in main sat.c:125
     #10 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:337 in binary_search
