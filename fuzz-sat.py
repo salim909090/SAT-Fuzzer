@@ -1,20 +1,21 @@
-'''
+"""
 Entry point of the SAT solver fuzzer
 
 - Check the input args to the fuzzer
 - Depending on the mode supplied it fuzzes all strategies in the mode
 
-'''
+"""
 
 import argparse
 import os
-import subprocess
+# import subprocess
 import corpus_tracker
 
 from functional_behavior_strategies import functional_behaviour
 from undefined_behaviour_strategies import undefined_behaviour
 
 exec_dir = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
+args = None
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SAT fuzzer usage options")
@@ -37,7 +38,7 @@ input_dir = os.path.abspath(args.inputs_path)
 
 bugs_logs = "fuzzed-tests"
 
-corpus = corpus_tracker.Corpus.getInstance()
+corpus = corpus_tracker.Corpus.get_instance()
 
 if args.mode == "ub":
     print("[+] Running all strategies to detect undefined behaviour")
