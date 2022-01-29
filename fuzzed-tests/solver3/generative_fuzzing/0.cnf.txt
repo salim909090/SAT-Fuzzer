@@ -1,14 +1,14 @@
 input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver3/generative_fuzzing/0.cnf the error found is:
 =================================================================
-==29422==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000014f at pc 0x00010e038a22 bp 0x7ffee1bcff90 sp 0x7ffee1bcff88
+==30870==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000014f at pc 0x00010c798a22 bp 0x7ffee346ff90 sp 0x7ffee346ff88
 READ of size 1 at 0x60200000014f thread T0
-    #0 0x10e038a21 in main sat.c:133
+    #0 0x10c798a21 in main sat.c:133
     #1 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x60200000014f is located 1 bytes to the left of 1-byte region [0x602000000150,0x602000000151)
 allocated by thread T0 here:
-    #0 0x10e097400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x10e036358 in main sat.c:79
+    #0 0x10c7f7400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x10c796358 in main sat.c:79
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:133 in main

@@ -6,15 +6,19 @@ is detected
 import os
 import subprocess
 import pathlib
-
+from pathlib import Path
 STRATEGY_NAME = "sanatizer_undefined_behaviour_fuzzing"
+import corpus_tracker
 
 def run_strategy(input_path,SUT_path,seed,bugs_logs_path):
-    for current_input_filename in os.listdir(input_path):
-        file_name_full_path = os.path.abspath(os.path.join(input_path,current_input_filename))
-        error = run_program(file_name_full_path,SUT_path,seed,bugs_logs_path)
-        if error is not None:
-            log_error_case(current_input_filename,file_name_full_path,SUT_path,bugs_logs_path,error)
+    corpus = corpus_tracker.Corpus.getInstance()
+    while not corpus.queue_is_empty("ub"):
+        for current_input_filename in os.listdir(input_path):
+            file_name_full_path = corpus.pop_queue("ub")
+            current_input_filename = Path(file_name_full_path).name
+            error = run_program(file_name_full_path,SUT_path,seed,bugs_logs_path)
+            if error is not None:
+                log_error_case(current_input_filename,file_name_full_path,SUT_path,bugs_logs_path,error)
 
 def run_program (input_path,SUT_path,seed,bugs_logs_path):
     result = subprocess.Popen(["./runsat.sh", input_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
