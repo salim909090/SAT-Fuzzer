@@ -34,7 +34,6 @@ def create_input_file(abs_file_path,input_data):
     file = open(abs_file_path,"w")
     file.write(input_data)
     file.close()
-
 def is_satisfiable(output):
     return "SAT" == output
 
