@@ -5,6 +5,8 @@ if the application handle wrong input directory
 import os
 import subprocess
 import random
+import pathlib
+
 STRATEGY_NAME = "false_file_inputs_check"
 def run_strategy(input_path,SUT_path,seed,bugs_logs_path):
     error,input = run_program(SUT_path,seed,bugs_logs_path)
@@ -56,17 +58,10 @@ def generate_input(seed):
     return input
 
 def log_error_case(input,SUT_path,bugs_logs_path,error):
-    # create dir and strategy dir if does not exist
-    if not os.path.exists(bugs_logs_path):
-        os.makedirs(bugs_logs_path)
-
     sut_dir = os.path.join(bugs_logs_path,os.path.basename(os.path.normpath(SUT_path)))
-    if not os.path.exists(sut_dir):
-        os.makedirs(sut_dir)
     strategy_dir = os.path.join(sut_dir,STRATEGY_NAME)
-    if not os.path.exists(strategy_dir):
-        os.makedirs(strategy_dir)
-    
+    pathlib.Path(strategy_dir).mkdir(parents=True, exist_ok=True)
+
     # create log of the bug
     full_path = os.path.join(strategy_dir,"false_file_input.txt")
     file = open(full_path, "w")
