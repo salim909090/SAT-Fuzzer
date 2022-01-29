@@ -1,0 +1,17 @@
+false input file <built-in function input> the error found is:
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==365==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000074 (pc 0x7fb1b82d55ad bp 0x000000000000 sp 0x7fff12883220 T0)
+==365==The signal is caused by a READ memory access.
+==365==Hint: address points to the zero page.
+    #0 0x7fb1b82d55ac in getc (/lib/x86_64-linux-gnu/libc.so.6+0x8e5ac)
+    #1 0x556c2b25e9fa in checkStartSequence /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:36
+    #2 0x556c2b25ff43 in PARSERinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:179
+    #3 0x556c2b25d952 in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:410
+    #4 0x556c2b25df97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
+    #5 0x7fb1b826e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #6 0x556c2b25485d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat+0x1585d)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x8e5ac) in getc
+==365==ABORTING
