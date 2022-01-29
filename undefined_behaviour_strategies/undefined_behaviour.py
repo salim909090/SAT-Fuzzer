@@ -21,7 +21,8 @@ strategies = {
 
 def run_strategies(input_path,SUT_path,seed,bugs_logs_path):
         corpus = corpus_tracker.Corpus.getInstance()
-        corpus.initialise_queue(input_path,"ub")
+        corpus.initialise_queue(input_path,"ub",1)
+        print("test")
         for current_strategy_name,current_strategy_func in strategies.items():
             print(f"running {current_strategy_name} strategy")
             current_strategy_func(input_path,SUT_path,seed,bugs_logs_path)

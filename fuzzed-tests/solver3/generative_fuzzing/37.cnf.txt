@@ -1,0 +1,1634 @@
+input file taken from /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/inputs/solver3/generative_fuzzing/37.cnf the error found is:
+=================================================================
+==24839==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x611000009988 at pc 0x560068cbd7ba bp 0x7ffd684913b0 sp 0x7ffd684913a0
+WRITE of size 4 at 0x611000009988 thread T0
+    #0 0x560068cbd7b9 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:98
+    #1 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #2 0x560068cbc83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+
+0x611000009988 is located 0 bytes to the right of 200-byte region [0x6110000098c0,0x611000009988)
+allocated by thread T0 here:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cbd243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
+    #2 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:98 in main
+Shadow bytes around the buggy address:
+  0x0c227fff92e0: 00 fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff92f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff9300: 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa
+  0x0c227fff9310: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c227fff9320: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c227fff9330: 00[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff9340: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff9350: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff9360: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff9370: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff9380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==24839==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x611000009988 at pc 0x560068cbca16 bp 0x7ffd68490f00 sp 0x7ffd68490ef0
+READ of size 4 at 0x611000009988 thread T0
+    #0 0x560068cbca15 in abscmpfunc /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:39
+    #1 0x7f8bced6f9ae  (/lib/x86_64-linux-gnu/libc.so.6+0x489ae)
+    #2 0x7f8bced6f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #3 0x7f8bced6f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #4 0x7f8bced6f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #5 0x7f8bced6f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #6 0x7f8bced6f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #7 0x7f8bced6fee5 in qsort_r (/lib/x86_64-linux-gnu/libc.so.6+0x48ee5)
+    #8 0x560068cbe4b4 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:122
+    #9 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #10 0x560068cbc83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+
+0x611000009988 is located 0 bytes to the right of 200-byte region [0x6110000098c0,0x611000009988)
+allocated by thread T0 here:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cbd243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
+    #2 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:39 in abscmpfunc
+Shadow bytes around the buggy address:
+  0x0c227fff92e0: 00 fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff92f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff9300: 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa
+  0x0c227fff9310: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c227fff9320: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c227fff9330: 00[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff9340: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff9350: 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa
+  0x0c227fff9360: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c227fff9370: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff9380: 00 fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==24839==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x611000009988 at pc 0x560068cc30ac bp 0x7ffd68490f00 sp 0x7ffd68490ef0
+READ of size 4 at 0x611000009988 thread T0
+    #0 0x560068cc30ab in remove_lit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:319
+    #1 0x560068cbf1e9 in assign /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:159
+    #2 0x560068cc10a9 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:239
+    #3 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #5 0x560068cbc83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+
+0x611000009988 is located 0 bytes to the right of 200-byte region [0x6110000098c0,0x611000009988)
+allocated by thread T0 here:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cbd243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
+    #2 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:319 in remove_lit
+Shadow bytes around the buggy address:
+  0x0c227fff92e0: 00 fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff92f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff9300: 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa
+  0x0c227fff9310: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c227fff9320: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c227fff9330: 00[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff9340: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff9350: 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa
+  0x0c227fff9360: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c227fff9370: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff9380: 00 fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+sat.c:334:16: runtime error: load of misaligned address 0x61100000030d for type 'int', which requires 4 byte alignment
+0x61100000030d: note: pointer points here
+ ff ff ff 0e 00 00 00  10 00 00 00 ef ff ff ff  11 00 00 00 12 00 00 00  13 00 00 00 e7 ff ff ff  19
+             ^ 
+sat.c:337:16: runtime error: load of misaligned address 0x61100000030d for type 'int', which requires 4 byte alignment
+0x61100000030d: note: pointer points here
+ ff ff ff 0e 00 00 00  10 00 00 00 ef ff ff ff  11 00 00 00 12 00 00 00  13 00 00 00 e7 ff ff ff  19
+             ^ 
+sat.c:302:5: runtime error: null pointer passed as argument 2, which is declared to never be null
+
+=================================================================
+==24839==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #7 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #15 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #13 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #11 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #5 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #16 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #10 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #14 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #17 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #12 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #6 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #17 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #18 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #9 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 3656 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1946 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:270
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #8 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #5 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #11 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #9 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #7 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #15 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #16 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #12 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #13 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #6 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #10 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #17 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #18 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #14 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #17 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1828 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1987 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:271
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #8 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #5 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #6 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #10 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #17 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #16 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #15 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #14 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #13 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #12 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #11 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #9 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #8 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #7 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc19fe in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:273
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #17 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #18 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #17 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #18 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #16 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #15 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #14 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #12 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #11 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #10 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #9 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #13 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #8 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #7 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #6 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #17 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #5 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 200 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993dc6 in calloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10ddc6)
+    #1 0x560068cc1a3c in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:274
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #17 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #18 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #17 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #16 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #15 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #14 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #13 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #12 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #11 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #10 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #9 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #8 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #7 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #6 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 50 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc19c0 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:272
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #5 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #17 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #18 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #17 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #10 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #6 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #16 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #9 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #15 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #14 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #8 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #13 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #5 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #12 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #7 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 38085 byte(s) in 50 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc2653 in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:299
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #11 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 2240 byte(s) in 76 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 1432 byte(s) in 52 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #5 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 968 byte(s) in 41 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #6 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 760 byte(s) in 36 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #7 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 604 byte(s) in 28 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #8 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 428 byte(s) in 23 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #9 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 256 byte(s) in 16 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #10 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 224 byte(s) in 13 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #11 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 168 byte(s) in 11 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #12 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 124 byte(s) in 8 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #13 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 88 byte(s) in 6 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #14 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 68 byte(s) in 5 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #15 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 52 byte(s) in 4 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #16 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 28 byte(s) in 2 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #17 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Indirect leak of 20 byte(s) in 1 object(s) allocated from:
+    #0 0x7f8bcf993bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x560068cc1fad in copy /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:287
+    #2 0x560068cc12d0 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:259
+    #3 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #4 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #5 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #6 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #7 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #8 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #9 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #10 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #11 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #12 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #13 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #14 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #15 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #16 0x560068cc1420 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:260
+    #17 0x560068cbe5d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #18 0x7f8bced4e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+SUMMARY: AddressSanitizer: 670745 byte(s) leaked in 1147 allocation(s).

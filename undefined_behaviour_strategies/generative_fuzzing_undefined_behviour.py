@@ -9,22 +9,30 @@ from mutation import fuzzing_data_random
 import numpy as np
 import sys
 import Levenshtein 
+import corpus_tracker
 
 STRATEGY_NAME = "generative_fuzzing"
 interesting_behaviours_encountered = []
 def run_strategy(input_path,SUT_path,seed,bugs_logs_path):
     # probability 50 ,50 smart and dumb input
-    dumb_smart_choice = random.choice([0,1])
-    if dumb_smart_choice == 0:
-        input_data = generate_dumb_cnf()
+
+    corpus = corpus_tracker.Corpus.getInstance()
+    if corpus.queue_is_empty("ub"):
+        dumb_smart_choice = random.choice([0,1])
+        if dumb_smart_choice == 0:
+            input_data = generate_dumb_cnf()
+        else:
+            input_data = generate_smart_cnf()
     else:
-        input_data = generate_smart_cnf()
+        input_data = corpus.pop_queue("ub")
+
 
     file_name_full_path = os.path.abspath(os.path.join(input_path))
     file_name = os.path.basename(os.path.normpath(file_name_full_path))
     create_input_file(file_name_full_path,input_data)
 
     error = run_program(file_name_full_path,SUT_path,seed,bugs_logs_path)
+    corpus.find_coverage(SUT_path,file_name_full_path,"ub",20)
 
     if error is not None:
         values = [Levenshtein.distance(error,current) for current in interesting_behaviours_encountered]
