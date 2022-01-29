@@ -33,7 +33,7 @@ def run_strategy(input_path,SUT_path,seed,bugs_logs_path):
             interesting_behaviours_encountered.append(error)
             log_error_case(file_name,file_name_full_path,SUT_path,bugs_logs_path,error)
             return
-        elif  min(values) < 500:
+        elif  min(values) < 5000:
             return
         interesting_behaviours_encountered.append(error)
         log_error_case(file_name,file_name_full_path,SUT_path,bugs_logs_path,error)
@@ -82,6 +82,8 @@ def generate_smart_cnf():
         forget_0_ending = 0
         out_of_range_var = 0
         leave_empty_Space = 0
+        replace_char_var = 0
+        replace_float_var = 0
     else:#abuse
         # use all args?
         use_all_args_number = random.choice([0,1])
@@ -142,7 +144,7 @@ def generate_smart_cnf():
                 cnf += " " + fuzzing_data_random(1,20)
 
             if replace_float_var and random.choice([0,1]):
-                cnf += " " + random.random(1,var_number)
+                cnf += " " + str(random.random()*10)
 
             if forget_0_ending:
                 forget_0_current = random.choice([0,1])
