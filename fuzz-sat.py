@@ -25,9 +25,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
 # Create output directory, remove and recreate
-output_dir = os.path.abspath(os.path.join(exec_dir, "fuzzed-tests"))
-subprocess.call(["rm", "-rf", output_dir], shell=False)
-subprocess.call(["mkdir", output_dir], shell=False)
+# output_dir = os.path.abspath(os.path.join(exec_dir, "fuzzed-tests"))
+# subprocess.call(["rm", "-rf", output_dir], shell=False)
+# subprocess.call(["mkdir", output_dir], shell=False)
 
 # SUT path
 sut_path = os.path.abspath(args.sut)

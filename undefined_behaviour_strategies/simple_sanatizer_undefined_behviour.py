@@ -5,7 +5,7 @@ is detected
 '''
 import os
 import subprocess
-from pathlib import Path  
+import pathlib
 
 STRATEGY_NAME = "sanatizer_undefined_behaviour_fuzzing"
 import corpus_tracker
@@ -40,7 +40,6 @@ def run_program (input_path,SUT_path,seed,bugs_logs_path):
         break
 
     print("error output")
-    counter =0
     for line in sut_output_error:
         if "ERROR" in line:    
             # print(line)
@@ -56,16 +55,10 @@ def run_program (input_path,SUT_path,seed,bugs_logs_path):
 
 def log_error_case(current_input_filename,file_name_full_path,SUT_path,bugs_logs_path,error):
     # create dir and strategy dir if does not exist
-    if not os.path.exists(bugs_logs_path):
-        os.makedirs(bugs_logs_path)
-
     sut_dir = os.path.join(bugs_logs_path,os.path.basename(os.path.normpath(SUT_path)))
-    if not os.path.exists(sut_dir):
-        os.makedirs(sut_dir)
     strategy_dir = os.path.join(sut_dir,STRATEGY_NAME)
-    if not os.path.exists(strategy_dir):
-        os.makedirs(strategy_dir)
-    
+    pathlib.Path(strategy_dir).mkdir(parents=True, exist_ok=True)
+
     # create log of the bug
     full_path = os.path.join(strategy_dir,f"{current_input_filename}.txt")
     file = open(full_path, "w")
