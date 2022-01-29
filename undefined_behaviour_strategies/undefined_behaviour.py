@@ -11,7 +11,7 @@ from undefined_behaviour_strategies import simple_sanatizer_undefined_behviour
 from undefined_behaviour_strategies import false_file_input_undefined_behivour
 from undefined_behaviour_strategies import generative_fuzzing_undefined_behviour
 
-# array of startgies to be run
+# array of strategies to be run
 strategies = {
     simple_sanatizer_undefined_behviour.STRATEGY_NAME: simple_sanatizer_undefined_behviour.run_strategy,
     false_file_input_undefined_behivour.STRATEGY_NAME: false_file_input_undefined_behivour.run_strategy

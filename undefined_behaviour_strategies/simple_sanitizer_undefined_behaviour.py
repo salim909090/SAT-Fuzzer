@@ -1,7 +1,7 @@
 """
-this stratgy takes input directory and run the inputs
-and check the output if undefined behviour from sanatizor
-is detected
+This strategy takes input directory and run the inputs
+and check the output if undefined behaviour from sanitizer
+is detected.
 """
 import os
 import subprocess
@@ -10,7 +10,7 @@ import corpus_tracker
 
 from pathlib import Path
 
-STRATEGY_NAME = "sanatizer_undefined_behaviour_fuzzing"
+STRATEGY_NAME = "sanitizer_undefined_behaviour_fuzzing"
 
 
 def run_strategy(input_path, SUT_path, seed, bugs_logs_path):
