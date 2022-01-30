@@ -22,6 +22,7 @@ class Corpus:
         if Corpus.instance is None:
             print("new corpus")
             Corpus()
+
         return Corpus.instance
 
     def compare_current_coverage(self, new_coverage, new_input, mode, tries):
