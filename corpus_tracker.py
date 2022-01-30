@@ -20,7 +20,7 @@ class Corpus:
     def get_instance():
         """ Static access method. """
         if Corpus.instance is None:
-            print("new corpus")
+            print("[+] New corpus")
             Corpus()
 
         return Corpus.instance

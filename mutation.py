@@ -44,8 +44,8 @@ def flip_random_character(s):
     return s[:pos] + new_c + s[pos + 1:]
 
 
-def mutate(s):
-    """Return s with a random mutation applied"""
+def mutate(str):
+    """Return str with a random mutation applied"""
     mutators = [
         delete_random_character,
         insert_random_character,
@@ -53,4 +53,4 @@ def mutate(s):
     ]
     mutator = random.choice(mutators)
     # print(mutator)
-    return mutator(s)
+    return mutator(str)

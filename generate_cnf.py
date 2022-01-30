@@ -11,7 +11,7 @@ def delete_random_elems(input_list, n):
 
 
 def generate_smart_cnf():
-    # choice of insert random comment or not
+    # Random choice of inserting comments or not
     comment_choice = random.choice([0, 1])
     cnf = ""
     if comment_choice:
@@ -57,8 +57,8 @@ def generate_smart_cnf():
     # list of vars available
     vars = list(range(1, var_number + 1))
     if not use_all_vars_number:
-        skiped_vars = random.randint(0, var_number)
-        vars = delete_random_elems(vars, skiped_vars)
+        skipped_vars = random.randint(0, var_number)
+        vars = delete_random_elems(vars, skipped_vars)
 
     if out_of_range_var:
         vars.append(var_number + random.randint(var_number + 1, sys.maxsize))
