@@ -1,6 +1,6 @@
 """
-this stratgy takes input directory and run the inputs
-and check the output if undefined behviour from sanatizor
+This strategy takes input directory and run the inputs
+and check the output if undefined behaviour from sanitizer
 is detected
 """
 import os

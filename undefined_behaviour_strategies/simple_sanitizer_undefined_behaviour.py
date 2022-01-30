@@ -33,7 +33,7 @@ def run_program(input_path, SUT_path, seed, bugs_logs_path):
     except subprocess.TimeoutExpired:
         result.kill()
         sut_output, sut_error = result.communicate()
-        return "time out in 20 sec"
+        return "[!] Time out in 20 sec"
 
     sut_output_printable = sut_output.decode('ascii', 'replace').split('\n')
     sut_output_error = sut_error.decode('ascii', 'replace').split('\n')

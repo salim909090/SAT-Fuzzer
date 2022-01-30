@@ -10,7 +10,7 @@ strategies = {
 }
 
 
-def run_stategies(input_path, SUT_path, seed, bugs_logs_path):
+def run_strategies(input_path, SUT_path, seed, bugs_logs_path):
     for current_strategy_name, current_strategy_func in strategies.items():
         print(f"running {current_strategy_name} strategy")
         current_strategy_func(input_path, SUT_path, seed, bugs_logs_path)

@@ -5,6 +5,7 @@ is detected
 """
 import os
 import subprocess
+import random
 
 STRATEGY_NAME = "check_basic_functional_behaviour"
 
@@ -31,6 +32,29 @@ def run_strategy(input_path, SUT_path, seed, bugs_logs_path):
         log_error_case("unsatisfiable_cnf", file_name_full_path, SUT_path, bugs_logs_path,
                        "unsatisfiable cnf result in satisfiable")
 
+
+# To be merged with rest of code
+def pick_random_sat_file():
+    """
+    Picks a random .cnf file from the functional_inputs dir, finds if its satisfiable
+    and feed it to the SUT to check if their are functional behaviour errors.
+
+    :return:
+    """
+    sat_flag = 0  # 1 - SAT & 0 - UNSAT
+    inputs_path = "inputs/functional_inputs"
+    if not os.path.exists(inputs_path):
+        print("[!] Input path given does not exist")
+        return
+    input_files = [f for f in os.listdir(inputs_path) if os.path.join(inputs_path, f)]
+    input_file = random.choice(input_files)
+    # print(input_file)
+    if "yes" in input_file:
+        sat_flag = 1
+
+    # TODO
+    # run program with input file
+# pick_random_sat_file()
 
 def generate_satisfiable_cnf():
     return "p cnf 1 1\n1 -1 0"
@@ -84,6 +108,6 @@ def log_error_case(current_input_filename, file_name_full_path, SUT_path, bugs_l
     # create log of the bug
     full_path = os.path.join(strategy_dir, f"{current_input_filename}.txt")
     file = open(full_path, "w")
-    file.write(f"input file taken from {file_name_full_path} the error found is:\n")
+    file.write(f"[!] Input file taken from {file_name_full_path} the error found is:\n")
     file.write(error)
     file.close()
