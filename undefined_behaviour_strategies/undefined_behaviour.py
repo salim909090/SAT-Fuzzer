@@ -29,13 +29,13 @@ def run_strategies(input_path,SUT_path,seed,bugs_logs_path):
             print()
 
         counter = 0
-        print(f"running {generative_fuzzing_undefined_behviour.STRATEGY_NAME} strategy")
-        # create input directory
-        sut_name = os.path.basename(os.path.normpath(SUT_path))
-        pathlib.Path(os.path.join(input_path,sut_name,generative_fuzzing_undefined_behviour.STRATEGY_NAME)).mkdir(parents=True, exist_ok=True)
-        while True:
-            full_input_file_path = os.path.join(input_path,sut_name,generative_fuzzing_undefined_behviour.STRATEGY_NAME,f"{counter}.cnf")
-            generative_fuzzing_undefined_behviour.run_strategy(full_input_file_path,SUT_path,seed,bugs_logs_path)
-            counter += 1
+        # print(f"running {generative_fuzzing_undefined_behviour.STRATEGY_NAME} strategy")
+        # # create input directory
+        # sut_name = os.path.basename(os.path.normpath(SUT_path))
+        # pathlib.Path(os.path.join(input_path,sut_name,generative_fuzzing_undefined_behviour.STRATEGY_NAME)).mkdir(parents=True, exist_ok=True)
+        # while True:
+        #     full_input_file_path = os.path.join(input_path,sut_name,generative_fuzzing_undefined_behviour.STRATEGY_NAME,f"{counter}.cnf")
+        #     generative_fuzzing_undefined_behviour.run_strategy(full_input_file_path,SUT_path,seed,bugs_logs_path)
+        #     counter += 1
 
 
