@@ -1,5 +1,6 @@
 import subprocess
 
+
 # Go to directory and run gcov and obtain final percentage coverage
 def find_coverage():
     subprocess = subprocess.Popen("gcovr", shell=True, stdout=subprocess.PIPE)

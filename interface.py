@@ -1,7 +1,6 @@
+import os
 import time
-
-from os import system
-
+import psutil
 
 if __name__ == "__main__":
 
@@ -9,16 +8,31 @@ if __name__ == "__main__":
     start_time = time.clock_gettime(time.CLOCK_MONOTONIC)
 
     while 1:
-        system('clear')
+        os.system('clear')
         current_time = time.clock_gettime(time.CLOCK_MONOTONIC)
         past_time = start_time
         end = time.time()
         hours, rem = divmod(end-start, 3600)
         minutes, seconds = divmod(rem, 60)
+        # cpufreq = psutil.cpu_freq()
+
+        statistics = {}
+
+        # Get Physical and Logical CPU Count
+        physical_and_logical_cpu_count = os.cpu_count()
+        statistics['physical_and_logical_cpu_count'] = physical_and_logical_cpu_count
+        cpu_load = [x / os.cpu_count() * 100 for x in os.getloadavg()][-1]
+        statistics['cpu_load'] = cpu_load
+
         print("FUZZING SAT SOLVER\n" + '-'*18)
         print("Stats\n")
-        print("Runtime: {:0>2}:{:05.2f}".format(int(minutes),seconds))
+        print("Runtime: {:0>2}:{:05.2f}".format(int(minutes), seconds))
+        # print(f"CPU: {cpufreq.current / 1000:.2f} GHz")
+        print(f"Memory: " + str(psutil.virtual_memory().percent) + " %")
+        print(f"CPU: {statistics['cpu_load']:.2f} % (" + str(physical_and_logical_cpu_count) + " cores)")
         print('Total Coverage Score: {:0.4f}%'.format(0))
         print('Possible Bugs found: {:d}'.format(0))
-        time.sleep(1)
+        time.sleep(0.5)
+
+
 
