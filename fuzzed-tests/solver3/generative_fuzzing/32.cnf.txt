@@ -1,16 +1,16 @@
 input file taken from /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/inputs/solver3/generative_fuzzing/32.cnf the error found is:
 =================================================================
-==24785==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60700000022c at pc 0x56405efc87ba bp 0x7ffce3ad3e50 sp 0x7ffce3ad3e40
+==1651==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60700000022c at pc 0x55ce476e07ba bp 0x7ffeca339700 sp 0x7ffeca3396f0
 WRITE of size 4 at 0x60700000022c thread T0
-    #0 0x56405efc87b9 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:98
-    #1 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #2 0x56405efc783d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+    #0 0x55ce476e07b9 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:98
+    #1 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #2 0x55ce476df83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
 
 0x60700000022c is located 0 bytes to the right of 76-byte region [0x6070000001e0,0x60700000022c)
 allocated by thread T0 here:
-    #0 0x7f4baf573bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56405efc8243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
-    #2 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7f441aeb0bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55ce476e0243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
+    #2 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:98 in main
 Shadow bytes around the buggy address:
@@ -46,24 +46,24 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==24785==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x607000000230 at pc 0x56405efc7990 bp 0x7ffce3ad3a90 sp 0x7ffce3ad3a80
+==1651==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x607000000230 at pc 0x55ce476df990 bp 0x7ffeca339340 sp 0x7ffeca339330
 READ of size 4 at 0x607000000230 thread T0
-    #0 0x56405efc798f in abscmpfunc /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:39
-    #1 0x7f4bae94f9ae  (/lib/x86_64-linux-gnu/libc.so.6+0x489ae)
-    #2 0x7f4bae94f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
-    #3 0x7f4bae94f804  (/lib/x86_64-linux-gnu/libc.so.6+0x48804)
-    #4 0x7f4bae94f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
-    #5 0x7f4bae94f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
-    #6 0x7f4bae94fee5 in qsort_r (/lib/x86_64-linux-gnu/libc.so.6+0x48ee5)
-    #7 0x56405efc94b4 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:122
-    #8 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #9 0x56405efc783d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+    #0 0x55ce476df98f in abscmpfunc /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:39
+    #1 0x7f441a28c9ae  (/lib/x86_64-linux-gnu/libc.so.6+0x489ae)
+    #2 0x7f441a28c821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #3 0x7f441a28c804  (/lib/x86_64-linux-gnu/libc.so.6+0x48804)
+    #4 0x7f441a28c821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #5 0x7f441a28c821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #6 0x7f441a28cee5 in qsort_r (/lib/x86_64-linux-gnu/libc.so.6+0x48ee5)
+    #7 0x55ce476e14b4 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:122
+    #8 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #9 0x55ce476df83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
 
 0x607000000230 is located 4 bytes to the right of 76-byte region [0x6070000001e0,0x60700000022c)
 allocated by thread T0 here:
-    #0 0x7f4baf573bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56405efc8243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
-    #2 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7f441aeb0bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55ce476e0243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
+    #2 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:39 in abscmpfunc
 Shadow bytes around the buggy address:
@@ -99,24 +99,24 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==24785==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x607000000234 at pc 0x56405efc7a16 bp 0x7ffce3ad3a90 sp 0x7ffce3ad3a80
+==1651==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x607000000234 at pc 0x55ce476dfa16 bp 0x7ffeca339340 sp 0x7ffeca339330
 READ of size 4 at 0x607000000234 thread T0
-    #0 0x56405efc7a15 in abscmpfunc /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:39
-    #1 0x7f4bae94f9ae  (/lib/x86_64-linux-gnu/libc.so.6+0x489ae)
-    #2 0x7f4bae94f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
-    #3 0x7f4bae94f804  (/lib/x86_64-linux-gnu/libc.so.6+0x48804)
-    #4 0x7f4bae94f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
-    #5 0x7f4bae94f821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
-    #6 0x7f4bae94fee5 in qsort_r (/lib/x86_64-linux-gnu/libc.so.6+0x48ee5)
-    #7 0x56405efc94b4 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:122
-    #8 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #9 0x56405efc783d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+    #0 0x55ce476dfa15 in abscmpfunc /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:39
+    #1 0x7f441a28c9ae  (/lib/x86_64-linux-gnu/libc.so.6+0x489ae)
+    #2 0x7f441a28c821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #3 0x7f441a28c804  (/lib/x86_64-linux-gnu/libc.so.6+0x48804)
+    #4 0x7f441a28c821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #5 0x7f441a28c821  (/lib/x86_64-linux-gnu/libc.so.6+0x48821)
+    #6 0x7f441a28cee5 in qsort_r (/lib/x86_64-linux-gnu/libc.so.6+0x48ee5)
+    #7 0x55ce476e14b4 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:122
+    #8 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #9 0x55ce476df83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
 
 0x607000000234 is located 8 bytes to the right of 76-byte region [0x6070000001e0,0x60700000022c)
 allocated by thread T0 here:
-    #0 0x7f4baf573bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56405efc8243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
-    #2 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7f441aeb0bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55ce476e0243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
+    #2 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:39 in abscmpfunc
 Shadow bytes around the buggy address:
@@ -152,20 +152,20 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==24785==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60700000022c at pc 0x56405efce0ac bp 0x7ffce3ad39a0 sp 0x7ffce3ad3990
+==1651==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60700000022c at pc 0x55ce476e60ac bp 0x7ffeca339250 sp 0x7ffeca339240
 READ of size 4 at 0x60700000022c thread T0
-    #0 0x56405efce0ab in remove_lit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:319
-    #1 0x56405efca1e9 in assign /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:159
-    #2 0x56405efcc0a9 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:239
-    #3 0x56405efc95d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
-    #4 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #5 0x56405efc783d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+    #0 0x55ce476e60ab in remove_lit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:319
+    #1 0x55ce476e21e9 in assign /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:159
+    #2 0x55ce476e40a9 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:239
+    #3 0x55ce476e15d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #5 0x55ce476df83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
 
 0x60700000022c is located 0 bytes to the right of 76-byte region [0x6070000001e0,0x60700000022c)
 allocated by thread T0 here:
-    #0 0x7f4baf573bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56405efc8243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
-    #2 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7f441aeb0bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55ce476e0243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
+    #2 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:319 in remove_lit
 Shadow bytes around the buggy address:
@@ -201,20 +201,20 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==24785==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60700000022c at pc 0x56405efce107 bp 0x7ffce3ad39a0 sp 0x7ffce3ad3990
+==1651==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60700000022c at pc 0x55ce476e6107 bp 0x7ffeca339250 sp 0x7ffeca339240
 WRITE of size 4 at 0x60700000022c thread T0
-    #0 0x56405efce106 in remove_lit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:319
-    #1 0x56405efca1e9 in assign /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:159
-    #2 0x56405efcc0a9 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:239
-    #3 0x56405efc95d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
-    #4 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #5 0x56405efc783d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+    #0 0x55ce476e6106 in remove_lit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:319
+    #1 0x55ce476e21e9 in assign /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:159
+    #2 0x55ce476e40a9 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:239
+    #3 0x55ce476e15d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #4 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #5 0x55ce476df83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
 
 0x60700000022c is located 0 bytes to the right of 76-byte region [0x6070000001e0,0x60700000022c)
 allocated by thread T0 here:
-    #0 0x7f4baf573bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56405efc8243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
-    #2 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7f441aeb0bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55ce476e0243 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:83
+    #2 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:319 in remove_lit
 Shadow bytes around the buggy address:
@@ -250,19 +250,19 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==24785==AddressSanitizer CHECK failed: ../../../../src/libsanitizer/asan/asan_descriptions.cc:164 "((chunk.AllocTid())) != ((kInvalidTid))" (0xffffff, 0xffffff)
-    #0 0x7f4baf57dc7e  (/lib/x86_64-linux-gnu/libasan.so.5+0x117c7e)
-    #1 0x7f4baf59c2ae  (/lib/x86_64-linux-gnu/libasan.so.5+0x1362ae)
-    #2 0x7f4baf493f22  (/lib/x86_64-linux-gnu/libasan.so.5+0x2df22)
-    #3 0x7f4baf49539d  (/lib/x86_64-linux-gnu/libasan.so.5+0x2f39d)
-    #4 0x7f4baf497e84  (/lib/x86_64-linux-gnu/libasan.so.5+0x31e84)
-    #5 0x7f4baf57d30d  (/lib/x86_64-linux-gnu/libasan.so.5+0x11730d)
-    #6 0x7f4baf57e14a in __asan_report_load4_noabort (/lib/x86_64-linux-gnu/libasan.so.5+0x11814a)
-    #7 0x56405efce47d in binary_search /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:334
-    #8 0x56405efcdec3 in remove_lit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:315
-    #9 0x56405efca1e9 in assign /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:159
-    #10 0x56405efcc0a9 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:239
-    #11 0x56405efc95d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
-    #12 0x7f4bae92e0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #13 0x56405efc783d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
+==1651==AddressSanitizer CHECK failed: ../../../../src/libsanitizer/asan/asan_descriptions.cc:164 "((chunk.AllocTid())) != ((kInvalidTid))" (0xffffff, 0xffffff)
+    #0 0x7f441aebac7e  (/lib/x86_64-linux-gnu/libasan.so.5+0x117c7e)
+    #1 0x7f441aed92ae  (/lib/x86_64-linux-gnu/libasan.so.5+0x1362ae)
+    #2 0x7f441add0f22  (/lib/x86_64-linux-gnu/libasan.so.5+0x2df22)
+    #3 0x7f441add239d  (/lib/x86_64-linux-gnu/libasan.so.5+0x2f39d)
+    #4 0x7f441add4e84  (/lib/x86_64-linux-gnu/libasan.so.5+0x31e84)
+    #5 0x7f441aeba30d  (/lib/x86_64-linux-gnu/libasan.so.5+0x11730d)
+    #6 0x7f441aebb14a in __asan_report_load4_noabort (/lib/x86_64-linux-gnu/libasan.so.5+0x11814a)
+    #7 0x55ce476e647d in binary_search /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:334
+    #8 0x55ce476e5ec3 in remove_lit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:315
+    #9 0x55ce476e21e9 in assign /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:159
+    #10 0x55ce476e40a9 in DPLL /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:239
+    #11 0x55ce476e15d7 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:125
+    #12 0x7f441a26b0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #13 0x55ce476df83d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
 
