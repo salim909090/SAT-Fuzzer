@@ -49,5 +49,5 @@ elif args.mode == "fb":
     functional_behaviour.run_strategies(args.inputs_path, sut_path, args.seed, bugs_logs)
 else:
     print("[+] Running all strategies to detect functional and undefined behaviour")
-    undefined_behaviour.run_strategies(args.inputs_path, sut_path, args.seed, bugs_logs)
     functional_behaviour.run_strategies(args.inputs_path, sut_path, args.seed, bugs_logs)
+    undefined_behaviour.run_strategies(args.inputs_path, sut_path, args.seed, bugs_logs)

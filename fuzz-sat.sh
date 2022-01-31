@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 sut_path=$1
 input_path=$2
 
