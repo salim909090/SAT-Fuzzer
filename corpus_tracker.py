@@ -16,6 +16,7 @@ class Corpus:
         else:
             Corpus.instance = self
 
+    ""
     @staticmethod
     def get_instance():
         """ Static access method. """
