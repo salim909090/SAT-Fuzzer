@@ -1,14 +1,14 @@
 input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver3/generative_fuzzing/11.cnf the error found is:
 =================================================================
-==42481==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60c0000002f4 at pc 0x000109426e63 bp 0x7ffee67dff90 sp 0x7ffee67dff88
+==4954==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60c0000002f4 at pc 0x0001063d2e63 bp 0x7ffee9833f90 sp 0x7ffee9833f88
 WRITE of size 4 at 0x60c0000002f4 thread T0
-    #0 0x109426e62 in main sat.c:98
+    #0 0x1063d2e62 in main sat.c:98
     #1 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x60c0000002f4 is located 0 bytes to the right of 116-byte region [0x60c000000280,0x60c0000002f4)
 allocated by thread T0 here:
-    #0 0x109488400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x109426519 in main sat.c:83
+    #0 0x106435400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1063d2519 in main sat.c:83
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:98 in main
@@ -45,15 +45,15 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==42481==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c1c at pc 0x000109427910 bp 0x7ffee67dff90 sp 0x7ffee67dff88
+==4954==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c1c at pc 0x0001063d3910 bp 0x7ffee9833f90 sp 0x7ffee9833f88
 WRITE of size 4 at 0x603000001c1c thread T0
-    #0 0x10942790f in main sat.c:108
+    #0 0x1063d390f in main sat.c:108
     #1 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x603000001c1c is located 0 bytes to the right of 28-byte region [0x603000001c00,0x603000001c1c)
 allocated by thread T0 here:
-    #0 0x109488400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x1094271f6 in main sat.c:106
+    #0 0x106435400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1063d31f6 in main sat.c:106
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:108 in main
@@ -90,17 +90,17 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==42481==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c1c at pc 0x000109425615 bp 0x7ffee67df6d0 sp 0x7ffee67df6c8
+==4954==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c1c at pc 0x0001063d1615 bp 0x7ffee98336d0 sp 0x7ffee98336c8
 READ of size 4 at 0x603000001c1c thread T0
-    #0 0x109425614 in abscmpfunc sat.c:39
-    #1 0x109481e79 in wrap_qsort+0x79 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3de79)
-    #2 0x109427f3a in main sat.c:117
+    #0 0x1063d1614 in abscmpfunc sat.c:39
+    #1 0x10642ee79 in wrap_qsort+0x79 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3de79)
+    #2 0x1063d3f3a in main sat.c:117
     #3 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x603000001c1c is located 0 bytes to the right of 28-byte region [0x603000001c00,0x603000001c1c)
 allocated by thread T0 here:
-    #0 0x109488400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x1094271f6 in main sat.c:106
+    #0 0x106435400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1063d31f6 in main sat.c:106
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:39 in abscmpfunc
@@ -137,18 +137,18 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==42481==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c1c at pc 0x00010942557a bp 0x7ffee67df610 sp 0x7ffee67df608
+==4954==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c1c at pc 0x0001063d157a bp 0x7ffee9833610 sp 0x7ffee9833608
 READ of size 4 at 0x603000001c1c thread T0
-    #0 0x109425579 in abscmpfunc sat.c:39
+    #0 0x1063d1579 in abscmpfunc sat.c:39
     #1 0x7fff2044730b in _qsort+0x3f0 (libsystem_c.dylib:x86_64+0x5d30b)
-    #2 0x109481ee9 in wrap_qsort+0xe9 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3dee9)
-    #3 0x109427f3a in main sat.c:117
+    #2 0x10642eee9 in wrap_qsort+0xe9 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3dee9)
+    #3 0x1063d3f3a in main sat.c:117
     #4 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x603000001c1c is located 0 bytes to the right of 28-byte region [0x603000001c00,0x603000001c1c)
 allocated by thread T0 here:
-    #0 0x109488400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x1094271f6 in main sat.c:106
+    #0 0x106435400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1063d31f6 in main sat.c:106
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:39 in abscmpfunc
@@ -185,16 +185,16 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==42481==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c1c at pc 0x000109482058 bp 0x7ffee67dff90 sp 0x7ffee67df738
+==4954==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c1c at pc 0x00010642f058 bp 0x7ffee9833f90 sp 0x7ffee9833738
 WRITE of size 32 at 0x603000001c1c thread T0
-    #0 0x109482057 in wrap_qsort+0x257 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3e057)
-    #1 0x109427f3a in main sat.c:117
+    #0 0x10642f057 in wrap_qsort+0x257 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3e057)
+    #1 0x1063d3f3a in main sat.c:117
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x603000001c1c is located 0 bytes to the right of 28-byte region [0x603000001c00,0x603000001c1c)
 allocated by thread T0 here:
-    #0 0x109488400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x1094271f6 in main sat.c:106
+    #0 0x106435400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1063d31f6 in main sat.c:106
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3e057) in wrap_qsort+0x257
@@ -231,18 +231,18 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Right alloca redzone:    cb
   Shadow gap:              cc
 =================================================================
-==42481==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60c0000002f4 at pc 0x000109486480 bp 0x7ffee67df5d0 sp 0x7ffee67ded98
+==4954==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60c0000002f4 at pc 0x000106433480 bp 0x7ffee98335d0 sp 0x7ffee9832d98
 READ of size 152 at 0x60c0000002f4 thread T0
-    #0 0x10948647f in __asan_memcpy+0x1af (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4247f)
-    #1 0x10942ff59 in copy sat.c:292
-    #2 0x1094296c7 in DPLL sat.c:259
-    #3 0x10942850a in main sat.c:125
+    #0 0x10643347f in __asan_memcpy+0x1af (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4247f)
+    #1 0x1063dbf59 in copy sat.c:292
+    #2 0x1063d56c7 in DPLL sat.c:259
+    #3 0x1063d450a in main sat.c:125
     #4 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x60c0000002f4 is located 0 bytes to the right of 116-byte region [0x60c000000280,0x60c0000002f4)
 allocated by thread T0 here:
-    #0 0x109488400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x109426519 in main sat.c:83
+    #0 0x106435400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1063d2519 in main sat.c:83
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4247f) in __asan_memcpy+0x1af
