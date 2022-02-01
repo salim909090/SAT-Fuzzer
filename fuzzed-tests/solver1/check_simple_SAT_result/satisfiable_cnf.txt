@@ -1,0 +1,2 @@
+input file taken from /mnt/d/SAT-Fuzzer/inputs/satisfiable_cnf.txt the error found is:
+satisfiable cnf result in unsatisfiable

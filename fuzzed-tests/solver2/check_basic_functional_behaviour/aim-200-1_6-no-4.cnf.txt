@@ -1,0 +1,253 @@
+[!] False input file aim-200-1_6-no-4.cnf the error found is:
+sat.c:124:11: runtime error: variable length array bound evaluates to non-positive value 0
+
+=================================================================
+==2933==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 12208 byte(s) in 763 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d1411bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7f99d1417663 in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:139
+    #3 0x7f99d1419d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #4 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #5 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 5104 byte(s) in 319 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141417a in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:24
+    #2 0x7f99d141c280 in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:141
+    #3 0x7f99d141c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7f99d141a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7f99d141aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 3552 byte(s) in 222 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d1411bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7f99d141a33a in initializeWatchers /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:395
+    #3 0x7f99d141a60d in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:423
+    #4 0x7f99d141aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #5 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 3096 byte(s) in 387 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d1416bbf in decide /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:86
+    #3 0x7f99d1419ded in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:333
+    #4 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #5 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 2928 byte(s) in 366 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141bf5d in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:122
+    #3 0x7f99d141c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7f99d141a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7f99d141aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 2728 byte(s) in 341 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d141578f in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:111
+    #4 0x7f99d14178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7f99d1419d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 2704 byte(s) in 338 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d1415a54 in CLAUSEreasonFor /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:136
+    #4 0x7f99d1419031 in analyze /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:263
+    #5 0x7f99d1419eeb in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:350
+    #6 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 2560 byte(s) in 320 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d14147e1 in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:43
+    #4 0x7f99d141c280 in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:141
+    #5 0x7f99d141c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #6 0x7f99d141a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #7 0x7f99d141aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #8 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 2560 byte(s) in 320 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d1414722 in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:42
+    #4 0x7f99d141c280 in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:141
+    #5 0x7f99d141c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #6 0x7f99d141a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #7 0x7f99d141aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #8 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 2544 byte(s) in 159 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d1411bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7f99d141596b in CLAUSEreasonFor /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:127
+    #3 0x7f99d1419031 in analyze /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:263
+    #4 0x7f99d1419eeb in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:350
+    #5 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 2312 byte(s) in 289 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d14153fb in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:92
+    #4 0x7f99d14178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7f99d1419d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 504 byte(s) in 63 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d14156e8 in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:109
+    #4 0x7f99d14178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7f99d1419d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 320 byte(s) in 20 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141417a in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:24
+    #2 0x7f99d1418ba8 in learn /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:236
+    #3 0x7f99d1419f7d in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:358
+    #4 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #5 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 240 byte(s) in 30 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d141959f in analyze /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:276
+    #4 0x7f99d1419eeb in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:350
+    #5 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 216 byte(s) in 27 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d1414722 in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:42
+    #4 0x7f99d1418ba8 in learn /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:236
+    #5 0x7f99d1419f7d in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:358
+    #6 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 216 byte(s) in 27 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d14147e1 in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:43
+    #4 0x7f99d1418ba8 in learn /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:236
+    #5 0x7f99d1419f7d in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:358
+    #6 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 128 byte(s) in 16 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d1419c63 in analyze /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:303
+    #4 0x7f99d1419eeb in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:350
+    #5 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 64 byte(s) in 4 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d1411bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7f99d1419ec2 in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:348
+    #3 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #4 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 255200 byte(s) in 319 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d1411d40 in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:7
+    #2 0x7f99d141bd9b in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:113
+    #3 0x7f99d141c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7f99d141a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7f99d141aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 19200 byte(s) in 24 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d1411d40 in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:7
+    #2 0x7f99d1419ec2 in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:348
+    #3 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #4 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 5104 byte(s) in 319 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d1411bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7f99d141bd9b in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:113
+    #3 0x7f99d141c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7f99d141a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7f99d141aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 4752 byte(s) in 594 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141bf5d in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:122
+    #3 0x7f99d141c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7f99d141a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7f99d141aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 2184 byte(s) in 273 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d14156e8 in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:109
+    #4 0x7f99d14178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7f99d1419d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1024 byte(s) in 128 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d14153fb in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:92
+    #4 0x7f99d14178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7f99d1419d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 320 byte(s) in 20 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d1411bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7f99d1419ec2 in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:348
+    #3 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #4 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 96 byte(s) in 12 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d141959f in analyze /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:276
+    #4 0x7f99d1419eeb in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:350
+    #5 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 56 byte(s) in 7 object(s) allocated from:
+    #0 0x7f99d011eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7f99d141ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7f99d141af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7f99d1419c63 in analyze /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:303
+    #4 0x7f99d1419eeb in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:350
+    #5 0x7f99d141ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #6 0x7f99cef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+SUMMARY: AddressSanitizer: 331920 byte(s) leaked in 5707 allocation(s).
+----------------------------------------------------------

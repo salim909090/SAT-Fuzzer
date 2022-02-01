@@ -1,0 +1,19 @@
+[!] false input file aim-100-1_6-no-4.cnf the error found is:
+t
+i
+m
+e
+ 
+o
+u
+t
+ 
+i
+n
+ 
+2
+0
+ 
+s
+e
+c----------------------------------------------------------

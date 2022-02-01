@@ -1,143 +1,143 @@
-input file taken from /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/inputs/bench_11676.smt2.1.cnf the error found is:
+input file taken from /mnt/d/SAT-Fuzzer/inputs/bench_11676.smt2.1.cnf the error found is:
 sat.c:124:11: runtime error: variable length array bound evaluates to non-positive value 0
 
 =================================================================
-==12369==ERROR: LeakSanitizer: detected memory leaks
+==3203==ERROR: LeakSanitizer: detected memory leaks
 
 Direct leak of 2944 byte(s) in 184 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56095715a19b in VECTORinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/vector.c:4
-    #2 0x5609571576ed in initializeWatchers /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:395
-    #3 0x560957157a46 in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:423
-    #4 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #5 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a11bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7ffc08a1a33a in initializeWatchers /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:395
+    #3 0x7ffc08a1a60d in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:423
+    #4 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #5 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Direct leak of 2016 byte(s) in 126 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56095714fec9 in CLAUSEnew /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:24
-    #2 0x56095715995b in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:141
-    #3 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #4 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #5 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #6 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1417a in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:24
+    #2 0x7ffc08a1c280 in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:141
+    #3 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Direct leak of 1696 byte(s) in 212 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x5609571584f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
-    #3 0x560957150560 in CLAUSEnew /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:42
-    #4 0x56095715995b in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:141
-    #5 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #6 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #7 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #8 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7ffc08a14722 in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:42
+    #4 0x7ffc08a1c280 in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:141
+    #5 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #6 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #7 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #8 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Direct leak of 1696 byte(s) in 212 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x5609571584f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
-    #3 0x56095715061c in CLAUSEnew /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:43
-    #4 0x56095715995b in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:141
-    #5 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #6 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #7 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #8 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7ffc08a147e1 in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:43
+    #4 0x7ffc08a1c280 in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:141
+    #5 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #6 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #7 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #8 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Direct leak of 1008 byte(s) in 126 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x56095715963f in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:122
-    #3 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #4 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #5 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #6 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1bf5d in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:122
+    #3 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Direct leak of 288 byte(s) in 18 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56095715a19b in VECTORinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/vector.c:4
-    #2 0x5609571594c4 in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:113
-    #3 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #4 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #5 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #6 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a11bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7ffc08a1bd9b in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:113
+    #3 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Direct leak of 232 byte(s) in 29 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x5609571584f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
-    #3 0x560957151898 in CLAUSEpropagate /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:111
-    #4 0x56095715424a in propagate /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:144
-    #5 0x560957156f88 in solve /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:318
-    #6 0x560957158028 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:474
-    #7 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7ffc08a1578f in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:111
+    #4 0x7ffc08a178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7ffc08a19d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7ffc08a1ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Direct leak of 216 byte(s) in 27 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x5609571584f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
-    #3 0x560957151408 in CLAUSEpropagate /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:92
-    #4 0x56095715424a in propagate /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:144
-    #5 0x560957156f88 in solve /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:318
-    #6 0x560957158028 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:474
-    #7 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7ffc08a153fb in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:92
+    #4 0x7ffc08a178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7ffc08a19d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7ffc08a1ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Direct leak of 40 byte(s) in 5 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x5609571584f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
-    #3 0x56095715076c in CLAUSEclean /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:54
-    #4 0x56095714fd3c in CLAUSEnew /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:6
-    #5 0x56095715995b in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:141
-    #6 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #7 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #8 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #9 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7ffc08a1494f in CLAUSEclean /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:54
+    #4 0x7ffc08a13ffc in CLAUSEnew /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:6
+    #5 0x7ffc08a1c280 in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:141
+    #6 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #7 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #8 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #9 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Indirect leak of 115200 byte(s) in 144 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56095715a376 in VECTORinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/vector.c:7
-    #2 0x5609571594c4 in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:113
-    #3 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #4 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #5 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #6 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a11d40 in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:7
+    #2 0x7ffc08a1bd9b in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:113
+    #3 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Indirect leak of 2152 byte(s) in 269 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x56095715963f in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:122
-    #3 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #4 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #5 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #6 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1bf5d in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:122
+    #3 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Indirect leak of 2016 byte(s) in 126 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x56095715a19b in VECTORinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/vector.c:4
-    #2 0x5609571594c4 in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:113
-    #3 0x56095715a09b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #4 0x560957157aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #5 0x560957157f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #6 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a11bfe in VECTORinit /mnt/d/SAT-Fuzzer/solvers/solver2/vector.c:4
+    #2 0x7ffc08a1bd9b in makeOutput /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:113
+    #3 0x7ffc08a1c9a7 in PARSEformula /mnt/d/SAT-Fuzzer/solvers/solver2/parser.c:194
+    #4 0x7ffc08a1a676 in initialize /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:430
+    #5 0x7ffc08a1aa78 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:467
+    #6 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Indirect leak of 184 byte(s) in 23 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x5609571584f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
-    #3 0x560957151408 in CLAUSEpropagate /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:92
-    #4 0x56095715424a in propagate /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:144
-    #5 0x560957156f88 in solve /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:318
-    #6 0x560957158028 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:474
-    #7 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7ffc08a153fb in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:92
+    #4 0x7ffc08a178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7ffc08a19d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7ffc08a1ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 Indirect leak of 128 byte(s) in 16 object(s) allocated from:
-    #0 0x7fd26dd72bc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x560957158176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
-    #2 0x5609571584f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
-    #3 0x5609571517be in CLAUSEpropagate /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:109
-    #4 0x56095715424a in propagate /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:144
-    #5 0x560957156f88 in solve /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:318
-    #6 0x560957158028 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:474
-    #7 0x7fd26d12d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7ffc0771eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7ffc08a1ac43 in VARinit /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:4
+    #2 0x7ffc08a1af1c in neg /mnt/d/SAT-Fuzzer/solvers/solver2/var.c:22
+    #3 0x7ffc08a156e8 in CLAUSEpropagate /mnt/d/SAT-Fuzzer/solvers/solver2/clause.c:109
+    #4 0x7ffc08a178af in propagate /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:144
+    #5 0x7ffc08a19d1f in solve /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:318
+    #6 0x7ffc08a1ab09 in main /mnt/d/SAT-Fuzzer/solvers/solver2/sat.c:474
+    #7 0x7ffc06531bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
 
 SUMMARY: AddressSanitizer: 129816 byte(s) leaked in 1517 allocation(s).

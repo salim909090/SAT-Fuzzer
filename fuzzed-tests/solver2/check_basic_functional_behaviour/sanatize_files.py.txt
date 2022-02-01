@@ -1,0 +1,2 @@
+[!] False input file sanatize_files.py the error found is:
+----------------------------------------------------------ERROR: the file is badly formatted. The file must start withp cnf 

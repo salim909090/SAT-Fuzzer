@@ -1,0 +1,1333 @@
+[!] false input file aim-100-1_6-yes1-2.cnf the error found is:
+sat.c:334:16: runtime error: load of misaligned address 0x602000001991 for type 'int', which requires 4 byte alignment
+0x602000001991: note: pointer points here
+ 00 80 5c  19 00 00 00 d0 ff ff ff  00 00 00 00 00 00 00 00  02 00 00 00 ff ff ff 02  0c 00 00 00 01
+              ^ 
+sat.c:337:16: runtime error: load of misaligned address 0x602000001991 for type 'int', which requires 4 byte alignment
+0x602000001991: note: pointer points here
+ 00 80 5c  19 00 00 00 d0 ff ff ff  00 00 00 00 00 00 00 00  02 00 00 00 ff ff ff 02  0c 00 00 00 01
+              ^ 
+=================================================================
+==2612==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000007c98 at pc 0x7fa30c4b977a bp 0x7fffc3fdef20 sp 0x7fffc3fde6c8
+WRITE of size 12 at 0x602000007c98 thread T0
+    #0 0x7fa30c4b9779  (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x79779)
+    #1 0x7fa30d80acbe in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:292
+    #2 0x7fa30d80a2b2 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+    #9 0x7fa30d806ad9 in _start (/mnt/d/SAT-Fuzzer/solvers/solver3/sat+0x6ad9)
+
+0x602000007c98 is located 0 bytes to the right of 8-byte region [0x602000007c90,0x602000007c98)
+allocated by thread T0 here:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x79779) 
+Shadow bytes around the buggy address:
+  0x0c047fff8f40: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8f50: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8f60: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8f70: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8f80: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+=>0x0c047fff8f90: fa fa 00[fa]fa fa 00 fa fa fa 00 fa fa fa 00 04
+  0x0c047fff8fa0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8fb0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8fc0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8fd0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8fe0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+=================================================================
+==2612==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000004bd8 at pc 0x7fa30d80b51c bp 0x7fffc3fdf280 sp 0x7fffc3fdf270
+READ of size 4 at 0x602000004bd8 thread T0
+    #0 0x7fa30d80b51b in remove_lit /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:319
+    #1 0x7fa30d808c89 in assign /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:159
+    #2 0x7fa30d809e54 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:239
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+    #7 0x7fa30d806ad9 in _start (/mnt/d/SAT-Fuzzer/solvers/solver3/sat+0x6ad9)
+
+0x602000004bd8 is located 0 bytes to the right of 8-byte region [0x602000004bd0,0x602000004bd8)
+allocated by thread T0 here:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:319 in remove_lit
+Shadow bytes around the buggy address:
+  0x0c047fff8920: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8930: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8940: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8950: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8960: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+=>0x0c047fff8970: fa fa 00 00 fa fa 00 00 fa fa 00[fa]fa fa 00 fa
+  0x0c047fff8980: fa fa 00 fa fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8990: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff89a0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff89b0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff89c0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+=================================================================
+==2612==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000006498 at pc 0x7fa30c4b9733 bp 0x7fffc3fdf2e0 sp 0x7fffc3fdea88
+READ of size 12 at 0x602000006498 thread T0
+    #0 0x7fa30c4b9732  (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x79732)
+    #1 0x7fa30d80acbe in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:292
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+    #7 0x7fa30d806ad9 in _start (/mnt/d/SAT-Fuzzer/solvers/solver3/sat+0x6ad9)
+
+0x602000006498 is located 0 bytes to the right of 8-byte region [0x602000006490,0x602000006498)
+allocated by thread T0 here:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x79732) 
+Shadow bytes around the buggy address:
+  0x0c047fff8c40: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8c50: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8c60: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8c70: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+  0x0c047fff8c80: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
+=>0x0c047fff8c90: fa fa 00[fa]fa fa 00 fa fa fa 00 fa fa fa 00 04
+  0x0c047fff8ca0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8cb0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8cc0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8cd0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+  0x0c047fff8ce0: fa fa 00 04 fa fa 00 04 fa fa 00 04 fa fa 00 04
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+
+=================================================================
+==2612==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #9 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #10 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #11 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #4 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #9 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #10 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 1280 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a565 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:270
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #9 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #10 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #11 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #9 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #10 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #4 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a61a in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:273
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #9 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #10 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #11 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #9 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #10 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 640 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a5a3 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:271
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #4 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #9 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #10 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #4 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 400 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51ed28 in __interceptor_calloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xded28)
+    #1 0x7fa30d80a658 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:274
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #9 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #10 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #11 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #9 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #10 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #11 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #9 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #10 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Direct leak of 100 byte(s) in 1 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a5dc in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:272
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #4 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 160 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #4 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #9 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #10 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #4 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #9 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #10 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #11 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1916 byte(s) in 100 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80ae77 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:299
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1872 byte(s) in 157 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1848 byte(s) in 156 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1844 byte(s) in 154 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #5 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1820 byte(s) in 154 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1820 byte(s) in 154 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1816 byte(s) in 152 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #6 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1748 byte(s) in 148 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1748 byte(s) in 148 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1744 byte(s) in 146 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #7 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1504 byte(s) in 126 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1488 byte(s) in 128 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 1472 byte(s) in 126 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #8 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 644 byte(s) in 55 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #9 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 300 byte(s) in 26 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #4 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #7 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #8 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #9 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #10 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+Indirect leak of 116 byte(s) in 10 object(s) allocated from:
+    #0 0x7fa30c51eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)
+    #1 0x7fa30d80a9e5 in copy /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:287
+    #2 0x7fa30d80a07b in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:259
+    #3 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #4 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #5 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #6 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #7 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #8 0x7fa30d80a1cb in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:260
+    #9 0x7fa30d80a396 in DPLL /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:261
+    #10 0x7fa30d808436 in main /mnt/d/SAT-Fuzzer/solvers/solver3/sat.c:125
+    #11 0x7fa30b331bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+
+SUMMARY: AddressSanitizer: 105876 byte(s) leaked in 3680 allocation(s).
+----------------------------------------------------------

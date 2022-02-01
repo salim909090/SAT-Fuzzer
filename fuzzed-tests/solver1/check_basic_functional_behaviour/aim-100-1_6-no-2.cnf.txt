@@ -1,0 +1,35 @@
+[!] false input file aim-100-1_6-no-2.cnf the error found is:
+decision.c:37:14: runtime error: member access within null pointer of type 'struct PriorityQueue'
+ASAN:DEADLYSIGNAL
+=================================================================
+==2422==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000018 (pc 0x7fccb1625afc bp 0x7fffde98bcb0 sp 0x7fffde98bc70 T0)
+==2422==The signal is caused by a READ memory access.
+==2422==Hint: address points to the zero page.
+    #0 0x7fccb1625afb in rotate_left /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:37
+    #1 0x7fccb1626a17 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:82
+    #2 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #3 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #4 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #5 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #6 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #7 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #8 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #9 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #10 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #11 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #12 0x7fccb1626505 in insert_literal /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:71
+    #13 0x7fccb1634e09 in revoke_assignment /mnt/d/SAT-Fuzzer/solvers/solver1/formula.c:343
+    #14 0x7fccb1635890 in cancel /mnt/d/SAT-Fuzzer/solvers/solver1/formula.c:396
+    #15 0x7fccb1624679 in backtrack /mnt/d/SAT-Fuzzer/solvers/solver1/conflict.c:174
+    #16 0x7fccb1624ae9 in analyze_conflict /mnt/d/SAT-Fuzzer/solvers/solver1/conflict.c:196
+    #17 0x7fccb162dbd5 in solve /mnt/d/SAT-Fuzzer/solvers/solver1/solver.c:391
+    #18 0x7fccb162e520 in sat /mnt/d/SAT-Fuzzer/solvers/solver1/solver.c:439
+    #19 0x7fccb1624c7d in proble4 /mnt/d/SAT-Fuzzer/solvers/solver1/sat.c:464
+    #20 0x7fccb1624f12 in main /mnt/d/SAT-Fuzzer/solvers/solver1/sat.c:486
+    #21 0x7fccaef31bf6 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21bf6)
+    #22 0x7fccb161f209 in _start (/mnt/d/SAT-Fuzzer/solvers/solver1/sat+0x1f209)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /mnt/d/SAT-Fuzzer/solvers/solver1/decision.c:37 in rotate_left
+==2422==ABORTING
+----------------------------------------------------------
