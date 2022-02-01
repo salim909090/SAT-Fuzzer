@@ -20,9 +20,7 @@ strategies = {
 
 def run_strategies(input_path, SUT_path, seed, bugs_logs_path):
     corpus = corpus_tracker.Corpus.get_instance()
-    corpus.initialise_queue(input_path, "ub", 1)
-    print("test")
-
+    corpus.initialise_queue(input_path, "ub", 0)
     for current_strategy_name, current_strategy_func in strategies.items():
         print(f"running {current_strategy_name} strategy")
         current_strategy_func(input_path, SUT_path, seed, bugs_logs_path)
@@ -33,9 +31,9 @@ def run_strategies(input_path, SUT_path, seed, bugs_logs_path):
     print(f"running {generative_fuzzing_undefined_behaviour.STRATEGY_NAME} strategy")
     # create input directory
     sut_name = os.path.basename(os.path.normpath(SUT_path))
-    pathlib.Path(os.path.join(input_path, sut_name, generative_fuzzing_undefined_behaviour.STRATEGY_NAME)).mkdir(
-        parents=True, exist_ok=True)
-
+    path = pathlib.Path(os.path.join(input_path, sut_name, generative_fuzzing_undefined_behaviour.STRATEGY_NAME))
+    if not path.exists():
+        path.mkdir(parents=True, exist_ok=True)
     while True:
         full_input_file_path = os.path.join(input_path, sut_name, generative_fuzzing_undefined_behaviour.STRATEGY_NAME,
                                             f"{counter}.cnf")

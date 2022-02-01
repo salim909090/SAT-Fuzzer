@@ -15,7 +15,6 @@ STRATEGY_NAME = "sanitizer_undefined_behaviour_fuzzing"
 
 def run_strategy(input_path, SUT_path, seed, bugs_logs_path):
     corpus = corpus_tracker.Corpus.get_instance()
-    print("test2")
     while not corpus.queue_is_empty("ub"):
         file_name_full_path = corpus.pop_queue("ub")
         current_input_filename = Path(file_name_full_path).name
