@@ -1,42 +1,42 @@
 input file taken from /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/inputs/solver2/generative_fuzzing/22.cnf the error found is:
 =================================================================
-==9208==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6020000009fa at pc 0x7fce7303ddbb bp 0x7ffda45a2ef0 sp 0x7ffda45a2668
-READ of size 11 at 0x6020000009fa thread T0
-    #0 0x7fce7303ddba  (/lib/x86_64-linux-gnu/libasan.so.5+0x9cdba)
-    #1 0x7fce7303eddc in __interceptor_vprintf (/lib/x86_64-linux-gnu/libasan.so.5+0x9dddc)
-    #2 0x7fce7303eed6 in printf (/lib/x86_64-linux-gnu/libasan.so.5+0x9ded6)
-    #3 0x5574fbca1714 in badFormatted /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:5
-    #4 0x5574fbca231f in readNumberUntilSpace /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:98
-    #5 0x5574fbca24f3 in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:115
-    #6 0x5574fbca309b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #7 0x5574fbca0aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #8 0x5574fbca0f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #9 0x7fce724690b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #10 0x5574fbc9785d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat+0x1585d)
+==12572==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000029e1a at pc 0x7f80e3bfcdbb bp 0x7ffe844161a0 sp 0x7ffe84415918
+READ of size 11 at 0x602000029e1a thread T0
+    #0 0x7f80e3bfcdba  (/lib/x86_64-linux-gnu/libasan.so.5+0x9cdba)
+    #1 0x7f80e3bfdddc in __interceptor_vprintf (/lib/x86_64-linux-gnu/libasan.so.5+0x9dddc)
+    #2 0x7f80e3bfded6 in printf (/lib/x86_64-linux-gnu/libasan.so.5+0x9ded6)
+    #3 0x55a2a7df3714 in badFormatted /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:5
+    #4 0x55a2a7df431f in readNumberUntilSpace /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:98
+    #5 0x55a2a7df44f3 in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:115
+    #6 0x55a2a7df509b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
+    #7 0x55a2a7df2aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
+    #8 0x55a2a7df2f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
+    #9 0x7f80e30280b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #10 0x55a2a7de985d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat+0x1585d)
 
-0x6020000009fa is located 0 bytes to the right of 10-byte region [0x6020000009f0,0x6020000009fa)
+0x602000029e1a is located 0 bytes to the right of 10-byte region [0x602000029e10,0x602000029e1a)
 allocated by thread T0 here:
-    #0 0x7fce730aebc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x5574fbca1efc in readNumberUntilSpace /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:82
-    #2 0x5574fbca24f3 in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:115
-    #3 0x5574fbca309b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
-    #4 0x5574fbca0aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
-    #5 0x5574fbca0f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
-    #6 0x7fce724690b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #0 0x7f80e3c6dbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55a2a7df3efc in readNumberUntilSpace /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:82
+    #2 0x55a2a7df44f3 in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:115
+    #3 0x55a2a7df509b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
+    #4 0x55a2a7df2aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
+    #5 0x55a2a7df2f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
+    #6 0x7f80e30280b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow (/lib/x86_64-linux-gnu/libasan.so.5+0x9cdba) 
 Shadow bytes around the buggy address:
-  0x0c047fff80e0: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
-  0x0c047fff80f0: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
-  0x0c047fff8100: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
-  0x0c047fff8110: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
-  0x0c047fff8120: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00 00
-=>0x0c047fff8130: fa fa 00 00 fa fa 00 00 fa fa 00 00 fa fa 00[02]
-  0x0c047fff8140: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8150: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8160: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8170: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c047fffd370: fa fa 00 fa fa fa fd fd fa fa 00 fa fa fa fd fd
+  0x0c047fffd380: fa fa 00 fa fa fa fd fd fa fa 00 fa fa fa fd fd
+  0x0c047fffd390: fa fa 00 fa fa fa fd fd fa fa 00 fa fa fa fd fd
+  0x0c047fffd3a0: fa fa 00 fa fa fa fd fd fa fa 00 fa fa fa fd fd
+  0x0c047fffd3b0: fa fa 00 00 fa fa 00 fa fa fa 00 fa fa fa 00 00
+=>0x0c047fffd3c0: fa fa 00[02]fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c047fffd3d0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c047fffd3e0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c047fffd3f0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c047fffd400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c047fffd410: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
 Shadow byte legend (one shadow byte represents 8 application bytes):
   Addressable:           00
   Partially addressable: 01 02 03 04 05 06 07 
@@ -57,4 +57,30 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   Left alloca redzone:     ca
   Right alloca redzone:    cb
   Shadow gap:              cc
-profiling:/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/vector.gcda:Cannot open
+
+=================================================================
+==12572==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 264 byte(s) in 33 object(s) allocated from:
+    #0 0x7f80e3c6dbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55a2a7df3176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
+    #2 0x55a2a7df34f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
+    #3 0x55a2a7deb61c in CLAUSEnew /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:43
+    #4 0x55a2a7df495b in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:141
+    #5 0x55a2a7df509b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
+    #6 0x55a2a7df2aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
+    #7 0x55a2a7df2f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
+    #8 0x7f80e30280b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 264 byte(s) in 33 object(s) allocated from:
+    #0 0x7f80e3c6dbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55a2a7df3176 in VARinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:4
+    #2 0x55a2a7df34f0 in neg /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/var.c:22
+    #3 0x55a2a7deb560 in CLAUSEnew /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/clause.c:42
+    #4 0x55a2a7df495b in makeOutput /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:141
+    #5 0x55a2a7df509b in PARSEformula /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:194
+    #6 0x55a2a7df2aad in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:430
+    #7 0x55a2a7df2f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
+    #8 0x7f80e30280b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+SUMMARY: AddressSanitizer: 528 byte(s) leaked in 66 allocation(s).

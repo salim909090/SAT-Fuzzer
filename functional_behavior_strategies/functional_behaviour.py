@@ -2,11 +2,12 @@
 The file contains the functions responsible to run the strategies
 to detect wrong functional behaviour
 """
-from functional_behavior_strategies import check_basic_functional_behaviour
+from functional_behavior_strategies import check_basic_functional_behaviour, check_SAT_variables
 
 # Dict of strategies to be run
 strategies = {
-    check_basic_functional_behaviour.STRATEGY_NAME: check_basic_functional_behaviour.run_strategy
+    check_basic_functional_behaviour.STRATEGY_NAME: check_basic_functional_behaviour.run_strategy,
+    check_SAT_variables.STRATEGY_NAME: check_SAT_variables.run_strategy
 }
 
 

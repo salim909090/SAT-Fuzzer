@@ -55,6 +55,14 @@ def generate_input(seed):
     for current_input in range(length):
         input += chr(random.randrange(0,256))
     input = input.replace('\n','').replace('\x00','')
+
+    if random.choice([0,1]):
+        second_input = ''
+        length = random.randint(0,150)
+        for current_input in range(length):
+            second_input += chr(random.randrange(0,256))
+        secound_input = second_input.replace('\n','').replace('\x00','')
+        input += " " + secound_input
     return input
 
 def log_error_case(input,SUT_path,bugs_logs_path,error):

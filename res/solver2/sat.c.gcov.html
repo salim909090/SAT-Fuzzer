@@ -31,13 +31,13 @@
             <td class="headerValue">coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">291</td>
-            <td class="headerCovTableEntry">322</td>
-            <td class="headerCovTableEntryHi">90.4 %</td>
+            <td class="headerCovTableEntry">253</td>
+            <td class="headerCovTableEntry">278</td>
+            <td class="headerCovTableEntryHi">91.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-29 19:44:28</td>
+            <td class="headerValue">2022-02-01 15:10:35</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">25</td>
@@ -63,44 +63,44 @@
 <a name="1"><span class="lineNum">       1 </span>            : #include &lt;signal.h&gt;</a>
 <a name="2"><span class="lineNum">       2 </span>            : #include &quot;sat.h&quot;</a>
 <a name="3"><span class="lineNum">       3 </span>            : </a>
-<a name="4"><span class="lineNum">       4 </span><span class="lineCov">     429109 : bool value(Var p) {</span></a>
-<a name="5"><span class="lineNum">       5 </span><span class="lineCov">     429109 :     if (p-&gt;id &lt;= numberOfLiterals &amp;&amp; assignments[p-&gt;id] != unassigned) {</span></a>
+<a name="4"><span class="lineNum">       4 </span><span class="lineCov">     626507 : bool value(Var p) {</span></a>
+<a name="5"><span class="lineNum">       5 </span><span class="lineCov">     626507 :     if (p-&gt;id &lt;= numberOfLiterals &amp;&amp; assignments[p-&gt;id] != unassigned) {</span></a>
 <a name="6"><span class="lineNum">       6 </span><span class="lineCov">      32513 :         if (p-&gt;sign == true) {</span></a>
 <a name="7"><span class="lineNum">       7 </span><span class="lineCov">      20070 :             return assignments[p-&gt;id];</span></a>
 <a name="8"><span class="lineNum">       8 </span><span class="lineCov">      12443 :         } else if (p-&gt;sign == false)</span></a>
 <a name="9"><span class="lineNum">       9 </span><span class="lineCov">      12443 :             return !(assignments[p-&gt;id]);</span></a>
-<a name="10"><span class="lineNum">      10 </span><span class="lineNoCov">          0 :     }</span></a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">     396596 :     return unassigned;</span></a>
-<a name="12"><span class="lineNum">      12 </span><span class="lineCov">     429109 : }</span></a>
+<a name="10"><span class="lineNum">      10 </span>            :     }</a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineCov">     593994 :     return unassigned;</span></a>
+<a name="12"><span class="lineNum">      12 </span>            : }</a>
 <a name="13"><span class="lineNum">      13 </span>            : </a>
-<a name="14"><span class="lineNum">      14 </span><span class="lineCov">     155014 : void addToWatchersOf(C clause, Var p) {</span></a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">     155014 :     int id;</span></a>
-<a name="16"><span class="lineNum">      16 </span><span class="lineCov">     155014 :     if (p-&gt;sign)</span></a>
-<a name="17"><span class="lineNum">      17 </span><span class="lineCov">      82671 :         id = p-&gt;id;</span></a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineCov">     157610 : void addToWatchersOf(C clause, Var p) {</span></a>
+<a name="15"><span class="lineNum">      15 </span>            :     int id;</a>
+<a name="16"><span class="lineNum">      16 </span><span class="lineCov">     157610 :     if (p-&gt;sign)</span></a>
+<a name="17"><span class="lineNum">      17 </span><span class="lineCov">      85267 :         id = p-&gt;id;</span></a>
 <a name="18"><span class="lineNum">      18 </span>            :     else</a>
 <a name="19"><span class="lineNum">      19 </span><span class="lineCov">      72343 :         id = -p-&gt;id;</span></a>
-<a name="20"><span class="lineNum">      20 </span><span class="lineCov">     155014 :     VECTORadd(watchers[id], clause);</span></a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">     155014 : }</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineCov">     157610 :     VECTORadd(watchers[id], clause);</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">     157610 : }</span></a>
 <a name="22"><span class="lineNum">      22 </span>            : </a>
 <a name="23"><span class="lineNum">      23 </span><span class="lineCov">     120416 : V watchersOf(Var p) {</span></a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineCov">     120416 :     int id;</span></a>
+<a name="24"><span class="lineNum">      24 </span>            :     int id;</a>
 <a name="25"><span class="lineNum">      25 </span><span class="lineCov">     120416 :     if (p-&gt;sign)</span></a>
 <a name="26"><span class="lineNum">      26 </span><span class="lineCov">      95261 :         id = p-&gt;id;</span></a>
 <a name="27"><span class="lineNum">      27 </span>            :     else</a>
 <a name="28"><span class="lineNum">      28 </span><span class="lineCov">      25155 :         id = -p-&gt;id;</span></a>
 <a name="29"><span class="lineNum">      29 </span><span class="lineCov">     120416 :     return watchers[id];</span></a>
-<a name="30"><span class="lineNum">      30 </span><span class="lineCov">     120416 : }</span></a>
+<a name="30"><span class="lineNum">      30 </span>            : }</a>
 <a name="31"><span class="lineNum">      31 </span>            : </a>
-<a name="32"><span class="lineNum">      32 </span><span class="lineCov">      51055 : int currentDecisionLevel() {</span></a>
-<a name="33"><span class="lineNum">      33 </span><span class="lineCov">      51055 :     return trail_lim_size;</span></a>
+<a name="32"><span class="lineNum">      32 </span><span class="lineCov">      51120 : int currentDecisionLevel() {</span></a>
+<a name="33"><span class="lineNum">      33 </span><span class="lineCov">      51120 :     return trail_lim_size;</span></a>
 <a name="34"><span class="lineNum">      34 </span>            : }</a>
 <a name="35"><span class="lineNum">      35 </span>            : </a>
 <a name="36"><span class="lineNum">      36 </span><span class="lineCov">      15937 : bool allVarsAssigned() {</span></a>
-<a name="37"><span class="lineNum">      37 </span><span class="lineCov">   30397206 :     for (unsigned int i = 1; i &lt;= numberOfLiterals; i++) {</span></a>
-<a name="38"><span class="lineNum">      38 </span><span class="lineCov">   30381269 :         if (assignments[i] == unassigned) return false;</span></a>
-<a name="39"><span class="lineNum">      39 </span><span class="lineCov">   30365342 :     }</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">   30381300 :     for (unsigned int i = 1; i &lt;= numberOfLiterals; i++) {</span></a>
+<a name="38"><span class="lineNum">      38 </span><span class="lineCov">   30381300 :         if (assignments[i] == unassigned) return false;</span></a>
+<a name="39"><span class="lineNum">      39 </span>            :     }</a>
 <a name="40"><span class="lineNum">      40 </span><span class="lineCov">         10 :     return true;</span></a>
-<a name="41"><span class="lineNum">      41 </span><span class="lineCov">      15937 : }</span></a>
+<a name="41"><span class="lineNum">      41 </span>            : }</a>
 <a name="42"><span class="lineNum">      42 </span>            : </a>
 <a name="43"><span class="lineNum">      43 </span><span class="lineNoCov">          0 : void staticVarOrder() {</span></a>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
@@ -115,8 +115,8 @@
 <a name="53"><span class="lineNum">      53 </span><span class="lineNoCov">          0 :         for (unsigned int j = 0; j &lt; VECTORtotal(c-&gt;literals); j++) {</span></a>
 <a name="54"><span class="lineNum">      54 </span><span class="lineNoCov">          0 :             Var v = VECTORget(c-&gt;literals, j);</span></a>
 <a name="55"><span class="lineNum">      55 </span><span class="lineNoCov">          0 :             activity[v-&gt;id] += 1;</span></a>
-<a name="56"><span class="lineNum">      56 </span><span class="lineNoCov">          0 :         }</span></a>
-<a name="57"><span class="lineNum">      57 </span><span class="lineNoCov">          0 :     }</span></a>
+<a name="56"><span class="lineNum">      56 </span>            :         }</a>
+<a name="57"><span class="lineNum">      57 </span>            :     }</a>
 <a name="58"><span class="lineNum">      58 </span><span class="lineNoCov">          0 : }</span></a>
 <a name="59"><span class="lineNum">      59 </span>            : </a>
 <a name="60"><span class="lineNum">      60 </span><span class="lineCov">      15927 : unsigned int selectVar() {</span></a>
@@ -124,16 +124,16 @@
 <a name="62"><span class="lineNum">      62 </span>            :     //int maxActivity = 0;</a>
 <a name="63"><span class="lineNum">      63 </span><span class="lineCov">      15927 :     unsigned int maxId = 0;</span></a>
 <a name="64"><span class="lineNum">      64 </span>            : </a>
-<a name="65"><span class="lineNum">      65 </span><span class="lineCov">   30370258 :     for (unsigned int id = 1; id &lt; numberOfLiterals; id++) {</span></a>
-<a name="66"><span class="lineNum">      66 </span><span class="lineCov">   30354331 :         if (assignments[id] == unassigned) {</span></a>
+<a name="65"><span class="lineNum">      65 </span><span class="lineCov">   30354300 :     for (unsigned int id = 1; id &lt; numberOfLiterals; id++) {</span></a>
+<a name="66"><span class="lineNum">      66 </span><span class="lineCov">   30354300 :         if (assignments[id] == unassigned) {</span></a>
 <a name="67"><span class="lineNum">      67 </span>            :             //if (maxActivity &lt;= activity[id]) {</a>
 <a name="68"><span class="lineNum">      68 </span>            :                 //maxActivity = activity[id];</a>
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">      15926 :                 return id;</span></a>
 <a name="70"><span class="lineNum">      70 </span>            :             //}</a>
 <a name="71"><span class="lineNum">      71 </span>            :         }</a>
-<a name="72"><span class="lineNum">      72 </span><span class="lineCov">   30338405 :     }</span></a>
+<a name="72"><span class="lineNum">      72 </span>            :     }</a>
 <a name="73"><span class="lineNum">      73 </span><span class="lineCov">          1 :     return maxId;</span></a>
-<a name="74"><span class="lineNum">      74 </span><span class="lineCov">      15927 : }</span></a>
+<a name="74"><span class="lineNum">      74 </span>            : }</a>
 <a name="75"><span class="lineNum">      75 </span>            : </a>
 <a name="76"><span class="lineNum">      76 </span><span class="lineCov">      15926 : bool decide(unsigned int id) {</span></a>
 <a name="77"><span class="lineNum">      77 </span><span class="lineCov">      15926 :     trail_lim_size++;</span></a>
@@ -148,8 +148,8 @@
 <a name="86"><span class="lineNum">      86 </span><span class="lineCov">      15926 :     Var decidingVar = VARinit(id, true);</span></a>
 <a name="87"><span class="lineNum">      87 </span>            : </a>
 <a name="88"><span class="lineNum">      88 </span><span class="lineCov">      15926 :     printDebugVar(&quot;Assigned true to &quot;, decidingVar);</span></a>
-<a name="89"><span class="lineNum">      89 </span><span class="lineCov">      31852 :     return enqueue(decidingVar, NULL);</span></a>
-<a name="90"><span class="lineNum">      90 </span><span class="lineCov">      15926 : }</span></a>
+<a name="89"><span class="lineNum">      89 </span><span class="lineCov">      15926 :     return enqueue(decidingVar, NULL);</span></a>
+<a name="90"><span class="lineNum">      90 </span>            : }</a>
 <a name="91"><span class="lineNum">      91 </span>            : </a>
 <a name="92"><span class="lineNum">      92 </span>            : //returns false on conflict, true on succesfull enqueueing</a>
 <a name="93"><span class="lineNum">      93 </span><span class="lineCov">      32752 : bool enqueue(Var p, C from) {</span></a>
@@ -170,7 +170,7 @@
 <a name="108"><span class="lineNum">     108 </span><span class="lineCov">      32744 :         QUEUEinsert(propagationQ, p);</span></a>
 <a name="109"><span class="lineNum">     109 </span><span class="lineCov">      32744 :         return true;</span></a>
 <a name="110"><span class="lineNum">     110 </span>            :     }</a>
-<a name="111"><span class="lineNum">     111 </span><span class="lineCov">      32752 : }</span></a>
+<a name="111"><span class="lineNum">     111 </span>            : }</a>
 <a name="112"><span class="lineNum">     112 </span>            : </a>
 <a name="113"><span class="lineNum">     113 </span><span class="lineCov">      15943 : C propagate() {</span></a>
 <a name="114"><span class="lineNum">     114 </span><span class="lineCov">      15943 :     printDebugInt(&quot;Propagation starting, queue size: &quot;, propagationQ-&gt;size);</span></a>
@@ -188,11 +188,11 @@
 <a name="126"><span class="lineNum">     126 </span>            :         //moving the watching clauses to a temporary vector</a>
 <a name="127"><span class="lineNum">     127 </span><span class="lineCov">      87678 :         for (unsigned int i = 0; i &lt; numberOfWatchers; i++) {</span></a>
 <a name="128"><span class="lineNum">     128 </span><span class="lineCov">      54946 :             propagationWatchers[i] = VECTORget(watchersOf(propagatingVar), i);</span></a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineCov">      54946 :         }</span></a>
+<a name="129"><span class="lineNum">     129 </span>            :         }</a>
 <a name="130"><span class="lineNum">     130 </span>            : </a>
 <a name="131"><span class="lineNum">     131 </span><span class="lineCov">      32732 :         VECTORfree(watchersOf(propagatingVar));</span></a>
 <a name="132"><span class="lineNum">     132 </span>            : </a>
-<a name="133"><span class="lineNum">     133 </span><span class="lineCov">      32732 :         int propagatingVarId;</span></a>
+<a name="133"><span class="lineNum">     133 </span>            :         int propagatingVarId;</a>
 <a name="134"><span class="lineNum">     134 </span><span class="lineCov">      32732 :         if (propagatingVar-&gt;sign)</span></a>
 <a name="135"><span class="lineNum">     135 </span><span class="lineCov">      25076 :             propagatingVarId = propagatingVar-&gt;id;</span></a>
 <a name="136"><span class="lineNum">     136 </span>            :         else</a>
@@ -200,7 +200,7 @@
 <a name="138"><span class="lineNum">     138 </span>            : </a>
 <a name="139"><span class="lineNum">     139 </span><span class="lineCov">      32732 :         watchers[propagatingVarId] = VECTORinit();</span></a>
 <a name="140"><span class="lineNum">     140 </span>            : </a>
-<a name="141"><span class="lineNum">     141 </span><span class="lineCov">      87672 :         for (unsigned int i = 0; i &lt; numberOfWatchers; i++) {</span></a>
+<a name="141"><span class="lineNum">     141 </span><span class="lineCov">      87666 :         for (unsigned int i = 0; i &lt; numberOfWatchers; i++) {</span></a>
 <a name="142"><span class="lineNum">     142 </span><span class="lineCov">      54940 :             printDebug(&quot;Clause before propagation: &quot;);</span></a>
 <a name="143"><span class="lineNum">     143 </span><span class="lineCov">      54940 :             printClause(propagationWatchers[i]);</span></a>
 <a name="144"><span class="lineNum">     144 </span><span class="lineCov">      54940 :             if (!CLAUSEpropagate(propagationWatchers[i], propagatingVar)) {</span></a>
@@ -209,7 +209,7 @@
 <a name="147"><span class="lineNum">     147 </span>            :                 //adding back the watchers</a>
 <a name="148"><span class="lineNum">     148 </span><span class="lineCov">         12 :                 for (unsigned int j = i + 1; j &lt; numberOfWatchers; j++) {</span></a>
 <a name="149"><span class="lineNum">     149 </span><span class="lineCov">          6 :                     VECTORadd(watchersOf(propagatingVar), propagationWatchers[j]);</span></a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineCov">          6 :                 }</span></a>
+<a name="150"><span class="lineNum">     150 </span>            :                 }</a>
 <a name="151"><span class="lineNum">     151 </span>            : </a>
 <a name="152"><span class="lineNum">     152 </span>            :                 //flushing propagationQ</a>
 <a name="153"><span class="lineNum">     153 </span><span class="lineCov">          6 :                 QUEUEclear(propagationQ);</span></a>
@@ -223,11 +223,11 @@
 <a name="161"><span class="lineNum">     161 </span>            : </a>
 <a name="162"><span class="lineNum">     162 </span><span class="lineCov">      54934 :             printDebug(&quot;Clause after propagation: &quot;);</span></a>
 <a name="163"><span class="lineNum">     163 </span><span class="lineCov">      54934 :             printClause(propagationWatchers[i]);</span></a>
-<a name="164"><span class="lineNum">     164 </span><span class="lineCov">      54934 :         }</span></a>
-<a name="165"><span class="lineNum">     165 </span><span class="lineCov">      32732 :     }</span></a>
+<a name="164"><span class="lineNum">     164 </span>            :         }</a>
+<a name="165"><span class="lineNum">     165 </span>            :     }</a>
 <a name="166"><span class="lineNum">     166 </span>            : </a>
 <a name="167"><span class="lineNum">     167 </span><span class="lineCov">      15937 :     return NULL;</span></a>
-<a name="168"><span class="lineNum">     168 </span><span class="lineCov">      15943 : }</span></a>
+<a name="168"><span class="lineNum">     168 </span>            : }</a>
 <a name="169"><span class="lineNum">     169 </span>            : </a>
 <a name="170"><span class="lineNum">     170 </span><span class="lineCov">       2679 : void undoOne() {</span></a>
 <a name="171"><span class="lineNum">     171 </span>            :     // Get the last element from the trail vector (last assignment)</a>
@@ -253,7 +253,7 @@
 <a name="191"><span class="lineNum">     191 </span><span class="lineCov">       1161 :     printDebugInt(&quot;Reducing trail of: &quot;, c);</span></a>
 <a name="192"><span class="lineNum">     192 </span><span class="lineCov">       3801 :     for (; c != 0; c--) {</span></a>
 <a name="193"><span class="lineNum">     193 </span><span class="lineCov">       2640 :         undoOne();</span></a>
-<a name="194"><span class="lineNum">     194 </span><span class="lineCov">       2640 :     }</span></a>
+<a name="194"><span class="lineNum">     194 </span>            :     }</a>
 <a name="195"><span class="lineNum">     195 </span>            : </a>
 <a name="196"><span class="lineNum">     196 </span><span class="lineCov">       1161 : }</span></a>
 <a name="197"><span class="lineNum">     197 </span>            : </a>
@@ -289,7 +289,7 @@
 <a name="227"><span class="lineNum">     227 </span><span class="lineCov">      26937 :         if (assignments[i]) printf(&quot;%d&quot;, i);</span></a>
 <a name="228"><span class="lineNum">     228 </span><span class="lineCov">       6540 :         else printf(&quot;-%d&quot;, i);</span></a>
 <a name="229"><span class="lineNum">     229 </span><span class="lineCov">      26937 :         if (i != numberOfLiterals) printf(&quot; &quot;);</span></a>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">      26937 :     }</span></a>
+<a name="230"><span class="lineNum">     230 </span>            :     }</a>
 <a name="231"><span class="lineNum">     231 </span><span class="lineCov">         10 :     printf(&quot;\n&quot;);</span></a>
 <a name="232"><span class="lineNum">     232 </span><span class="lineCov">         10 : }</span></a>
 <a name="233"><span class="lineNum">     233 </span>            : </a>
@@ -300,12 +300,12 @@
 <a name="238"><span class="lineNum">     238 </span><span class="lineCov">          6 :         enqueue(VECTORget(clause-&gt;literals, 0), clause);</span></a>
 <a name="239"><span class="lineNum">     239 </span><span class="lineCov">          6 :         VECTORadd(learnts, clause);</span></a>
 <a name="240"><span class="lineNum">     240 </span><span class="lineCov">          6 :         printClause(clause);</span></a>
-<a name="241"><span class="lineNum">     241 </span><span class="lineCov">          6 :     }</span></a>
+<a name="241"><span class="lineNum">     241 </span>            :     }</a>
 <a name="242"><span class="lineNum">     242 </span><span class="lineCov">          6 : }</span></a>
 <a name="243"><span class="lineNum">     243 </span>            : </a>
 <a name="244"><span class="lineNum">     244 </span><span class="lineCov">          6 : int analyze(C conflictClause, V learntClauseLits) {</span></a>
 <a name="245"><span class="lineNum">     245 </span><span class="lineCov">          6 :     Var p = NULL;</span></a>
-<a name="246"><span class="lineNum">     246 </span><span class="lineCov">          6 :     V reasonForP;</span></a>
+<a name="246"><span class="lineNum">     246 </span>            :     V reasonForP;</a>
 <a name="247"><span class="lineNum">     247 </span><span class="lineCov">          6 :     int backtrackLevel = 0;</span></a>
 <a name="248"><span class="lineNum">     248 </span><span class="lineCov">          6 :     int count = 0;</span></a>
 <a name="249"><span class="lineNum">     249 </span><span class="lineCov">          6 :     bool seen[numberOfLiterals + 1];</span></a>
@@ -315,11 +315,11 @@
 <a name="253"><span class="lineNum">     253 </span>            : </a>
 <a name="254"><span class="lineNum">     254 </span><span class="lineCov">      21069 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
 <a name="255"><span class="lineNum">     255 </span><span class="lineCov">      21063 :         seen[i] = false;</span></a>
-<a name="256"><span class="lineNum">     256 </span><span class="lineCov">      21063 :     }</span></a>
+<a name="256"><span class="lineNum">     256 </span>            :     }</a>
 <a name="257"><span class="lineNum">     257 </span>            : </a>
 <a name="258"><span class="lineNum">     258 </span><span class="lineCov">          6 :     printDebugInt(&quot;Trail size: &quot;, VECTORtotal(trail));</span></a>
 <a name="259"><span class="lineNum">     259 </span>            : </a>
-<a name="260"><span class="lineNum">     260 </span><span class="lineCov">          6 :     do {</span></a>
+<a name="260"><span class="lineNum">     260 </span>            :     do {</a>
 <a name="261"><span class="lineNum">     261 </span>            :         // VECTORfree(reasonForP);</a>
 <a name="262"><span class="lineNum">     262 </span><span class="lineCov">         25 :         printDebug(&quot;Main learning cycle started&quot;);</span></a>
 <a name="263"><span class="lineNum">     263 </span><span class="lineCov">         25 :         reasonForP = CLAUSEreasonFor(conflictClause, p);</span></a>
@@ -334,19 +334,19 @@
 <a name="272"><span class="lineNum">     272 </span>            : </a>
 <a name="273"><span class="lineNum">     273 </span><span class="lineCov">         33 :                 if (level[q-&gt;id] == currentDecisionLevel()) {</span></a>
 <a name="274"><span class="lineNum">     274 </span><span class="lineCov">         25 :                     count++;</span></a>
-<a name="275"><span class="lineNum">     275 </span><span class="lineCov">         33 :                 } else if (level[q-&gt;id] &gt; 0) {</span></a>
+<a name="275"><span class="lineNum">     275 </span><span class="lineCov">          8 :                 } else if (level[q-&gt;id] &gt; 0) {</span></a>
 <a name="276"><span class="lineNum">     276 </span><span class="lineCov">          8 :                     VECTORadd(learntClauseLits, neg(q));</span></a>
 <a name="277"><span class="lineNum">     277 </span><span class="lineCov">          8 :                     backtrackLevel = max(backtrackLevel, level[q-&gt;id]);</span></a>
-<a name="278"><span class="lineNum">     278 </span><span class="lineCov">          8 :                 }</span></a>
-<a name="279"><span class="lineNum">     279 </span><span class="lineCov">         33 :             }</span></a>
-<a name="280"><span class="lineNum">     280 </span><span class="lineCov">         44 :         }</span></a>
+<a name="278"><span class="lineNum">     278 </span>            :                 }</a>
+<a name="279"><span class="lineNum">     279 </span>            :             }</a>
+<a name="280"><span class="lineNum">     280 </span>            :         }</a>
 <a name="281"><span class="lineNum">     281 </span><span class="lineCov">         25 :         VECTORfree(reasonForP);</span></a>
 <a name="282"><span class="lineNum">     282 </span>            :         </a>
 <a name="283"><span class="lineNum">     283 </span>            :         </a>
 <a name="284"><span class="lineNum">     284 </span>            : </a>
 <a name="285"><span class="lineNum">     285 </span><span class="lineCov">         25 :         printDebug(&quot;Selecting next p&quot;);</span></a>
 <a name="286"><span class="lineNum">     286 </span>            :         //select next p</a>
-<a name="287"><span class="lineNum">     287 </span><span class="lineCov">         25 :         do {</span></a>
+<a name="287"><span class="lineNum">     287 </span>            :         do {</a>
 <a name="288"><span class="lineNum">     288 </span><span class="lineCov">         39 :             p = VECTORget(trail, VECTORtotal(trail) - 1);</span></a>
 <a name="289"><span class="lineNum">     289 </span><span class="lineCov">         39 :             if (VECTORtotal(trail) &lt;= trail_lim[trail_lim_size - 1])</span></a>
 <a name="290"><span class="lineNum">     290 </span><span class="lineNoCov">          0 :                 break;</span></a>
@@ -365,7 +365,7 @@
 <a name="303"><span class="lineNum">     303 </span><span class="lineCov">          6 :     VECTORset(learntClauseLits, 0, neg(p));</span></a>
 <a name="304"><span class="lineNum">     304 </span>            : </a>
 <a name="305"><span class="lineNum">     305 </span><span class="lineCov">          6 :     return backtrackLevel;</span></a>
-<a name="306"><span class="lineNum">     306 </span><span class="lineCov">          6 : }</span></a>
+<a name="306"><span class="lineNum">     306 </span>            : }</a>
 <a name="307"><span class="lineNum">     307 </span>            : </a>
 <a name="308"><span class="lineNum">     308 </span><span class="lineCov">         11 : int solve(V formula) {</span></a>
 <a name="309"><span class="lineNum">     309 </span>            : </a>
@@ -374,7 +374,7 @@
 <a name="312"><span class="lineNum">     312 </span><span class="lineCov">         11 :     var_decay = VARDECAY;</span></a>
 <a name="313"><span class="lineNum">     313 </span>            :     // staticVarOrder();</a>
 <a name="314"><span class="lineNum">     314 </span>            : </a>
-<a name="315"><span class="lineNum">     315 </span><span class="lineCov">      15943 :     while (true) {</span></a>
+<a name="315"><span class="lineNum">     315 </span><span class="lineCov">      15932 :     while (true) {</span></a>
 <a name="316"><span class="lineNum">     316 </span><span class="lineCov">      15943 :         printFormula(formula);</span></a>
 <a name="317"><span class="lineNum">     317 </span>            : </a>
 <a name="318"><span class="lineNum">     318 </span><span class="lineCov">      15943 :         C conflictingClause = propagate();</span></a>
@@ -393,12 +393,12 @@
 <a name="331"><span class="lineNum">     331 </span><span class="lineCov">      15926 :                     printDebugInt(&quot;Selected new var: &quot;, varToDecide);</span></a>
 <a name="332"><span class="lineNum">     332 </span>            :                     //assigne true to varToDecide</a>
 <a name="333"><span class="lineNum">     333 </span><span class="lineCov">      15926 :                     decide(varToDecide);</span></a>
-<a name="334"><span class="lineNum">     334 </span><span class="lineCov">      15926 :                 } else {</span></a>
+<a name="334"><span class="lineNum">     334 </span>            :                 } else {</a>
 <a name="335"><span class="lineNum">     335 </span><span class="lineCov">          1 :                     printDebug(&quot;No more variables to assign &quot;);</span></a>
 <a name="336"><span class="lineNum">     336 </span><span class="lineCov">          1 :                     return false;</span></a>
 <a name="337"><span class="lineNum">     337 </span>            :                 }</a>
 <a name="338"><span class="lineNum">     338 </span>            :             }</a>
-<a name="339"><span class="lineNum">     339 </span><span class="lineCov">      15926 :         } else {</span></a>
+<a name="339"><span class="lineNum">     339 </span>            :         } else {</a>
 <a name="340"><span class="lineNum">     340 </span>            :             //conflict</a>
 <a name="341"><span class="lineNum">     341 </span><span class="lineCov">          6 :             printDebugInt(&quot;Conflict at level&quot;, currentDecisionLevel());</span></a>
 <a name="342"><span class="lineNum">     342 </span>            :             //conflict</a>
@@ -420,77 +420,77 @@
 <a name="358"><span class="lineNum">     358 </span><span class="lineCov">          6 :             learn(learntClauseVars);</span></a>
 <a name="359"><span class="lineNum">     359 </span>            : </a>
 <a name="360"><span class="lineNum">     360 </span><span class="lineCov">          6 :             printDebug(&quot;Learnt conflict clause&quot;);</span></a>
-<a name="361"><span class="lineNum">     361 </span><span class="lineCov">          6 :         }</span></a>
-<a name="362"><span class="lineNum">     362 </span><span class="lineCov">      15943 :     }</span></a>
-<a name="363"><span class="lineNum">     363 </span><span class="lineCov">         11 : }</span></a>
+<a name="361"><span class="lineNum">     361 </span>            :         }</a>
+<a name="362"><span class="lineNum">     362 </span>            :     }</a>
+<a name="363"><span class="lineNum">     363 </span>            : }</a>
 <a name="364"><span class="lineNum">     364 </span>            : </a>
-<a name="365"><span class="lineNum">     365 </span><span class="lineCov">         12 : void initializeAssigments() {</span></a>
-<a name="366"><span class="lineNum">     366 </span><span class="lineCov">         12 :     assignments = (bool *) malloc(sizeof(bool) * numberOfLiterals + sizeof(bool));</span></a>
-<a name="367"><span class="lineNum">     367 </span><span class="lineCov">      30090 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
-<a name="368"><span class="lineNum">     368 </span><span class="lineCov">      30078 :         assignments[i] = unassigned;</span></a>
-<a name="369"><span class="lineNum">     369 </span><span class="lineCov">      30078 :     }</span></a>
-<a name="370"><span class="lineNum">     370 </span><span class="lineCov">         12 : }</span></a>
+<a name="365"><span class="lineNum">     365 </span><span class="lineCov">         77 : void initializeAssigments() {</span></a>
+<a name="366"><span class="lineNum">     366 </span><span class="lineCov">         77 :     assignments = (bool *) malloc(sizeof(bool) * numberOfLiterals + sizeof(bool));</span></a>
+<a name="367"><span class="lineNum">     367 </span><span class="lineCov">      35592 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
+<a name="368"><span class="lineNum">     368 </span><span class="lineCov">      35515 :         assignments[i] = unassigned;</span></a>
+<a name="369"><span class="lineNum">     369 </span>            :     }</a>
+<a name="370"><span class="lineNum">     370 </span><span class="lineCov">         77 : }</span></a>
 <a name="371"><span class="lineNum">     371 </span>            : </a>
-<a name="372"><span class="lineNum">     372 </span><span class="lineCov">         12 : void initializeLevel() {</span></a>
-<a name="373"><span class="lineNum">     373 </span><span class="lineCov">         12 :     level = (int *) malloc(sizeof(int) * numberOfLiterals + sizeof(int));</span></a>
-<a name="374"><span class="lineNum">     374 </span><span class="lineCov">      30090 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
-<a name="375"><span class="lineNum">     375 </span><span class="lineCov">      30078 :         level[i] = -1;</span></a>
-<a name="376"><span class="lineNum">     376 </span><span class="lineCov">      30078 :     }</span></a>
-<a name="377"><span class="lineNum">     377 </span><span class="lineCov">         12 : }</span></a>
+<a name="372"><span class="lineNum">     372 </span><span class="lineCov">         77 : void initializeLevel() {</span></a>
+<a name="373"><span class="lineNum">     373 </span><span class="lineCov">         77 :     level = (int *) malloc(sizeof(int) * numberOfLiterals + sizeof(int));</span></a>
+<a name="374"><span class="lineNum">     374 </span><span class="lineCov">      35592 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
+<a name="375"><span class="lineNum">     375 </span><span class="lineCov">      35515 :         level[i] = -1;</span></a>
+<a name="376"><span class="lineNum">     376 </span>            :     }</a>
+<a name="377"><span class="lineNum">     377 </span><span class="lineCov">         77 : }</span></a>
 <a name="378"><span class="lineNum">     378 </span>            : </a>
-<a name="379"><span class="lineNum">     379 </span><span class="lineCov">         12 : void initializeReason() {</span></a>
-<a name="380"><span class="lineNum">     380 </span><span class="lineCov">         12 :     reason = (C *) malloc(sizeof(C) * numberOfLiterals + sizeof(C));</span></a>
-<a name="381"><span class="lineNum">     381 </span><span class="lineCov">      30090 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
-<a name="382"><span class="lineNum">     382 </span><span class="lineCov">      30078 :         reason[i] = NULL;</span></a>
-<a name="383"><span class="lineNum">     383 </span><span class="lineCov">      30078 :     }</span></a>
-<a name="384"><span class="lineNum">     384 </span><span class="lineCov">         12 : }</span></a>
+<a name="379"><span class="lineNum">     379 </span><span class="lineCov">         77 : void initializeReason() {</span></a>
+<a name="380"><span class="lineNum">     380 </span><span class="lineCov">         77 :     reason = (C *) malloc(sizeof(C) * numberOfLiterals + sizeof(C));</span></a>
+<a name="381"><span class="lineNum">     381 </span><span class="lineCov">      35592 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
+<a name="382"><span class="lineNum">     382 </span><span class="lineCov">      35515 :         reason[i] = NULL;</span></a>
+<a name="383"><span class="lineNum">     383 </span>            :     }</a>
+<a name="384"><span class="lineNum">     384 </span><span class="lineCov">         77 : }</span></a>
 <a name="385"><span class="lineNum">     385 </span>            : </a>
-<a name="386"><span class="lineNum">     386 </span><span class="lineCov">         12 : void initializeTrail() {</span></a>
+<a name="386"><span class="lineNum">     386 </span><span class="lineCov">         77 : void initializeTrail() {</span></a>
 <a name="387"><span class="lineNum">     387 </span>            :     // Trail vector will keep track of each assignment, to backtrack</a>
-<a name="388"><span class="lineNum">     388 </span><span class="lineCov">         12 :     trail = VECTORinit();</span></a>
-<a name="389"><span class="lineNum">     389 </span><span class="lineCov">         12 :     trail_lim_size = 0;</span></a>
-<a name="390"><span class="lineNum">     390 </span><span class="lineCov">         12 : }</span></a>
+<a name="388"><span class="lineNum">     388 </span><span class="lineCov">         77 :     trail = VECTORinit();</span></a>
+<a name="389"><span class="lineNum">     389 </span><span class="lineCov">         77 :     trail_lim_size = 0;</span></a>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">         77 : }</span></a>
 <a name="391"><span class="lineNum">     391 </span>            : </a>
-<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         12 : void initializeWatchers() {</span></a>
-<a name="393"><span class="lineNum">     393 </span><span class="lineCov">         12 :     watchers = (V *) malloc(sizeof(V) * numberOfLiterals * 2 + sizeof(V));</span></a>
-<a name="394"><span class="lineNum">     394 </span><span class="lineCov">      60156 :     for (unsigned int i = 0; i &lt;= numberOfLiterals * 2; i++) {</span></a>
-<a name="395"><span class="lineNum">     395 </span><span class="lineCov">      60144 :         watchers[i] = VECTORinit();</span></a>
-<a name="396"><span class="lineNum">     396 </span><span class="lineCov">      60144 :     }</span></a>
+<a name="392"><span class="lineNum">     392 </span><span class="lineCov">         77 : void initializeWatchers() {</span></a>
+<a name="393"><span class="lineNum">     393 </span><span class="lineCov">         77 :     watchers = (V *) malloc(sizeof(V) * numberOfLiterals * 2 + sizeof(V));</span></a>
+<a name="394"><span class="lineNum">     394 </span><span class="lineCov">      71030 :     for (unsigned int i = 0; i &lt;= numberOfLiterals * 2; i++) {</span></a>
+<a name="395"><span class="lineNum">     395 </span><span class="lineCov">      70953 :         watchers[i] = VECTORinit();</span></a>
+<a name="396"><span class="lineNum">     396 </span>            :     }</a>
 <a name="397"><span class="lineNum">     397 </span>            : </a>
-<a name="398"><span class="lineNum">     398 </span><span class="lineCov">         12 :     watchers = watchers + numberOfLiterals;</span></a>
-<a name="399"><span class="lineNum">     399 </span><span class="lineCov">         12 : }</span></a>
+<a name="398"><span class="lineNum">     398 </span><span class="lineCov">         77 :     watchers = watchers + numberOfLiterals;</span></a>
+<a name="399"><span class="lineNum">     399 </span><span class="lineCov">         77 : }</span></a>
 <a name="400"><span class="lineNum">     400 </span>            : </a>
-<a name="401"><span class="lineNum">     401 </span><span class="lineCov">         12 : void initializeActivities() {</span></a>
-<a name="402"><span class="lineNum">     402 </span><span class="lineCov">         12 :     activity = (int *) malloc(sizeof(double) * numberOfLiterals + sizeof(int));</span></a>
-<a name="403"><span class="lineNum">     403 </span><span class="lineCov">      30090 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
-<a name="404"><span class="lineNum">     404 </span><span class="lineCov">      30078 :         activity[i] = 0;</span></a>
-<a name="405"><span class="lineNum">     405 </span><span class="lineCov">      30078 :     }</span></a>
-<a name="406"><span class="lineNum">     406 </span><span class="lineCov">         12 : }</span></a>
+<a name="401"><span class="lineNum">     401 </span><span class="lineCov">         77 : void initializeActivities() {</span></a>
+<a name="402"><span class="lineNum">     402 </span><span class="lineCov">         77 :     activity = (int *) malloc(sizeof(double) * numberOfLiterals + sizeof(int));</span></a>
+<a name="403"><span class="lineNum">     403 </span><span class="lineCov">      35592 :     for (unsigned int i = 0; i &lt;= numberOfLiterals; i++) {</span></a>
+<a name="404"><span class="lineNum">     404 </span><span class="lineCov">      35515 :         activity[i] = 0;</span></a>
+<a name="405"><span class="lineNum">     405 </span>            :     }</a>
+<a name="406"><span class="lineNum">     406 </span><span class="lineCov">         77 : }</span></a>
 <a name="407"><span class="lineNum">     407 </span>            : </a>
-<a name="408"><span class="lineNum">     408 </span><span class="lineCov">         13 : V initialize(char *path) {</span></a>
+<a name="408"><span class="lineNum">     408 </span><span class="lineCov">         80 : V initialize(char *path) {</span></a>
 <a name="409"><span class="lineNum">     409 </span>            : </a>
-<a name="410"><span class="lineNum">     410 </span><span class="lineCov">         13 :     FILE *inputFile = PARSERinit(path);</span></a>
-<a name="411"><span class="lineNum">     411 </span><span class="lineCov">         13 :     PARSEheader(inputFile);</span></a>
+<a name="410"><span class="lineNum">     410 </span><span class="lineCov">         80 :     FILE *inputFile = PARSERinit(path);</span></a>
+<a name="411"><span class="lineNum">     411 </span><span class="lineCov">         77 :     PARSEheader(inputFile);</span></a>
 <a name="412"><span class="lineNum">     412 </span>            : </a>
 <a name="413"><span class="lineNum">     413 </span>            : </a>
-<a name="414"><span class="lineNum">     414 </span><span class="lineCov">         13 :     initializeAssigments();</span></a>
-<a name="415"><span class="lineNum">     415 </span><span class="lineCov">         13 :     initializeTrail();</span></a>
-<a name="416"><span class="lineNum">     416 </span><span class="lineCov">         13 :     initializeLevel();</span></a>
-<a name="417"><span class="lineNum">     417 </span><span class="lineCov">         13 :     initializeReason();</span></a>
+<a name="414"><span class="lineNum">     414 </span><span class="lineCov">         77 :     initializeAssigments();</span></a>
+<a name="415"><span class="lineNum">     415 </span><span class="lineCov">         77 :     initializeTrail();</span></a>
+<a name="416"><span class="lineNum">     416 </span><span class="lineCov">         77 :     initializeLevel();</span></a>
+<a name="417"><span class="lineNum">     417 </span><span class="lineCov">         77 :     initializeReason();</span></a>
 <a name="418"><span class="lineNum">     418 </span>            : </a>
-<a name="419"><span class="lineNum">     419 </span><span class="lineCov">         13 :     learnts = VECTORinit();</span></a>
+<a name="419"><span class="lineNum">     419 </span><span class="lineCov">         77 :     learnts = VECTORinit();</span></a>
 <a name="420"><span class="lineNum">     420 </span>            : </a>
-<a name="421"><span class="lineNum">     421 </span><span class="lineCov">         13 :     propagationQ = QUEUEinit();</span></a>
+<a name="421"><span class="lineNum">     421 </span><span class="lineCov">         77 :     propagationQ = QUEUEinit();</span></a>
 <a name="422"><span class="lineNum">     422 </span>            : </a>
-<a name="423"><span class="lineNum">     423 </span><span class="lineCov">         13 :     initializeWatchers();</span></a>
-<a name="424"><span class="lineNum">     424 </span><span class="lineCov">         13 :     initializeActivities();</span></a>
+<a name="423"><span class="lineNum">     423 </span><span class="lineCov">         77 :     initializeWatchers();</span></a>
+<a name="424"><span class="lineNum">     424 </span><span class="lineCov">         77 :     initializeActivities();</span></a>
 <a name="425"><span class="lineNum">     425 </span>            : </a>
-<a name="426"><span class="lineNum">     426 </span><span class="lineCov">         13 :     rootLevel = currentDecisionLevel();</span></a>
+<a name="426"><span class="lineNum">     426 </span><span class="lineCov">         77 :     rootLevel = currentDecisionLevel();</span></a>
 <a name="427"><span class="lineNum">     427 </span>            : </a>
-<a name="428"><span class="lineNum">     428 </span><span class="lineCov">         13 :     lastAssignedVar = NULL;</span></a>
+<a name="428"><span class="lineNum">     428 </span><span class="lineCov">         77 :     lastAssignedVar = NULL;</span></a>
 <a name="429"><span class="lineNum">     429 </span>            : </a>
-<a name="430"><span class="lineNum">     430 </span><span class="lineCov">         26 :     return PARSEformula(inputFile);</span></a>
-<a name="431"><span class="lineNum">     431 </span><span class="lineCov">         13 : }</span></a>
+<a name="430"><span class="lineNum">     430 </span><span class="lineCov">         77 :     return PARSEformula(inputFile);</span></a>
+<a name="431"><span class="lineNum">     431 </span>            : }</a>
 <a name="432"><span class="lineNum">     432 </span>            : </a>
 <a name="433"><span class="lineNum">     433 </span>            : </a>
 <a name="434"><span class="lineNum">     434 </span><span class="lineCov">         11 : void destroy() {</span></a>
@@ -504,32 +504,32 @@
 <a name="442"><span class="lineNum">     442 </span><span class="lineCov">         11 :     watchers -= numberOfLiterals;</span></a>
 <a name="443"><span class="lineNum">     443 </span><span class="lineCov">      60152 :     for (unsigned int i = 0; i &lt;= numberOfLiterals * 2; i++) {</span></a>
 <a name="444"><span class="lineNum">     444 </span><span class="lineCov">      60141 :         VECTORfree(watchers[i]);</span></a>
-<a name="445"><span class="lineNum">     445 </span><span class="lineCov">      60141 :     }</span></a>
+<a name="445"><span class="lineNum">     445 </span>            :     }</a>
 <a name="446"><span class="lineNum">     446 </span>            : </a>
 <a name="447"><span class="lineNum">     447 </span><span class="lineCov">         11 :     VECTORfree(cnf);</span></a>
 <a name="448"><span class="lineNum">     448 </span><span class="lineCov">         11 : }</span></a>
 <a name="449"><span class="lineNum">     449 </span>            : </a>
 <a name="450"><span class="lineNum">     450 </span><span class="lineNoCov">          0 : void termination_handler(int sig_num) {</span></a>
-<a name="451"><span class="lineNum">     451 </span><span class="lineNoCov">          0 :   (void)sig_num;</span></a>
+<a name="451"><span class="lineNum">     451 </span>            :   (void)sig_num;</a>
 <a name="452"><span class="lineNum">     452 </span><span class="lineNoCov">          0 :   exit(0);</span></a>
 <a name="453"><span class="lineNum">     453 </span>            : }</a>
 <a name="454"><span class="lineNum">     454 </span>            : </a>
-<a name="455"><span class="lineNum">     455 </span><span class="lineCov">         11 : int main(int argc, char **argv) {</span></a>
-<a name="456"><span class="lineNum">     456 </span><span class="lineCov">         11 :     struct sigaction act;</span></a>
-<a name="457"><span class="lineNum">     457 </span><span class="lineCov">         11 :     act.sa_handler = &amp;termination_handler;</span></a>
-<a name="458"><span class="lineNum">     458 </span><span class="lineCov">         11 :     sigemptyset(&amp;act.sa_mask);</span></a>
-<a name="459"><span class="lineNum">     459 </span><span class="lineCov">         11 :     act.sa_flags = 0;</span></a>
-<a name="460"><span class="lineNum">     460 </span><span class="lineCov">         11 :     sigaction(SIGTERM, &amp;act, NULL);</span></a>
-<a name="461"><span class="lineNum">     461 </span><span class="lineCov">         11 :     sigaction(SIGINT, &amp;act, NULL);</span></a>
-<a name="462"><span class="lineNum">     462 </span><span class="lineCov">         11 :     if (argc != 2) {</span></a>
+<a name="455"><span class="lineNum">     455 </span><span class="lineCov">         80 : int main(int argc, char **argv) {</span></a>
+<a name="456"><span class="lineNum">     456 </span><span class="lineCov">         80 :     struct sigaction act;</span></a>
+<a name="457"><span class="lineNum">     457 </span><span class="lineCov">         80 :     act.sa_handler = &amp;termination_handler;</span></a>
+<a name="458"><span class="lineNum">     458 </span><span class="lineCov">         80 :     sigemptyset(&amp;act.sa_mask);</span></a>
+<a name="459"><span class="lineNum">     459 </span><span class="lineCov">         80 :     act.sa_flags = 0;</span></a>
+<a name="460"><span class="lineNum">     460 </span><span class="lineCov">         80 :     sigaction(SIGTERM, &amp;act, NULL);</span></a>
+<a name="461"><span class="lineNum">     461 </span><span class="lineCov">         80 :     sigaction(SIGINT, &amp;act, NULL);</span></a>
+<a name="462"><span class="lineNum">     462 </span><span class="lineCov">         80 :     if (argc != 2) {</span></a>
 <a name="463"><span class="lineNum">     463 </span><span class="lineNoCov">          0 :         printf(&quot;sat accepts only 1 argument which is the filename of the formula.\n&quot;);</span></a>
 <a name="464"><span class="lineNum">     464 </span><span class="lineNoCov">          0 :         exit(EXIT_FAILURE);</span></a>
 <a name="465"><span class="lineNum">     465 </span>            :     }</a>
 <a name="466"><span class="lineNum">     466 </span>            : </a>
-<a name="467"><span class="lineNum">     467 </span><span class="lineCov">         11 :     cnf = initialize(argv[1]);</span></a>
-<a name="468"><span class="lineNum">     468 </span><span class="lineCov">         11 :     if (cnf == NULL) {</span></a>
-<a name="469"><span class="lineNum">     469 </span><span class="lineNoCov">          0 :         printf(&quot;UNSAT\n&quot;);</span></a>
-<a name="470"><span class="lineNum">     470 </span><span class="lineNoCov">          0 :         exit(EXIT_SUCCESS);</span></a>
+<a name="467"><span class="lineNum">     467 </span><span class="lineCov">         80 :     cnf = initialize(argv[1]);</span></a>
+<a name="468"><span class="lineNum">     468 </span><span class="lineCov">         12 :     if (cnf == NULL) {</span></a>
+<a name="469"><span class="lineNum">     469 </span><span class="lineCov">          1 :         printf(&quot;UNSAT\n&quot;);</span></a>
+<a name="470"><span class="lineNum">     470 </span><span class="lineCov">          1 :         exit(EXIT_SUCCESS);</span></a>
 <a name="471"><span class="lineNum">     471 </span>            :     }</a>
 <a name="472"><span class="lineNum">     472 </span>            : </a>
 <a name="473"><span class="lineNum">     473 </span><span class="lineCov">         11 :     printDebug(&quot;-----RUNNING DPLL-----&quot;);</span></a>
@@ -538,7 +538,7 @@
 <a name="476"><span class="lineNum">     476 </span><span class="lineCov">         11 :     if (result == true) {</span></a>
 <a name="477"><span class="lineNum">     477 </span><span class="lineCov">         10 :         printf(&quot;SAT\n&quot;);</span></a>
 <a name="478"><span class="lineNum">     478 </span><span class="lineCov">         10 :         printAssignments();</span></a>
-<a name="479"><span class="lineNum">     479 </span><span class="lineCov">         10 :     } else {</span></a>
+<a name="479"><span class="lineNum">     479 </span>            :     } else {</a>
 <a name="480"><span class="lineNum">     480 </span><span class="lineCov">          1 :         printf(&quot;UNSAT\n&quot;);</span></a>
 <a name="481"><span class="lineNum">     481 </span>            :     }</a>
 <a name="482"><span class="lineNum">     482 </span>            : </a>
@@ -593,7 +593,7 @@
 
   <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
-    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.15</a></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.14</a></td></tr>
   </table>
   <br>
 

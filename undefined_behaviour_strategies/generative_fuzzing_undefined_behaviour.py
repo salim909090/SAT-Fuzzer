@@ -9,7 +9,7 @@ import numpy as np
 import sys
 import Levenshtein
 import corpus_tracker
-
+import mutation
 from mutation import fuzzing_data_random
 
 
@@ -22,14 +22,19 @@ def run_strategy(input_path, SUT_path, seed, bugs_logs_path):
 
     corpus = corpus_tracker.Corpus.get_instance()
     if corpus.queue_is_empty("ub"):
+        print("Queue is empty, generating ")
         dumb_smart_choice = random.choice([0, 1])
         if dumb_smart_choice == 0:
             input_data = generate_dumb_cnf()
         else:
             input_data = generate_smart_cnf()
     else:
-        input_data = corpus.pop_queue("ub")
-
+        print("Gotten item from queue")
+        input_file = corpus.pop_queue("ub")
+        file1 = open(input_file, "r+")
+        input_data = mutation.mutate(file1.read())
+        #input_data = corpus.pop_queue("ub")
+    
     file_name_full_path = os.path.abspath(os.path.join(input_path))
     file_name = os.path.basename(os.path.normpath(file_name_full_path))
     create_input_file(file_name_full_path, input_data)

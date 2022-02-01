@@ -1,0 +1,137 @@
+input file taken from /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/inputs/solver1/generative_fuzzing/24.cnf the error found is:
+
+=================================================================
+==13153==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 819 byte(s) in 39 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc30fed in ltoa /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/literal.c:41
+    #2 0x55879dc4708f in report /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:424
+    #3 0x55879dc4740d in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:440
+    #4 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #5 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #6 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 640 byte(s) in 16 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc390fc in init_node /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:9
+    #2 0x55879dc3acf2 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:66
+    #3 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #4 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #5 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #6 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #7 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #8 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #9 0x55879dc4780e in init_unassigned_table /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:27
+    #10 0x55879dc48fe8 in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:150
+    #11 0x55879dc47315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
+    #12 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #13 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #14 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 624 byte(s) in 39 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc4c69a in assign /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:311
+    #2 0x55879dc42317 in bcp /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:134
+    #3 0x55879dc46669 in solve /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:380
+    #4 0x55879dc473dc in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:439
+    #5 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #6 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #7 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 320 byte(s) in 8 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc390fc in init_node /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:9
+    #2 0x55879dc3acf2 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:66
+    #3 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #4 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #5 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #6 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #7 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #8 0x55879dc4780e in init_unassigned_table /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:27
+    #9 0x55879dc48fe8 in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:150
+    #10 0x55879dc47315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
+    #11 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #12 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #13 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 280 byte(s) in 7 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc390fc in init_node /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:9
+    #2 0x55879dc3acf2 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:66
+    #3 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #4 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #5 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #6 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #7 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #8 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #9 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #10 0x55879dc4780e in init_unassigned_table /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:27
+    #11 0x55879dc48fe8 in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:150
+    #12 0x55879dc47315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
+    #13 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #14 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #15 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 160 byte(s) in 4 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc390fc in init_node /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:9
+    #2 0x55879dc3acf2 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:66
+    #3 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #4 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #5 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #6 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #7 0x55879dc4780e in init_unassigned_table /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:27
+    #8 0x55879dc48fe8 in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:150
+    #9 0x55879dc47315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
+    #10 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #11 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #12 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 80 byte(s) in 2 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc390fc in init_node /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:9
+    #2 0x55879dc3acf2 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:66
+    #3 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #4 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #5 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #6 0x55879dc4780e in init_unassigned_table /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:27
+    #7 0x55879dc48fe8 in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:150
+    #8 0x55879dc47315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
+    #9 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #10 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #11 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc390fc in init_node /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:9
+    #2 0x55879dc3acf2 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:66
+    #3 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #4 0x55879dc3ae49 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:71
+    #5 0x55879dc4780e in init_unassigned_table /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:27
+    #6 0x55879dc48fe8 in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:150
+    #7 0x55879dc47315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
+    #8 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #9 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #10 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 40 byte(s) in 1 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc390fc in init_node /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:9
+    #2 0x55879dc3acf2 in insert_literal /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/decision.c:66
+    #3 0x55879dc4780e in init_unassigned_table /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:27
+    #4 0x55879dc48fe8 in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:150
+    #5 0x55879dc47315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
+    #6 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #7 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #8 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+Direct leak of 1 byte(s) in 1 object(s) allocated from:
+    #0 0x7f09dc56cbc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
+    #1 0x55879dc4889b in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:129
+    #2 0x55879dc47315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
+    #3 0x55879dc38d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
+    #4 0x55879dc39045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
+    #5 0x7f09db9270b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+
+SUMMARY: AddressSanitizer: 3004 byte(s) leaked in 118 allocation(s).

@@ -1,6 +1,7 @@
 false input file <built-in function input> the error found is:
 AddressSanitizer:DEADLYSIGNAL
 =================================================================
+<<<<<<< HEAD
 ==26748==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000068 (pc 0x7fff2042325c bp 0x7ffeeeb24450 sp 0x7ffeeeb24440 T0)
 ==26748==The signal is caused by a READ memory access.
 ==26748==Hint: address points to the zero page.
@@ -21,3 +22,19 @@ AddressSanitizer can not provide additional info.
 SUMMARY: AddressSanitizer: SEGV (libsystem_c.dylib:x86_64+0x3925c) in flockfile+0x12
 ==26748==ABORTING
 ./runsat.sh: line 23: 26748 Abort trap: 6           "${SCRIPT_DIR}/sat" "$1"
+=======
+==12414==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000074 (pc 0x7f82272375ad bp 0x000000000000 sp 0x7ffd667f35b0 T0)
+==12414==The signal is caused by a READ memory access.
+==12414==Hint: address points to the zero page.
+    #0 0x7f82272375ac in getc (/lib/x86_64-linux-gnu/libc.so.6+0x8e5ac)
+    #1 0x55a7e11299fa in checkStartSequence /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:36
+    #2 0x55a7e112af43 in PARSERinit /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/parser.c:179
+    #3 0x55a7e1128952 in initialize /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:410
+    #4 0x55a7e1128f97 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat.c:467
+    #5 0x7f82271d00b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
+    #6 0x55a7e111f85d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver2/sat+0x1585d)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x8e5ac) in getc
+==12414==ABORTING
+>>>>>>> 1988cf785fc56c1358983edc23827d173c476f1a
