@@ -1,15 +1,14 @@
-<<<<<<< HEAD
 input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver2 the error found is:
 =================================================================
-==4606==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000014f at pc 0x000103fa0a22 bp 0x7ffeebc67f90 sp 0x7ffeebc67f88
+==7613==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000014f at pc 0x000108e4da22 bp 0x7ffee6dbaf90 sp 0x7ffee6dbaf88
 READ of size 1 at 0x60200000014f thread T0
-    #0 0x103fa0a21 in main sat.c:133
+    #0 0x108e4da21 in main sat.c:133
     #1 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 0x60200000014f is located 1 bytes to the left of 1-byte region [0x602000000150,0x602000000151)
 allocated by thread T0 here:
-    #0 0x104000400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
-    #1 0x103f9e358 in main sat.c:79
+    #0 0x108eb0400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x108e4b358 in main sat.c:79
     #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
 
 SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:133 in main
@@ -25,35 +24,6 @@ Shadow bytes around the buggy address:
   0x1c0400000050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
   0x1c0400000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
   0x1c0400000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-=======
-input file taken from /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/inputs/solver2 the error found is:
-=================================================================
-==1229==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000008f at pc 0x55efdc5038f1 bp 0x7ffc309f47e0 sp 0x7ffc309f47d0
-READ of size 1 at 0x60200000008f thread T0
-    #0 0x55efdc5038f0 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:133
-    #1 0x7ff28eca90b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #2 0x55efdc50183d in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat+0x883d)
-
-0x60200000008f is located 1 bytes to the left of 1-byte region [0x602000000090,0x602000000091)
-allocated by thread T0 here:
-    #0 0x7ff28f8eebc8 in malloc (/lib/x86_64-linux-gnu/libasan.so.5+0x10dbc8)
-    #1 0x55efdc50211f in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:79
-    #2 0x7ff28eca90b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-
-SUMMARY: AddressSanitizer: heap-buffer-overflow /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.c:133 in main
-Shadow bytes around the buggy address:
-  0x0c047fff7fc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x0c047fff7fd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x0c047fff7fe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x0c047fff7ff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x0c047fff8000: fa fa 01 fa fa fa 01 fa fa fa 01 fa fa fa 01 fa
-=>0x0c047fff8010: fa[fa]01 fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8020: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8030: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8040: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x0c047fff8060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
->>>>>>> 1988cf785fc56c1358983edc23827d173c476f1a
 Shadow byte legend (one shadow byte represents 8 application bytes):
   Addressable:           00
   Partially addressable: 01 02 03 04 05 06 07 

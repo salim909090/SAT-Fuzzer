@@ -70,8 +70,8 @@ class Corpus:
     """Find the coverage of the given directory"""
     def find_coverage(self, path, new_input, mode, tries):
         # Process the shell command and read the output
-        command = "gcov -n " +path+"/*.c"
-        subprocess = cmdlineprocess.Popen(command, shell=True, stdout=cmdlineprocess.PIPE)
+        command = "gcov -n *.c" 
+        subprocess = cmdlineprocess.Popen(command, shell=True, stdout=cmdlineprocess.PIPE,stderr=cmdlineprocess.PIPE, cwd=path)
         subprocess_return = subprocess.stdout.read()
         subprocess_return = subprocess_return.splitlines()
 

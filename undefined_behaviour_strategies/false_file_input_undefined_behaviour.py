@@ -49,7 +49,6 @@ def run_program (SUT_path,seed,bugs_logs_path):
     return None,input
 
 def generate_input(seed):
-    random.seed(seed)
     input = ''
     length = random.randint(0,150)
     for current_input in range(length):
@@ -63,6 +62,7 @@ def generate_input(seed):
             second_input += chr(random.randrange(0,256))
         secound_input = second_input.replace('\n','').replace('\x00','')
         input += " " + secound_input
+
     return input
 
 def log_error_case(input,SUT_path,bugs_logs_path,error):

@@ -1,0 +1,336 @@
+input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver3/generative_fuzzing/52.cnf the error found is:
+=================================================================
+==98127==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6080000002f4 at pc 0x00010498fe63 bp 0x7ffeeb276f90 sp 0x7ffeeb276f88
+WRITE of size 4 at 0x6080000002f4 thread T0
+    #0 0x10498fe62 in main sat.c:98
+    #1 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x6080000002f4 is located 0 bytes to the right of 84-byte region [0x6080000002a0,0x6080000002f4)
+allocated by thread T0 here:
+    #0 0x1049f5400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x10498f519 in main sat.c:83
+    #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:98 in main
+Shadow bytes around the buggy address:
+  0x1c1000000000: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1000000010: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 05
+  0x1c1000000020: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1000000030: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 04 fa
+  0x1c1000000040: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 04 fa
+=>0x1c1000000050: fa fa fa fa 00 00 00 00 00 00 00 00 00 00[04]fa
+  0x1c1000000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1000000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1000000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1000000090: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c10000000a0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==98127==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c44 at pc 0x000104990910 bp 0x7ffeeb276f90 sp 0x7ffeeb276f88
+WRITE of size 4 at 0x603000001c44 thread T0
+    #0 0x10499090f in main sat.c:108
+    #1 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001c44 is located 0 bytes to the right of 20-byte region [0x603000001c30,0x603000001c44)
+allocated by thread T0 here:
+    #0 0x1049f5400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1049901f6 in main sat.c:106
+    #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:108 in main
+Shadow bytes around the buggy address:
+  0x1c0600000330: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000340: 04 fa fa fa 00 00 05 fa fa fa 00 00 04 fa fa fa
+  0x1c0600000350: 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa
+  0x1c0600000360: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c0600000370: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+=>0x1c0600000380: 00 00 04 fa fa fa 00 00[04]fa fa fa 00 00 04 fa
+  0x1c0600000390: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c06000003a0: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+  0x1c06000003b0: 00 00 00 00 fa fa fd fd fd fd fa fa 00 00 00 00
+  0x1c06000003c0: fa fa 00 00 00 00 fa fa fd fd fd fd fa fa fd fd
+  0x1c06000003d0: fd fd fa fa fd fd fd fd fa fa 00 00 04 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==98127==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c44 at pc 0x00010498e615 bp 0x7ffeeb2766d0 sp 0x7ffeeb2766c8
+READ of size 4 at 0x603000001c44 thread T0
+    #0 0x10498e614 in abscmpfunc sat.c:39
+    #1 0x1049eee79 in wrap_qsort+0x79 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3de79)
+    #2 0x104990f3a in main sat.c:117
+    #3 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001c44 is located 0 bytes to the right of 20-byte region [0x603000001c30,0x603000001c44)
+allocated by thread T0 here:
+    #0 0x1049f5400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1049901f6 in main sat.c:106
+    #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:39 in abscmpfunc
+Shadow bytes around the buggy address:
+  0x1c0600000330: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000340: 04 fa fa fa 00 00 05 fa fa fa 00 00 04 fa fa fa
+  0x1c0600000350: 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa
+  0x1c0600000360: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c0600000370: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+=>0x1c0600000380: 00 00 04 fa fa fa 00 00[04]fa fa fa 00 00 04 fa
+  0x1c0600000390: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c06000003a0: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+  0x1c06000003b0: 00 00 00 00 fa fa fd fd fd fd fa fa 00 00 00 00
+  0x1c06000003c0: fa fa 00 00 00 00 fa fa fd fd fd fd fa fa fd fd
+  0x1c06000003d0: fd fd fa fa fd fd fd fd fa fa 00 00 04 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==98127==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c44 at pc 0x0001049ef058 bp 0x7ffeeb276f90 sp 0x7ffeeb276738
+WRITE of size 24 at 0x603000001c44 thread T0
+    #0 0x1049ef057 in wrap_qsort+0x257 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3e057)
+    #1 0x104990f3a in main sat.c:117
+    #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001c44 is located 0 bytes to the right of 20-byte region [0x603000001c30,0x603000001c44)
+allocated by thread T0 here:
+    #0 0x1049f5400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1049901f6 in main sat.c:106
+    #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3e057) in wrap_qsort+0x257
+Shadow bytes around the buggy address:
+  0x1c0600000330: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000340: 04 fa fa fa 00 00 05 fa fa fa 00 00 04 fa fa fa
+  0x1c0600000350: 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa
+  0x1c0600000360: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c0600000370: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+=>0x1c0600000380: 00 00 04 fa fa fa 00 00[04]fa fa fa 00 00 04 fa
+  0x1c0600000390: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c06000003a0: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+  0x1c06000003b0: 00 00 00 00 fa fa fd fd fd fd fa fa 00 00 00 00
+  0x1c06000003c0: fa fa 00 00 00 00 fa fa fd fd fd fd fa fa fd fd
+  0x1c06000003d0: fd fd fa fa fd fd fd fd fa fa 00 00 04 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==98127==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6080000002f4 at pc 0x00010498e57a bp 0x7ffeeb2766d0 sp 0x7ffeeb2766c8
+READ of size 4 at 0x6080000002f4 thread T0
+    #0 0x10498e579 in abscmpfunc sat.c:39
+    #1 0x1049eee79 in wrap_qsort+0x79 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3de79)
+    #2 0x1049913b4 in main sat.c:122
+    #3 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x6080000002f4 is located 0 bytes to the right of 84-byte region [0x6080000002a0,0x6080000002f4)
+allocated by thread T0 here:
+    #0 0x1049f5400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x10498f519 in main sat.c:83
+    #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:39 in abscmpfunc
+Shadow bytes around the buggy address:
+  0x1c1000000000: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1000000010: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 05
+  0x1c1000000020: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1000000030: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 04 fa
+  0x1c1000000040: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 04 fa
+=>0x1c1000000050: fa fa fa fa 00 00 00 00 00 00 00 00 00 00[04]fa
+  0x1c1000000060: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fd fd
+  0x1c1000000070: fa fa fa fa fd fd fd fd fd fd fd fd fd fd fd fd
+  0x1c1000000080: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 04 fa
+  0x1c1000000090: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 04 fa
+  0x1c10000000a0: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 04 fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+sat.c:334:13: runtime error: load of misaligned address 0x6080000002dd for type 'int', which requires 4 byte alignment
+0x6080000002dd: note: pointer points here
+ ff ff ff 0a 00 00 00  0b 00 00 00 f5 ff ff ff  f4 ff ff ff 0c 00 00 00  0d 00 00 00 f3 ff ff ff  f2
+             ^ 
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior sat.c:334:13 in 
+sat.c:337:13: runtime error: load of misaligned address 0x6080000002dd for type 'int', which requires 4 byte alignment
+0x6080000002dd: note: pointer points here
+ ff ff ff 0a 00 00 00  0b 00 00 00 f5 ff ff ff  f4 ff ff ff 0c 00 00 00  0d 00 00 00 f3 ff ff ff  f2
+             ^ 
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior sat.c:337:13 in 
+=================================================================
+==98127==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c44 at pc 0x0001049933cf bp 0x7ffeeb276850 sp 0x7ffeeb276848
+READ of size 4 at 0x603000001c44 thread T0
+    #0 0x1049933ce in assign sat.c:151
+    #1 0x10499203b in DPLL sat.c:239
+    #2 0x10499150a in main sat.c:125
+    #3 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001c44 is located 0 bytes to the right of 20-byte region [0x603000001c30,0x603000001c44)
+allocated by thread T0 here:
+    #0 0x1049f5400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1049901f6 in main sat.c:106
+    #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:151 in assign
+Shadow bytes around the buggy address:
+  0x1c0600000330: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000340: 04 fa fa fa 00 00 05 fa fa fa 00 00 04 fa fa fa
+  0x1c0600000350: 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa
+  0x1c0600000360: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c0600000370: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+=>0x1c0600000380: 00 00 04 fa fa fa 00 00[04]fa fa fa 00 00 04 fa
+  0x1c0600000390: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c06000003a0: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+  0x1c06000003b0: 00 00 00 00 fa fa fd fd fd fd fa fa 00 00 00 00
+  0x1c06000003c0: fa fa 00 00 00 00 fa fa fd fd fd fd fa fa fd fd
+  0x1c06000003d0: fd fd fa fa fd fd fd fd fa fa 00 00 04 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==98127==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001c44 at pc 0x0001049f3480 bp 0x7ffeeb2765d0 sp 0x7ffeeb275d98
+READ of size 24 at 0x603000001c44 thread T0
+    #0 0x1049f347f in __asan_memcpy+0x1af (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4247f)
+    #1 0x10499974c in copy sat.c:302
+    #2 0x1049926c7 in DPLL sat.c:259
+    #3 0x10499150a in main sat.c:125
+    #4 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001c44 is located 0 bytes to the right of 20-byte region [0x603000001c30,0x603000001c44)
+allocated by thread T0 here:
+    #0 0x1049f5400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1049901f6 in main sat.c:106
+    #2 0x7fff20530f3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4247f) in __asan_memcpy+0x1af
+Shadow bytes around the buggy address:
+  0x1c0600000330: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000340: 04 fa fa fa 00 00 05 fa fa fa 00 00 04 fa fa fa
+  0x1c0600000350: 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa
+  0x1c0600000360: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c0600000370: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+=>0x1c0600000380: 00 00 04 fa fa fa 00 00[04]fa fa fa 00 00 04 fa
+  0x1c0600000390: fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa 00 00
+  0x1c06000003a0: 04 fa fa fa 00 00 04 fa fa fa 00 00 04 fa fa fa
+  0x1c06000003b0: 00 00 00 00 fa fa fd fd fd fd fa fa 00 00 00 00
+  0x1c06000003c0: fa fa 00 00 00 00 fa fa fd fd fd fd fa fa fd fd
+  0x1c06000003d0: fd fd fa fa fd fd fd fd fa fa 00 00 04 fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc

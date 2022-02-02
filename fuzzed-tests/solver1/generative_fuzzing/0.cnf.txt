@@ -1,15 +1,2 @@
-input file taken from /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/inputs/solver1/generative_fuzzing/0.cnf the error found is:
-AddressSanitizer:DEADLYSIGNAL
-=================================================================
-==13007==ERROR: AddressSanitizer: SEGV on unknown address 0x61fd2908f940 (pc 0x55718bef5cb0 bp 0x7ffe32d92040 sp 0x7ffe32d91f20 T0)
-==13007==The signal is caused by a READ memory access.
-    #0 0x55718bef5caf in init_formula_from_file /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:143
-    #1 0x55718bef4315 in sat /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/solver.c:433
-    #2 0x55718bee5d5b in proble4 /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:464
-    #3 0x55718bee6045 in main /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat.c:486
-    #4 0x7fcb8ca3d0b2 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x270b2)
-    #5 0x55718bedd9dd in _start (/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/sat+0x2b9dd)
-
-AddressSanitizer can not provide additional info.
-SUMMARY: AddressSanitizer: SEGV /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver1/formula.c:143 in init_formula_from_file
-==13007==ABORTING
+input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver1/generative_fuzzing/0.cnf the error found is:
+time out in 20 sec

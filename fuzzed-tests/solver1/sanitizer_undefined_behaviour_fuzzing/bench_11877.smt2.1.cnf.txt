@@ -1,2 +1,2 @@
-input file taken from /mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/inputs/bench_11877.smt2.1.cnf the error found is:
+input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/bench_11877.smt2.1.cnf the error found is:
 [!] Time out in 20 sec
