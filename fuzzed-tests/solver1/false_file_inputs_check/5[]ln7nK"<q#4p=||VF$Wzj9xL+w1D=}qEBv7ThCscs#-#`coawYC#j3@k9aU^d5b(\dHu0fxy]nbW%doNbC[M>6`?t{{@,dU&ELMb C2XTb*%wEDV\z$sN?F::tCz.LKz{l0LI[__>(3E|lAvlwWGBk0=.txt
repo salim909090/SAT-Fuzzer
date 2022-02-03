@@ -1,0 +1,5 @@
+[!] False input file 5[]ln7nK"<q#4p=||VF$Wzj9xL+w1D=}qEBv7ThCscs#-#`coawYC#j3@k9aU^d5b(\dHu0fxy]nbW%doNbC[M>6`?t{{@,dU&ELMb C2XTb*%wEDV\z$sN?F::tCz.LKz{l0LI[__>(3E|lAvlwWGBk0= the error found is:
+std output:
+
+std error
+Error while openning the file 5[]ln7nK"<q#4p=||VF$Wzj9xL+w1D=}qEBv7ThCscs#-#`coawYC#j3@k9aU^d5b(\dHu0fxy]nbW%doNbC[M>6`?t{{@,dU&ELMb C2XTb*%wEDV\z$sN?F::tCz.LKz{l0LI[__>(3E|lAvlwWGBk0=.

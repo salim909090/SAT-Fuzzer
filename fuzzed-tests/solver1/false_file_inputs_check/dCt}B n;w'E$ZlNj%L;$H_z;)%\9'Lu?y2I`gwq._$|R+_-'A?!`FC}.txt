@@ -1,0 +1,5 @@
+[!] False input file A^9\UyG0u3.LoR)j&TC$UM)PLGsw(2[2!:#X+MI.wO/dCt}B n;w'E$ZlNj%L;$H_z;)%\9'Lu?y2I`gwq._$|R+_-'A?!`FC} the error found is:
+std output:
+
+std error
+Error while openning the file A^9\UyG0u3.LoR)j&TC$UM)PLGsw(2[2!:#X+MI.wO/dCt}B n;w'E$ZlNj%L;$H_z;)%\9'Lu?y2I`gwq._$|R+_-'A?!`FC}.

@@ -1,0 +1,26 @@
+[!] False input file *Y^|nViMOqV_vmuKCf[<Plvr#GNNJfw@PU_JqF=$S%Z>|lRtnH"R\yQ3sgoY{g_C:N`;5h$Y>BJm4/WE.(pq`33k:uGW>/1@-h3CQ&!8 the error found is:
+std output:
+
+std error
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==75053==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000068 (pc 0x7fff2043025c bp 0x7ffee513e430 sp 0x7ffee513e420 T0)
+==75053==The signal is caused by a READ memory access.
+==75053==Hint: address points to the zero page.
+    #0 0x7fff2043025c in flockfile+0x12 (libsystem_c.dylib:x86_64+0x3925c)
+    #1 0x7fff20430a57 in fgetc+0xe (libsystem_c.dylib:x86_64+0x39a57)
+    #2 0x10aac87b1 in checkStartSequence parser.c:36
+    #3 0x10aac9d9a in PARSERinit parser.c:179
+    #4 0x10aad5466 in initialize sat.c:410
+    #5 0x10aad5e0b in main sat.c:467
+    #6 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+==75053==Register values:
+rax = 0x000000010ceeceac  rbx = 0x0000000000000000  rcx = 0x000000010ceeceac  rdx = 0x0000000000000000  
+rdi = 0x0000000000000000  rsi = 0x0000000000000000  rbp = 0x00007ffee513e430  rsp = 0x00007ffee513e420  
+ r8 = 0x00000000000b2d3e   r9 = 0xffffffff00000000  r10 = 0x000000000000000e  r11 = 0x00007fff20430a49  
+r12 = 0x0000000000000000  r13 = 0x0000000000000000  r14 = 0x0000000000000002  r15 = 0x0000000000000000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (libsystem_c.dylib:x86_64+0x3925c) in flockfile+0x12
+==75053==ABORTING
+./runsat.sh: line 23: 75053 Abort trap: 6           "${SCRIPT_DIR}/sat" "$1"

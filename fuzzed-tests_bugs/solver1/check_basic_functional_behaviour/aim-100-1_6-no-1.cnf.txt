@@ -1,0 +1,43 @@
+[!] False input file /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/functional_inputs/aim-100-1_6-no-1.cnf the error found is:
+std output:
+
+std error
+decision.c:37:34: runtime error: member access within null pointer of type 'PriorityQueue' (aka 'struct pq')
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior decision.c:37:34 in 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==88863==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000018 (pc 0x0001049c81a4 bp 0x7ffeeb247610 sp 0x7ffeeb2474a0 T0)
+==88863==The signal is caused by a READ memory access.
+==88863==Hint: address points to the zero page.
+    #0 0x1049c81a4 in rotate_left decision.c:37
+    #1 0x1049ca3c4 in insert_literal decision.c:82
+    #2 0x1049c969e in insert_literal decision.c:71
+    #3 0x1049c969e in insert_literal decision.c:71
+    #4 0x1049c969e in insert_literal decision.c:71
+    #5 0x1049c969e in insert_literal decision.c:71
+    #6 0x1049c969e in insert_literal decision.c:71
+    #7 0x1049c969e in insert_literal decision.c:71
+    #8 0x1049c969e in insert_literal decision.c:71
+    #9 0x1049c969e in insert_literal decision.c:71
+    #10 0x1049c969e in insert_literal decision.c:71
+    #11 0x1049c969e in insert_literal decision.c:71
+    #12 0x1049c969e in insert_literal decision.c:71
+    #13 0x1049da9ef in revoke_assignment formula.c:343
+    #14 0x1049dc062 in cancel formula.c:396
+    #15 0x1049c5ba6 in backtrack conflict.c:174
+    #16 0x1049c61b3 in analyze_conflict conflict.c:196
+    #17 0x1049edc5f in solve solver.c:391
+    #18 0x1049eec01 in sat solver.c:439
+    #19 0x1049e4e56 in proble4 sat.c:464
+    #20 0x1049e523b in main sat.c:486
+    #21 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+==88863==Register values:
+rax = 0x0000000000000018  rbx = 0x00007ffeeb247680  rcx = 0x0000100000000000  rdx = 0x000000000000003f  
+rdi = 0x00007ffeeb246fd1  rsi = 0x0000000000000000  rbp = 0x00007ffeeb247610  rsp = 0x00007ffeeb2474a0  
+ r8 = 0x0000000104b17480   r9 = 0x00007ffeeb246770  r10 = 0x0000000000000000  r11 = 0x0000000000000202  
+r12 = 0x0000000000000000  r13 = 0x0000000000000000  r14 = 0x0000000000000000  r15 = 0x0000000000000000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV decision.c:37 in rotate_left
+==88863==ABORTING
+./runsat.sh: line 23: 88863 Abort trap: 6           "${SCRIPT_DIR}/sat" "$1"
+the solver should yield a unsatisfiable solution

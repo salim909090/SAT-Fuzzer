@@ -1,0 +1,24 @@
+[!] False input file /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver1/generative_fuzzing/8.cnf the error found is:
+std output:
+
+std error
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==90293==ERROR: AddressSanitizer: BUS on unknown address (pc 0x000105dbc9b9 bp 0x7ffee9e623d0 sp 0x7ffee9e62180 T0)
+==90293==The signal is caused by a READ memory access.
+==90293==Hint: this fault was caused by a dereference of a high value address (see register values below).  Disassemble the provided pc to learn which register was used.
+    #0 0x105dbc9b9 in init_formula_from_file formula.c:143
+    #1 0x105dd6b46 in sat solver.c:433
+    #2 0x105dcce56 in proble4 sat.c:464
+    #3 0x105dcd23b in main sat.c:486
+    #4 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+==90293==Register values:
+rax = 0x0000627aabbfcc48  rbx = 0x00007ffee9e621e0  rcx = 0x0000100000000000  rdx = 0x0000000000000001  
+rdi = 0x0000000aabbfcb28  rsi = 0x0000000000000001  rbp = 0x00007ffee9e623d0  rsp = 0x00007ffee9e62180  
+ r8 = 0x0000000000000001   r9 = 0x0000000000000000  r10 = 0x00000000ffffff00  r11 = 0x00007fff8081a570  
+r12 = 0x0000000000000000  r13 = 0x0000000000000000  r14 = 0x0000000000000000  r15 = 0x0000000000000000  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: BUS formula.c:143 in init_formula_from_file
+==90293==ABORTING
+./runsat.sh: line 23: 90293 Abort trap: 6           "${SCRIPT_DIR}/sat" "$1"

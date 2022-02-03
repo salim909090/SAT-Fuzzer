@@ -1,0 +1,30 @@
+[!] False input file /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver1/generative_fuzzing/3.cnf the error found is:
+std output:
+
+std error
+clause.c:296:19: runtime error: member access within null pointer of type 'ChainedLiteral' (aka 'struct chained_literal')
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior clause.c:296:19 in 
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==86329==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7fff205650a9 bp 0x7ffeebb98360 sp 0x7ffeebb98360 T0)
+==86329==The signal is caused by a READ memory access.
+==86329==Hint: address points to the zero page.
+    #0 0x7fff205650a9 in _platform_memmove$VARIANT$Haswell+0xa9 (libsystem_platform.dylib:x86_64+0x10a9)
+    #1 0x104166566 in __asan_memcpy+0x296 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x42566)
+    #2 0x1040711c3 in get clause.c:296
+    #3 0x104083f36 in init_formula_from_clauses formula.c:203
+    #4 0x104085cfd in init_formula_from_file formula.c:156
+    #5 0x10409fb46 in sat solver.c:433
+    #6 0x104095e56 in proble4 sat.c:464
+    #7 0x10409623b in main sat.c:486
+    #8 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+==86329==Register values:
+rax = 0x00007ffeebb98be0  rbx = 0x0000000000000008  rcx = 0x00000fffdd773101  rdx = 0x0000000000000000  
+rdi = 0x00007ffeebb98be0  rsi = 0x0000000000000000  rbp = 0x00007ffeebb98360  rsp = 0x00007ffeebb98360  
+ r8 = 0x00000001041c7480   r9 = 0x00007ffeebb97e90  r10 = 0x0000000000000000  r11 = 0x00007ffeebb98be0  
+r12 = 0x0000000000000000  r13 = 0x0000000000000000  r14 = 0x0000000000000000  r15 = 0x00007ffeebb98be0  
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (libsystem_platform.dylib:x86_64+0x10a9) in _platform_memmove$VARIANT$Haswell+0xa9
+==86329==ABORTING
+./runsat.sh: line 23: 86329 Abort trap: 6           "${SCRIPT_DIR}/sat" "$1"

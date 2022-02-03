@@ -1,0 +1,5 @@
+[!] False input file w!*#,iiW}B&r5l:pY>3xR7rc4:m_3{=-!'x5k2;x@l{uL.Z||!HU%2u+2g)6]QzXXXjP_;WGxl0gX+;/ the error found is:
+std output:
+
+std error
+Error while openning the file w!*#,iiW}B&r5l:pY>3xR7rc4:m_3{=-!'x5k2;x@l{uL.Z||!HU%2u+2g)6]QzXXXjP_;WGxl0gX+;/.

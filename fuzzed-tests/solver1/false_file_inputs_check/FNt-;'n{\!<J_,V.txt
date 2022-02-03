@@ -1,0 +1,5 @@
+[!] False input file 4#[].Sp*%"@}(r1cP($vu|tu'FXzB/X8xU9Q_uWf|`Ybh|/W\[cq?{So[t<*{H&eY^M*|/1q+mlKZQCzSW^ZIX_+ fJ%?x6;t5TY:;u#P'vVn5Zk5cJ&"VAKicLE$l},&*6h,"|99oS@.gMbF}*!x'!q[X8/Hzl[ATjK}l`Gzk1aQBJYhYmk]ft[8vt\OGW[A[z]<gOCu-)[r/FNt-;'n{\!<J_,V the error found is:
+std output:
+
+std error
+Error while openning the file 4#[].Sp*%"@}(r1cP($vu|tu'FXzB/X8xU9Q_uWf|`Ybh|/W\[cq?{So[t<*{H&eY^M*|/1q+mlKZQCzSW^ZIX_+ fJ%?x6;t5TY:;u#P'vVn5Zk5cJ&"VAKicLE$l},&*6h,"|99oS@.gMbF}*!x'!q[X8/Hzl[ATjK}l`Gzk1aQBJYhYmk]ft[8vt\OGW[A[z]<gOCu-)[r/FNt-;'n{\!<J_,V.

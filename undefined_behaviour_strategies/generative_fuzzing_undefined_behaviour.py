@@ -11,49 +11,49 @@ import Levenshtein
 import corpus_tracker
 import mutation
 from mutation import fuzzing_data_random
-
-
+import textdistance
+import shutil
 STRATEGY_NAME = "generative_fuzzing"
 interesting_behaviours_encountered = []
 
 
-def run_strategy(input_path, SUT_path, seed, bugs_logs_path):
+def run_strategy(input_path, SUT_path, seed, bugs_logs_path,input_bugs):
     # probability 50 ,50 smart and dumb input
-
     corpus = corpus_tracker.Corpus.get_instance()
     if corpus.queue_is_empty("ub"):
-        print("Queue is empty, generating ")
-        dumb_smart_choice = random.choice([0, 1])
+        dumb_smart_choice = random.choice([0,1])
         if dumb_smart_choice == 0:
             input_data = generate_dumb_cnf()
         else:
             input_data = generate_smart_cnf()
     else:
-        print("Gotten item from queue")
         input_file = corpus.pop_queue("ub")
         file1 = open(input_file, "r+")
         input_data = mutation.mutate(file1.read())
         #input_data = corpus.pop_queue("ub")
-    
     file_name_full_path = os.path.abspath(os.path.join(input_path))
     file_name = os.path.basename(os.path.normpath(file_name_full_path))
     create_input_file(file_name_full_path, input_data)
+    before_coverage = corpus.find_coverage(SUT_path, file_name_full_path, "ub", 20)
 
-    error = run_program(file_name_full_path, SUT_path, seed, bugs_logs_path)
+    output,error = run_program(file_name_full_path, SUT_path, seed, bugs_logs_path)
     corpus.find_coverage(SUT_path, file_name_full_path, "ub", 20)
+    bug_counter = 0
 
     if error is not None:
-        values = [Levenshtein.distance(error, current) for current in interesting_behaviours_encountered]
-        print(values)
+        values = [textdistance.levenshtein.normalized_similarity(error, current) for current in interesting_behaviours_encountered]
+
         if len(values) == 0:
             interesting_behaviours_encountered.append(error)
-            log_error_case(file_name, file_name_full_path, SUT_path, bugs_logs_path, error)
-            return
-        elif min(values) < 5000:
-            return
-        interesting_behaviours_encountered.append(error)
-        log_error_case(file_name, file_name_full_path, SUT_path, bugs_logs_path, error)
-
+            log_error_case(file_name_full_path, SUT_path, bugs_logs_path,input_bugs, output,error)
+            bug_counter +=1
+        elif max(values) < 0.5:
+            bug_counter += 1
+            interesting_behaviours_encountered.append(error)
+            log_error_case(file_name_full_path, SUT_path, bugs_logs_path,input_bugs, output,error)
+        if corpus.current_coverage > before_coverage:
+            corpus.add_cnf(file_name_full_path,"ub",20)
+    return bug_counter
 
 def generate_dumb_cnf():
     # choice short or long input
@@ -72,7 +72,7 @@ def generate_smart_cnf():
     #     cnf += "c " + fuzzing_data_random(0,100).replace("\n","") + "\n"
 
     # big or small number of vars
-    big_small_var_number = random.choice([0, 1, 2])
+    big_small_var_number = random.choice([0,1, 2])
     var_number = 0
     if big_small_var_number == 0:
         var_number = random.randint(0, 10)
@@ -192,43 +192,33 @@ def run_program(input_path, SUT_path, seed, bugs_logs_path):
     result = subprocess.Popen(["./runsat.sh", input_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                               cwd=SUT_path)
     try:
-        sut_output, sut_error = result.communicate(timeout=20)
+        sut_output, sut_error = result.communicate(timeout=10)
     except subprocess.TimeoutExpired:
         result.kill()
-        return "time out in 20 sec"
+        return "","time out in 10 sec"
 
-    sut_output_printable = sut_output.decode('ascii', 'replace').split('\n')
-    sut_output_error = sut_error.decode('ascii', 'replace').split('\n')
+    sut_output_printable = sut_output.decode('ascii', 'replace')
+    sut_output_error = sut_error.decode('ascii', 'replace')
+    if sut_output_error.strip() != "":
+        return sut_output_printable,sut_output_error
+    return sut_output_printable,None
 
-    print(f"running {input_path}")
-    print("normal output")
-    for line in sut_output_printable:
-        print(line)
-        break
-
-    print("error output")
-    for line in sut_output_error:
-        if "ERROR" in line:
-            # print(line)
-            print(' '.join(line.split(" ")[:3]))
-            print(f"end of running {input_path}")
-            print()
-            return '\n'.join(sut_output_error)
-
-    print(f"end of running {input_path}")
-    print()
-    return None
-
-
-def log_error_case(current_input_filename, file_name_full_path, SUT_path, bugs_logs_path, error):
-    # create dir and strategy dir if does not exist
-    sut_dir = os.path.join(bugs_logs_path, os.path.basename(os.path.normpath(SUT_path)))
+def log_error_case(input_file, SUT_path, bugs_logs_path,input_bugs, output, error):
+    sut_name = os.path.basename(os.path.normpath(SUT_path))
+    sut_dir = os.path.join(bugs_logs_path, sut_name)
     strategy_dir = os.path.join(sut_dir, STRATEGY_NAME)
     pathlib.Path(strategy_dir).mkdir(parents=True, exist_ok=True)
+    dst = os.path.join(os.path.abspath(input_bugs),sut_name,STRATEGY_NAME)
+    pathlib.Path(dst).mkdir(parents=True, exist_ok=True)
+    # copy input to fuzzed tests directory
+    shutil.copyfile(input_file, os.path.join(dst,os.path.basename(input_file)))
 
     # create log of the bug
-    full_path = os.path.join(strategy_dir, f"{current_input_filename}.txt")
+    full_path = os.path.join(strategy_dir, f"{os.path.basename(os.path.normpath(input_file))}.txt")
     file = open(full_path, "w")
-    file.write(f"input file taken from {file_name_full_path} the error found is:\n")
+    file.write(f"[!] False input file {input_file} the error found is:\n")
+    file.write("std output:\n")
+    file.write(output+"\n")
+    file.write("std error\n")
     file.write(error)
     file.close()

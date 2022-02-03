@@ -1,11 +1,5 @@
         -:    0:Source:sat.c
-<<<<<<< HEAD
-        -:    0:Graph:solvers/solver2/sat.gcno
-        -:    0:Data:solvers/solver2/sat.gcda
-        -:    0:Runs:1
-        -:    0:Programs:1
-=======
-        -:    0:Graph:/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.gcno
-        -:    0:Data:/mnt/c/Users/nadim/Documents/Imperial/SoftwareReliability/software-reliability-/solvers/solver3/sat.gcda
-        -:    0:Runs:57
->>>>>>> 1988cf785fc56c1358983edc23827d173c476f1a
+        -:    0:Graph:solvers/solver1/sat.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0

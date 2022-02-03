@@ -1,0 +1,15 @@
+[!] False input file /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver3/generative_fuzzing/5.cnf the error found is:
+std output:
+UNSAT
+
+std error
+sat.c:334:13: runtime error: load of misaligned address 0x619000089901 for type 'int', which requires 4 byte alignment
+0x619000089901: note: pointer points here
+ ff ff ff  a7 ff ff ff a2 ff ff ff  8d ff ff ff 87 ff ff ff  7f ff ff ff 7d ff ff ff  75 ff ff ff 72
+              ^ 
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior sat.c:334:13 in 
+sat.c:337:13: runtime error: load of misaligned address 0x619000089901 for type 'int', which requires 4 byte alignment
+0x619000089901: note: pointer points here
+ ff ff ff  a7 ff ff ff a2 ff ff ff  8d ff ff ff 87 ff ff ff  7f ff ff ff 7d ff ff ff  75 ff ff ff 72
+              ^ 
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior sat.c:337:13 in 

@@ -1,2 +1,0 @@
-input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver1/generative_fuzzing/0.cnf the error found is:
-time out in 20 sec

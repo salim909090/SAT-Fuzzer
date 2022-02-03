@@ -1,0 +1,5 @@
+[!] False input file u!RDVI`q7v;q="A3)GVDehy)kVTd4krLg[ `L?tUE! the error found is:
+std output:
+
+std error
+Error while openning the file u!RDVI`q7v;q="A3)GVDehy)kVTd4krLg[ `L?tUE!.

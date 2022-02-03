@@ -1,2 +1,0 @@
-input file taken from /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/bench_10502.smt2.2.cnf the error found is:
-[!] Time out in 20 sec

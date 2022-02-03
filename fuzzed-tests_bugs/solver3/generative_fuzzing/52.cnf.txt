@@ -1,0 +1,720 @@
+[!] False input file /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver3/generative_fuzzing/52.cnf the error found is:
+std output:
+
+std error
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60f0000001e0 at pc 0x000109e08e63 bp 0x7ffee5dfdf30 sp 0x7ffee5dfdf28
+WRITE of size 4 at 0x60f0000001e0 thread T0
+    #0 0x109e08e62 in main sat.c:98
+    #1 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x60f0000001e0 is located 0 bytes to the right of 176-byte region [0x60f000000130,0x60f0000001e0)
+allocated by thread T0 here:
+    #0 0x109e6a400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x109e08519 in main sat.c:83
+    #2 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:98 in main
+Shadow bytes around the buggy address:
+  0x1c1dffffffe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1dfffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1e00000000: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x1c1e00000010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 fa fa
+  0x1c1e00000020: fa fa fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+=>0x1c1e00000030: 00 00 00 00 00 00 00 00 00 00 00 00[fa]fa fa fa
+  0x1c1e00000040: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1e00000050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1e00000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1e00000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1e00000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001a68 at pc 0x000109e09910 bp 0x7ffee5dfdf30 sp 0x7ffee5dfdf28
+WRITE of size 4 at 0x603000001a68 thread T0
+    #0 0x109e0990f in main sat.c:108
+    #1 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001a68 is located 0 bytes to the right of 24-byte region [0x603000001a50,0x603000001a68)
+allocated by thread T0 here:
+    #0 0x109e6a400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x109e091f6 in main sat.c:106
+    #2 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:108 in main
+Shadow bytes around the buggy address:
+  0x1c06000002f0: 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00 00 00
+  0x1c0600000300: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00
+  0x1c0600000310: 00 00 fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa
+  0x1c0600000320: 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00 06 fa
+  0x1c0600000330: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+=>0x1c0600000340: 00 fa fa fa 00 00 00 fa fa fa 00 00 00[fa]fa fa
+  0x1c0600000350: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x1c0600000360: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000370: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+  0x1c0600000380: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x1c0600000390: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001df8 at pc 0x000109e07615 bp 0x7ffee5dfd670 sp 0x7ffee5dfd668
+READ of size 4 at 0x603000001df8 thread T0
+    #0 0x109e07614 in abscmpfunc sat.c:39
+    #1 0x109e63e79 in wrap_qsort+0x79 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3de79)
+    #2 0x109e09f3a in main sat.c:117
+    #3 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001df8 is located 0 bytes to the right of 24-byte region [0x603000001de0,0x603000001df8)
+allocated by thread T0 here:
+    #0 0x109e6a400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x109e091f6 in main sat.c:106
+    #2 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:39 in abscmpfunc
+Shadow bytes around the buggy address:
+  0x1c0600000360: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000370: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+  0x1c0600000380: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x1c0600000390: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c06000003a0: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+=>0x1c06000003b0: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00[fa]
+  0x1c06000003c0: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c06000003d0: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+  0x1c06000003e0: 00 00 00 fa fa fa 00 00 00 00 fa fa fd fd fd fd
+  0x1c06000003f0: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa fd fd
+  0x1c0600000400: fd fd fa fa fd fd fd fd fa fa fd fd fd fd fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001df8 at pc 0x000109e64058 bp 0x7ffee5dfdf30 sp 0x7ffee5dfd6d8
+WRITE of size 28 at 0x603000001df8 thread T0
+    #0 0x109e64057 in wrap_qsort+0x257 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3e057)
+    #1 0x109e09f3a in main sat.c:117
+    #2 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001df8 is located 0 bytes to the right of 24-byte region [0x603000001de0,0x603000001df8)
+allocated by thread T0 here:
+    #0 0x109e6a400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x109e091f6 in main sat.c:106
+    #2 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3e057) in wrap_qsort+0x257
+Shadow bytes around the buggy address:
+  0x1c0600000360: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000370: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+  0x1c0600000380: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x1c0600000390: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c06000003a0: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+=>0x1c06000003b0: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00[fa]
+  0x1c06000003c0: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c06000003d0: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+  0x1c06000003e0: 00 00 00 fa fa fa 00 00 00 00 fa fa fd fd fd fd
+  0x1c06000003f0: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa fd fd
+  0x1c0600000400: fd fd fa fa fd fd fd fd fa fa fd fd fd fd fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000001a68 at pc 0x000109e0757a bp 0x7ffee5dfd670 sp 0x7ffee5dfd668
+READ of size 4 at 0x603000001a68 thread T0
+    #0 0x109e07579 in abscmpfunc sat.c:39
+    #1 0x109e63e79 in wrap_qsort+0x79 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x3de79)
+    #2 0x109e09f3a in main sat.c:117
+    #3 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x603000001a68 is located 0 bytes to the right of 24-byte region [0x603000001a50,0x603000001a68)
+allocated by thread T0 here:
+    #0 0x109e6a400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x109e091f6 in main sat.c:106
+    #2 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:39 in abscmpfunc
+Shadow bytes around the buggy address:
+  0x1c06000002f0: 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00 00 00
+  0x1c0600000300: fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00
+  0x1c0600000310: 00 00 fa fa 00 00 00 00 fa fa 00 00 00 00 fa fa
+  0x1c0600000320: 00 00 00 00 fa fa 00 00 00 00 fa fa 00 00 06 fa
+  0x1c0600000330: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+=>0x1c0600000340: 00 fa fa fa 00 00 00 fa fa fa 00 00 00[fa]fa fa
+  0x1c0600000350: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x1c0600000360: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+  0x1c0600000370: 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa
+  0x1c0600000380: 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00 00 fa
+  0x1c0600000390: fa fa 00 00 00 fa fa fa 00 00 00 fa fa fa 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60f0000001e0 at pc 0x000109e68480 bp 0x7ffee5dfd570 sp 0x7ffee5dfcd38
+READ of size 200 at 0x60f0000001e0 thread T0
+    #0 0x109e6847f in __asan_memcpy+0x1af (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4247f)
+    #1 0x109e11f59 in copy sat.c:292
+    #2 0x109e0b6c7 in DPLL sat.c:259
+    #3 0x109e0a50a in main sat.c:125
+    #4 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x60f0000001e0 is located 0 bytes to the right of 176-byte region [0x60f000000130,0x60f0000001e0)
+allocated by thread T0 here:
+    #0 0x109e6a400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x109e08519 in main sat.c:83
+    #2 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4247f) in __asan_memcpy+0x1af
+Shadow bytes around the buggy address:
+  0x1c1dffffffe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1dfffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1e00000000: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x1c1e00000010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 fa fa
+  0x1c1e00000020: fa fa fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+=>0x1c1e00000030: 00 00 00 00 00 00 00 00 00 00 00 00[fa]fa fa fa
+  0x1c1e00000040: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1e00000050: 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa
+  0x1c1e00000060: fa fa 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1e00000070: 00 00 00 00 00 00 00 00 fa fa fa fa fa fa fa fa
+  0x1c1e00000080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+sat.c:334:13: runtime error: load of misaligned address 0x611000000541 for type 'int', which requires 4 byte alignment
+0x611000000541: note: pointer points here
+ 00 00 00  04 00 00 00 05 00 00 00  06 00 00 00 fa ff ff ff  07 00 00 00 f7 ff ff ff  09 00 00 00 f5
+              ^ 
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior sat.c:334:13 in 
+sat.c:337:13: runtime error: load of misaligned address 0x611000000541 for type 'int', which requires 4 byte alignment
+0x611000000541: note: pointer points here
+ 00 00 00  04 00 00 00 05 00 00 00  06 00 00 00 fa ff ff ff  07 00 00 00 f7 ff ff ff  09 00 00 00 f5
+              ^ 
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior sat.c:337:13 in 
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x604000000b0f at pc 0x000109e0bf22 bp 0x7ffee5dfcad0 sp 0x7ffee5dfcac8
+WRITE of size 1 at 0x604000000b0f thread T0
+    #0 0x109e0bf21 in assign sat.c:146
+    #1 0x109e0b735 in DPLL sat.c:260
+    #2 0x109e0b806 in DPLL sat.c:260
+    #3 0x109e0b806 in DPLL sat.c:260
+    #4 0x109e0b806 in DPLL sat.c:260
+    #5 0x109e0a50a in main sat.c:125
+    #6 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x604000000b0f is located 1 bytes to the left of 44-byte region [0x604000000b10,0x604000000b3c)
+allocated by thread T0 here:
+    #0 0x109e6a400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x109e10aff in copy sat.c:272
+    #2 0x109e0b6c7 in DPLL sat.c:259
+    #3 0x109e0b806 in DPLL sat.c:260
+    #4 0x109e0b806 in DPLL sat.c:260
+    #5 0x109e0b806 in DPLL sat.c:260
+    #6 0x109e0a50a in main sat.c:125
+    #7 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:146 in assign
+Shadow bytes around the buggy address:
+  0x1c0800000110: fa fa 00 00 00 00 00 00 fa fa 00 00 00 00 00 04
+  0x1c0800000120: fa fa 00 00 00 00 04 fa fa fa 00 00 00 00 00 00
+  0x1c0800000130: fa fa 00 00 00 00 00 04 fa fa 00 00 00 00 04 fa
+  0x1c0800000140: fa fa 00 00 00 00 00 00 fa fa 00 00 00 00 00 04
+  0x1c0800000150: fa fa 00 00 00 00 04 fa fa fa 00 00 00 00 00 00
+=>0x1c0800000160: fa[fa]00 00 00 00 00 04 fa fa 00 00 00 00 04 fa
+  0x1c0800000170: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0800000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0800000190: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c08000001a0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c08000001b0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x613000000ab8 at pc 0x000109e0c0b0 bp 0x7ffee5dfcad0 sp 0x7ffee5dfcac8
+READ of size 8 at 0x613000000ab8 thread T0
+    #0 0x109e0c0af in assign sat.c:148
+    #1 0x109e0b735 in DPLL sat.c:260
+    #2 0x109e0b806 in DPLL sat.c:260
+    #3 0x109e0b806 in DPLL sat.c:260
+    #4 0x109e0b806 in DPLL sat.c:260
+    #5 0x109e0a50a in main sat.c:125
+    #6 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x613000000ab8 is located 8 bytes to the left of 352-byte region [0x613000000ac0,0x613000000c20)
+allocated by thread T0 here:
+    #0 0x109e6a7d5 in wrap_calloc+0xa5 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x447d5)
+    #1 0x109e10c30 in copy sat.c:273
+    #2 0x109e0b6c7 in DPLL sat.c:259
+    #3 0x109e0b806 in DPLL sat.c:260
+    #4 0x109e0b806 in DPLL sat.c:260
+    #5 0x109e0b806 in DPLL sat.c:260
+    #6 0x109e0a50a in main sat.c:125
+    #7 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:148 in assign
+Shadow bytes around the buggy address:
+  0x1c2600000100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c2600000110: 00 00 00 00 fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c2600000120: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c2600000130: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c2600000140: 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa
+=>0x1c2600000150: fa fa fa fa fa fa fa[fa]00 00 00 00 00 00 00 00
+  0x1c2600000160: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c2600000170: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c2600000180: 00 00 00 00 fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c2600000190: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c26000001a0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==55774==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60f00000099c at pc 0x000109e0c25f bp 0x7ffee5dfcad0 sp 0x7ffee5dfcac8
+READ of size 4 at 0x60f00000099c thread T0
+    #0 0x109e0c25e in assign sat.c:149
+    #1 0x109e0b735 in DPLL sat.c:260
+    #2 0x109e0b806 in DPLL sat.c:260
+    #3 0x109e0b806 in DPLL sat.c:260
+    #4 0x109e0b806 in DPLL sat.c:260
+    #5 0x109e0a50a in main sat.c:125
+    #6 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x60f00000099c is located 4 bytes to the left of 176-byte region [0x60f0000009a0,0x60f000000a50)
+allocated by thread T0 here:
+    #0 0x109e6a7d5 in wrap_calloc+0xa5 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x447d5)
+    #1 0x109e10d61 in copy sat.c:274
+    #2 0x109e0b6c7 in DPLL sat.c:259
+    #3 0x109e0b806 in DPLL sat.c:260
+    #4 0x109e0b806 in DPLL sat.c:260
+    #5 0x109e0b806 in DPLL sat.c:260
+    #6 0x109e0a50a in main sat.c:125
+    #7 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sat.c:149 in assign
+Shadow bytes around the buggy address:
+  0x1c1e000000e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1e000000f0: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+  0x1c1e00000100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 fa fa
+  0x1c1e00000110: fa fa fa fa fa fa 00 00 00 00 00 00 00 00 00 00
+  0x1c1e00000120: 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa
+=>0x1c1e00000130: fa fa fa[fa]00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c1e00000140: 00 00 00 00 00 00 00 00 00 00 fa fa fa fa fa fa
+  0x1c1e00000150: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1e00000160: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1e00000170: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c1e00000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==55774==ERROR: AddressSanitizer: stack-overflow on address 0x7ffee55fef68 (pc 0x000109e3ec90 bp 0x7ffee55ff7b0 sp 0x7ffee55fef70 T0)
+    #0 0x109e3ec90 in wrap_memcpy+0xc0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x18c90)
+    #1 0x109e104db in copy sat.c:265
+    #2 0x109e0b6c7 in DPLL sat.c:259
+    #3 0x109e0b806 in DPLL sat.c:260
+    #4 0x109e0b806 in DPLL sat.c:260
+    #5 0x109e0b806 in DPLL sat.c:260
+    #6 0x109e0b806 in DPLL sat.c:260
+    #7 0x109e0b806 in DPLL sat.c:260
+    #8 0x109e0b806 in DPLL sat.c:260
+    #9 0x109e0b806 in DPLL sat.c:260
+    #10 0x109e0b806 in DPLL sat.c:260
+    #11 0x109e0b806 in DPLL sat.c:260
+    #12 0x109e0b806 in DPLL sat.c:260
+    #13 0x109e0b806 in DPLL sat.c:260
+    #14 0x109e0b806 in DPLL sat.c:260
+    #15 0x109e0b806 in DPLL sat.c:260
+    #16 0x109e0b806 in DPLL sat.c:260
+    #17 0x109e0b806 in DPLL sat.c:260
+    #18 0x109e0b806 in DPLL sat.c:260
+    #19 0x109e0b806 in DPLL sat.c:260
+    #20 0x109e0b806 in DPLL sat.c:260
+    #21 0x109e0b806 in DPLL sat.c:260
+    #22 0x109e0b806 in DPLL sat.c:260
+    #23 0x109e0b806 in DPLL sat.c:260
+    #24 0x109e0b806 in DPLL sat.c:260
+    #25 0x109e0b806 in DPLL sat.c:260
+    #26 0x109e0b806 in DPLL sat.c:260
+    #27 0x109e0b806 in DPLL sat.c:260
+    #28 0x109e0b806 in DPLL sat.c:260
+    #29 0x109e0b806 in DPLL sat.c:260
+    #30 0x109e0b806 in DPLL sat.c:260
+    #31 0x109e0b806 in DPLL sat.c:260
+    #32 0x109e0b806 in DPLL sat.c:260
+    #33 0x109e0b806 in DPLL sat.c:260
+    #34 0x109e0b806 in DPLL sat.c:260
+    #35 0x109e0b806 in DPLL sat.c:260
+    #36 0x109e0b806 in DPLL sat.c:260
+    #37 0x109e0b806 in DPLL sat.c:260
+    #38 0x109e0b806 in DPLL sat.c:260
+    #39 0x109e0b806 in DPLL sat.c:260
+    #40 0x109e0b806 in DPLL sat.c:260
+    #41 0x109e0b806 in DPLL sat.c:260
+    #42 0x109e0b806 in DPLL sat.c:260
+    #43 0x109e0b806 in DPLL sat.c:260
+    #44 0x109e0b806 in DPLL sat.c:260
+    #45 0x109e0b806 in DPLL sat.c:260
+    #46 0x109e0b806 in DPLL sat.c:260
+    #47 0x109e0b806 in DPLL sat.c:260
+    #48 0x109e0b806 in DPLL sat.c:260
+    #49 0x109e0b806 in DPLL sat.c:260
+    #50 0x109e0b806 in DPLL sat.c:260
+    #51 0x109e0b806 in DPLL sat.c:260
+    #52 0x109e0b806 in DPLL sat.c:260
+    #53 0x109e0b806 in DPLL sat.c:260
+    #54 0x109e0b806 in DPLL sat.c:260
+    #55 0x109e0b806 in DPLL sat.c:260
+    #56 0x109e0b806 in DPLL sat.c:260
+    #57 0x109e0b806 in DPLL sat.c:260
+    #58 0x109e0b806 in DPLL sat.c:260
+    #59 0x109e0b806 in DPLL sat.c:260
+    #60 0x109e0b806 in DPLL sat.c:260
+    #61 0x109e0b806 in DPLL sat.c:260
+    #62 0x109e0b806 in DPLL sat.c:260
+    #63 0x109e0b806 in DPLL sat.c:260
+    #64 0x109e0b806 in DPLL sat.c:260
+    #65 0x109e0b806 in DPLL sat.c:260
+    #66 0x109e0b806 in DPLL sat.c:260
+    #67 0x109e0b806 in DPLL sat.c:260
+    #68 0x109e0b806 in DPLL sat.c:260
+    #69 0x109e0b806 in DPLL sat.c:260
+    #70 0x109e0b806 in DPLL sat.c:260
+    #71 0x109e0b806 in DPLL sat.c:260
+    #72 0x109e0b806 in DPLL sat.c:260
+    #73 0x109e0b806 in DPLL sat.c:260
+    #74 0x109e0b806 in DPLL sat.c:260
+    #75 0x109e0b806 in DPLL sat.c:260
+    #76 0x109e0b806 in DPLL sat.c:260
+    #77 0x109e0b806 in DPLL sat.c:260
+    #78 0x109e0b806 in DPLL sat.c:260
+    #79 0x109e0b806 in DPLL sat.c:260
+    #80 0x109e0b806 in DPLL sat.c:260
+    #81 0x109e0b806 in DPLL sat.c:260
+    #82 0x109e0b806 in DPLL sat.c:260
+    #83 0x109e0b806 in DPLL sat.c:260
+    #84 0x109e0b806 in DPLL sat.c:260
+    #85 0x109e0b806 in DPLL sat.c:260
+    #86 0x109e0b806 in DPLL sat.c:260
+    #87 0x109e0b806 in DPLL sat.c:260
+    #88 0x109e0b806 in DPLL sat.c:260
+    #89 0x109e0b806 in DPLL sat.c:260
+    #90 0x109e0b806 in DPLL sat.c:260
+    #91 0x109e0b806 in DPLL sat.c:260
+    #92 0x109e0b806 in DPLL sat.c:260
+    #93 0x109e0b806 in DPLL sat.c:260
+    #94 0x109e0b806 in DPLL sat.c:260
+    #95 0x109e0b806 in DPLL sat.c:260
+    #96 0x109e0b806 in DPLL sat.c:260
+    #97 0x109e0b806 in DPLL sat.c:260
+    #98 0x109e0b806 in DPLL sat.c:260
+    #99 0x109e0b806 in DPLL sat.c:260
+    #100 0x109e0b806 in DPLL sat.c:260
+    #101 0x109e0b806 in DPLL sat.c:260
+    #102 0x109e0b806 in DPLL sat.c:260
+    #103 0x109e0b806 in DPLL sat.c:260
+    #104 0x109e0b806 in DPLL sat.c:260
+    #105 0x109e0b806 in DPLL sat.c:260
+    #106 0x109e0b806 in DPLL sat.c:260
+    #107 0x109e0b806 in DPLL sat.c:260
+    #108 0x109e0b806 in DPLL sat.c:260
+    #109 0x109e0b806 in DPLL sat.c:260
+    #110 0x109e0b806 in DPLL sat.c:260
+    #111 0x109e0b806 in DPLL sat.c:260
+    #112 0x109e0b806 in DPLL sat.c:260
+    #113 0x109e0b806 in DPLL sat.c:260
+    #114 0x109e0b806 in DPLL sat.c:260
+    #115 0x109e0b806 in DPLL sat.c:260
+    #116 0x109e0b806 in DPLL sat.c:260
+    #117 0x109e0b806 in DPLL sat.c:260
+    #118 0x109e0b806 in DPLL sat.c:260
+    #119 0x109e0b806 in DPLL sat.c:260
+    #120 0x109e0b806 in DPLL sat.c:260
+    #121 0x109e0b806 in DPLL sat.c:260
+    #122 0x109e0b806 in DPLL sat.c:260
+    #123 0x109e0b806 in DPLL sat.c:260
+    #124 0x109e0b806 in DPLL sat.c:260
+    #125 0x109e0b806 in DPLL sat.c:260
+    #126 0x109e0b806 in DPLL sat.c:260
+    #127 0x109e0b806 in DPLL sat.c:260
+    #128 0x109e0b806 in DPLL sat.c:260
+    #129 0x109e0b806 in DPLL sat.c:260
+    #130 0x109e0b806 in DPLL sat.c:260
+    #131 0x109e0b806 in DPLL sat.c:260
+    #132 0x109e0b806 in DPLL sat.c:260
+    #133 0x109e0b806 in DPLL sat.c:260
+    #134 0x109e0b806 in DPLL sat.c:260
+    #135 0x109e0b806 in DPLL sat.c:260
+    #136 0x109e0b806 in DPLL sat.c:260
+    #137 0x109e0b806 in DPLL sat.c:260
+    #138 0x109e0b806 in DPLL sat.c:260
+    #139 0x109e0b806 in DPLL sat.c:260
+    #140 0x109e0b806 in DPLL sat.c:260
+    #141 0x109e0b806 in DPLL sat.c:260
+    #142 0x109e0b806 in DPLL sat.c:260
+    #143 0x109e0b806 in DPLL sat.c:260
+    #144 0x109e0b806 in DPLL sat.c:260
+    #145 0x109e0b806 in DPLL sat.c:260
+    #146 0x109e0b806 in DPLL sat.c:260
+    #147 0x109e0b806 in DPLL sat.c:260
+    #148 0x109e0b806 in DPLL sat.c:260
+    #149 0x109e0b806 in DPLL sat.c:260
+    #150 0x109e0b806 in DPLL sat.c:260
+    #151 0x109e0b806 in DPLL sat.c:260
+    #152 0x109e0b806 in DPLL sat.c:260
+    #153 0x109e0b806 in DPLL sat.c:260
+    #154 0x109e0b806 in DPLL sat.c:260
+    #155 0x109e0b806 in DPLL sat.c:260
+    #156 0x109e0b806 in DPLL sat.c:260
+    #157 0x109e0b806 in DPLL sat.c:260
+    #158 0x109e0b806 in DPLL sat.c:260
+    #159 0x109e0b806 in DPLL sat.c:260
+    #160 0x109e0b806 in DPLL sat.c:260
+    #161 0x109e0b806 in DPLL sat.c:260
+    #162 0x109e0b806 in DPLL sat.c:260
+    #163 0x109e0b806 in DPLL sat.c:260
+    #164 0x109e0b806 in DPLL sat.c:260
+    #165 0x109e0b806 in DPLL sat.c:260
+    #166 0x109e0b806 in DPLL sat.c:260
+    #167 0x109e0b806 in DPLL sat.c:260
+    #168 0x109e0b806 in DPLL sat.c:260
+    #169 0x109e0b806 in DPLL sat.c:260
+    #170 0x109e0b806 in DPLL sat.c:260
+    #171 0x109e0b806 in DPLL sat.c:260
+    #172 0x109e0b806 in DPLL sat.c:260
+    #173 0x109e0b806 in DPLL sat.c:260
+    #174 0x109e0b806 in DPLL sat.c:260
+    #175 0x109e0b806 in DPLL sat.c:260
+    #176 0x109e0b806 in DPLL sat.c:260
+    #177 0x109e0b806 in DPLL sat.c:260
+    #178 0x109e0b806 in DPLL sat.c:260
+    #179 0x109e0b806 in DPLL sat.c:260
+    #180 0x109e0b806 in DPLL sat.c:260
+    #181 0x109e0b806 in DPLL sat.c:260
+    #182 0x109e0b806 in DPLL sat.c:260
+    #183 0x109e0b806 in DPLL sat.c:260
+    #184 0x109e0b806 in DPLL sat.c:260
+    #185 0x109e0b806 in DPLL sat.c:260
+    #186 0x109e0b806 in DPLL sat.c:260
+    #187 0x109e0b806 in DPLL sat.c:260
+    #188 0x109e0b806 in DPLL sat.c:260
+    #189 0x109e0b806 in DPLL sat.c:260
+    #190 0x109e0b806 in DPLL sat.c:260
+    #191 0x109e0b806 in DPLL sat.c:260
+    #192 0x109e0b806 in DPLL sat.c:260
+    #193 0x109e0b806 in DPLL sat.c:260
+    #194 0x109e0b806 in DPLL sat.c:260
+    #195 0x109e0b806 in DPLL sat.c:260
+    #196 0x109e0b806 in DPLL sat.c:260
+    #197 0x109e0b806 in DPLL sat.c:260
+    #198 0x109e0b806 in DPLL sat.c:260
+    #199 0x109e0b806 in DPLL sat.c:260
+    #200 0x109e0b806 in DPLL sat.c:260
+    #201 0x109e0b806 in DPLL sat.c:260
+    #202 0x109e0b806 in DPLL sat.c:260
+    #203 0x109e0b806 in DPLL sat.c:260
+    #204 0x109e0b806 in DPLL sat.c:260
+    #205 0x109e0b806 in DPLL sat.c:260
+    #206 0x109e0b806 in DPLL sat.c:260
+    #207 0x109e0b806 in DPLL sat.c:260
+    #208 0x109e0b806 in DPLL sat.c:260
+    #209 0x109e0b806 in DPLL sat.c:260
+    #210 0x109e0b806 in DPLL sat.c:260
+    #211 0x109e0b806 in DPLL sat.c:260
+    #212 0x109e0b806 in DPLL sat.c:260
+    #213 0x109e0b806 in DPLL sat.c:260
+    #214 0x109e0b806 in DPLL sat.c:260
+    #215 0x109e0b806 in DPLL sat.c:260
+    #216 0x109e0b806 in DPLL sat.c:260
+    #217 0x109e0b806 in DPLL sat.c:260
+    #218 0x109e0b806 in DPLL sat.c:260
+    #219 0x109e0b806 in DPLL sat.c:260
+    #220 0x109e0b806 in DPLL sat.c:260
+    #221 0x109e0b806 in DPLL sat.c:260
+    #222 0x109e0b806 in DPLL sat.c:260
+    #223 0x109e0b806 in DPLL sat.c:260
+    #224 0x109e0b806 in DPLL sat.c:260
+    #225 0x109e0b806 in DPLL sat.c:260
+    #226 0x109e0b806 in DPLL sat.c:260
+    #227 0x109e0b806 in DPLL sat.c:260
+    #228 0x109e0b806 in DPLL sat.c:260
+    #229 0x109e0b806 in DPLL sat.c:260
+    #230 0x109e0b806 in DPLL sat.c:260
+    #231 0x109e0b806 in DPLL sat.c:260
+    #232 0x109e0b806 in DPLL sat.c:260
+    #233 0x109e0b806 in DPLL sat.c:260
+    #234 0x109e0b806 in DPLL sat.c:260
+    #235 0x109e0b806 in DPLL sat.c:260
+    #236 0x109e0b806 in DPLL sat.c:260
+    #237 0x109e0b806 in DPLL sat.c:260
+    #238 0x109e0b806 in DPLL sat.c:260
+    #239 0x109e0b806 in DPLL sat.c:260
+    #240 0x109e0b806 in DPLL sat.c:260
+    #241 0x109e0b806 in DPLL sat.c:260
+    #242 0x109e0b806 in DPLL sat.c:260
+    #243 0x109e0b806 in DPLL sat.c:260
+    #244 0x109e0b806 in DPLL sat.c:260
+    #245 0x109e0b806 in DPLL sat.c:260
+    #246 0x109e0b806 in DPLL sat.c:260
+    #247 0x109e0b806 in DPLL sat.c:260
+    #248 0x109e0b806 in DPLL sat.c:260
+    #249 0x109e0b806 in DPLL sat.c:260
+    #250 0x109e0b806 in DPLL sat.c:260
+    #251 0x109e0b806 in DPLL sat.c:260
+    #252 0x109e0b806 in DPLL sat.c:260
+    #253 0x109e0b806 in DPLL sat.c:260
+    #254 0x109e0b806 in DPLL sat.c:260
+    #255 0x109e0b806 in DPLL sat.c:260
+
+SUMMARY: AddressSanitizer: stack-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x18c90) in wrap_memcpy+0xc0
+==55774==ABORTING
+./runsat.sh: line 23: 55774 Abort trap: 6           "${SCRIPT_DIR}/sat" "$1"

@@ -1,0 +1,5 @@
+[!] False input file :*s_o/Q>^[ZnmB0*2-$CV4M.D$*r8)z*[jqGqI1MdS6?m\-\2rGtS#D7J-|C^[q=h}tXJ40wg=yspFEJjRXP!fsC|uSPS%T:fLb58xnFt$*H%d4*cuQZh4tF iXBK07+"AZf!f%/$X2zM\D)x*a6Wd|(?ZiY`@28iG,"/&"OIO1\SO2pp the error found is:
+std output:
+
+std error
+Error while openning the file :*s_o/Q>^[ZnmB0*2-$CV4M.D$*r8)z*[jqGqI1MdS6?m\-\2rGtS#D7J-|C^[q=h}tXJ40wg=yspFEJjRXP!fsC|uSPS%T:fLb58xnFt$*H%d4*cuQZh4tF iXBK07+"AZf!f%/$X2zM\D)x*a6Wd|(?ZiY`@28iG,"/&"OIO1\SO2pp.

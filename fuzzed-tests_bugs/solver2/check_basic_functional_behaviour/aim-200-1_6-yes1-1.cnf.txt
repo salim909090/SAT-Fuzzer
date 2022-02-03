@@ -1,0 +1,7 @@
+[!] False input file /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/functional_inputs/aim-200-1_6-yes1-1.cnf the error found is:
+std output:
+UNSAT
+
+std error
+
+the solver should yield a satisfiable solution

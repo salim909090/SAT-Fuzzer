@@ -1,0 +1,5 @@
+[!] False input file oRz%Fa|!Z}!OM3( W6KyN+WWM>D/d#9Yu8(y?[?J&[o}A(B__kD)$QD`-]$tf/YV{#[\\xv5ph'[Y2a$^\]HTEut|gKV`hU|G&!dW2&Ud the error found is:
+std output:
+
+std error
+Error while openning the file oRz%Fa|!Z}!OM3( W6KyN+WWM>D/d#9Yu8(y?[?J&[o}A(B__kD)$QD`-]$tf/YV{#[\\xv5ph'[Y2a$^\]HTEut|gKV`hU|G&!dW2&Ud.

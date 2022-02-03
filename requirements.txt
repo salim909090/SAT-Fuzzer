@@ -1,3 +1,4 @@
 psutil==5.9.0
 numpy==1.19.5
 Levenshtein==0.17.0
+textdistance

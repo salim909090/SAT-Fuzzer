@@ -1,0 +1,5 @@
+[!] False input file /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver1/generative_fuzzing/1.cnf the error found is:
+std output:
+
+std error
+Input file is not valid: Undefined error: 0

@@ -1,0 +1,120 @@
+[!] False input file /Users/salimalwahaibi/Desktop/imperial/sem 2/software relibelity/software-reliability-/inputs/solver2/generative_fuzzing/0.cnf the error found is:
+std output:
+ERROR: the file is badly formatted. Expected a number, read: ����������
+
+std error
+=================================================================
+==92476==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000025a at pc 0x0001054f7738 bp 0x7ffeea766190 sp 0x7ffeea765910
+READ of size 11 at 0x60200000025a thread T0
+    #0 0x1054f7737 in printf_common(void*, char const*, __va_list_tag*)+0x8e7 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x1f737)
+    #1 0x1054f80ec in wrap_printf+0xdc (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x200ec)
+    #2 0x1054a05a7 in badFormatted parser.c:5
+    #3 0x1054a107a in readNumberUntilSpace parser.c:98
+    #4 0x1054a12c1 in makeOutput parser.c:115
+    #5 0x1054a1ed3 in PARSEformula parser.c:194
+    #6 0x1054ad5c5 in initialize sat.c:430
+    #7 0x1054ade0b in main sat.c:467
+    #8 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x60200000025a is located 0 bytes to the right of 10-byte region [0x602000000250,0x60200000025a)
+allocated by thread T0 here:
+    #0 0x10551c400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1054a0d1b in readNumberUntilSpace parser.c:82
+    #2 0x1054a12c1 in makeOutput parser.c:115
+    #3 0x1054a1ed3 in PARSEformula parser.c:194
+    #4 0x1054ad5c5 in initialize sat.c:430
+    #5 0x1054ade0b in main sat.c:467
+    #6 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x1f737) in printf_common(void*, char const*, __va_list_tag*)+0x8e7
+Shadow bytes around the buggy address:
+  0x1c03fffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c0400000000: fa fa fd fd fa fa 00 00 fa fa 00 02 fa fa 00 04
+  0x1c0400000010: fa fa 00 00 fa fa 00 06 fa fa fd fd fa fa fd fd
+  0x1c0400000020: fa fa 02 fa fa fa 00 00 fa fa 04 fa fa fa 00 fa
+  0x1c0400000030: fa fa 00 00 fa fa 00 fa fa fa 00 00 fa fa 04 fa
+=>0x1c0400000040: fa fa 00 00 fa fa 00 00 fa fa 00[02]fa fa fa fa
+  0x1c0400000050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000090: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+=================================================================
+==92476==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000025a at pc 0x0001054ed5b5 bp 0x7ffeea765ce0 sp 0x7ffeea7654a0
+READ of size 11 at 0x60200000025a thread T0
+    #0 0x1054ed5b4 in wrap_strlen+0x184 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x155b4)
+    #1 0x7fff2043a54e in __vfprintf+0x148c (libsystem_c.dylib:x86_64+0x4354e)
+    #2 0x7fff20460964 in __v2printf+0x1d4 (libsystem_c.dylib:x86_64+0x69964)
+    #3 0x7fff20438fe5 in vfprintf_l+0x35 (libsystem_c.dylib:x86_64+0x41fe5)
+    #4 0x1054f80f8 in wrap_printf+0xe8 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x200f8)
+    #5 0x1054a05a7 in badFormatted parser.c:5
+    #6 0x1054a107a in readNumberUntilSpace parser.c:98
+    #7 0x1054a12c1 in makeOutput parser.c:115
+    #8 0x1054a1ed3 in PARSEformula parser.c:194
+    #9 0x1054ad5c5 in initialize sat.c:430
+    #10 0x1054ade0b in main sat.c:467
+    #11 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+0x60200000025a is located 0 bytes to the right of 10-byte region [0x602000000250,0x60200000025a)
+allocated by thread T0 here:
+    #0 0x10551c400 in wrap_malloc+0xa0 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x44400)
+    #1 0x1054a0d1b in readNumberUntilSpace parser.c:82
+    #2 0x1054a12c1 in makeOutput parser.c:115
+    #3 0x1054a1ed3 in PARSEformula parser.c:194
+    #4 0x1054ad5c5 in initialize sat.c:430
+    #5 0x1054ade0b in main sat.c:467
+    #6 0x7fff2053df3c in start+0x0 (libdyld.dylib:x86_64+0x15f3c)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x155b4) in wrap_strlen+0x184
+Shadow bytes around the buggy address:
+  0x1c03fffffff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x1c0400000000: fa fa fd fd fa fa 00 00 fa fa 00 02 fa fa 00 04
+  0x1c0400000010: fa fa 00 00 fa fa 00 06 fa fa fd fd fa fa fd fd
+  0x1c0400000020: fa fa 02 fa fa fa 00 00 fa fa 04 fa fa fa 00 fa
+  0x1c0400000030: fa fa 00 00 fa fa 00 fa fa fa 00 00 fa fa 04 fa
+=>0x1c0400000040: fa fa 00 00 fa fa 00 00 fa fa 00[02]fa fa 00 00
+  0x1c0400000050: fa fa fd fd fa fa fd fa fa fa fd fa fa fa fa fa
+  0x1c0400000060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000070: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x1c0400000090: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc

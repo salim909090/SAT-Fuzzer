@@ -1,0 +1,5 @@
+[!] False input file &!R4B'Y30*YIN\mrw?VQGzcZB8ftWH0dd9gawtL:qFZ913n9eP+Hv{uW]2@t-M@,]]#p,z.>%'m5+'YHq-`LAojdpII!9a2}7.]8Q{nOt__)x "#2^es6y%PsG0^-8Xdc%,clN>VvN]Q'*".=S5CsH5B+;aW$MIP}=wkk47F"2Qvrp/67Y1hk0j9hf$s+T_0_WRz)/9jHBr|%*(15nLBD0b]uikZBtg+yQjh%7q+D:s'vL7LQ4km2oQg^{KQ3/S>o]i" the error found is:
+std output:
+
+std error
+Error while openning the file &!R4B'Y30*YIN\mrw?VQGzcZB8ftWH0dd9gawtL:qFZ913n9eP+Hv{uW]2@t-M@,]]#p,z.>%'m5+'YHq-`LAojdpII!9a2}7.]8Q{nOt__)x "#2^es6y%PsG0^-8Xdc%,clN>VvN]Q'*".=S5CsH5B+;aW$MIP}=wkk47F"2Qvrp/67Y1hk0j9hf$s+T_0_WRz)/9jHBr|%*(15nLBD0b]uikZBtg+yQjh%7q+D:s'vL7LQ4km2oQg^{KQ3/S>o]i".

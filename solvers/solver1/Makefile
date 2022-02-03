@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-I. -Wall -Wextra -Wpedantic $(flags)
+CFLAGS=-I. -Wall -DNDEBUG -Wextra -Wpedantic $(flags)
 COVFLAGS=-g -O0 -fno-omit-frame-pointer -fno-optimize-sibling-calls -ftest-coverage -fprofile-arcs
 SANFLAGS=-fsanitize=address -fsanitize=undefined -fsanitize-recover=all
 
